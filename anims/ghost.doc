@@ -1,0 +1,77 @@
+Ghostbuster problem animation
+
+Files:
+	ghost.c
+	ghostscenes.c
+	ghost.h
+	ghostmake
+	ghost.doc
+
+
+General info:
+
+	The "ghostbuster problem" is actually an exercise in computational
+geometry.  Consider a set of points in the plane, half of which are designated
+'ghosts' and the other half designated 'ghostbusters'.  (One ghost for each 
+ghostbuster).  Each ghostbuster can shoot a straight-line beam at only one 
+ghost.  The problem is for each ghostbuster to shoot a different ghost without 
+any of the beams crossing each other.
+
+	The ghosts and busters are represented as points on a graph.  To 
+determine which pairs should be connected, a divide and conquer algorithm is 
+used.  The general idea is to choose one ghost-ghostbuster pair in such a way 
+that the line connecting them will divide the set of points being considered 
+into two regions, each region having equal numbers of ghost and ghostbusters.
+
+	To find such a pair of points, first the left-most point (either a 
+ghostbuster or a ghost) is determined and then angles formed between a vertical
+ray emitting from this point and rays to the other points in the region are 
+calculated.  Now the points are considered, in order of increasing angle size, 
+until a point is found that is the opposite type of the first point and that 
+divides the region as required.  This important dividing step is emphasized in 
+the animation.
+
+	Next, the same procedure is applied recursively to the two new regions,
+finding a new pair to be connected with each recursive step, and continues 
+until reaching the base case of only two points left in a region, which are 
+simply connected.  Once all points are exhausted, the ghosts will be connected 
+to their respective ghostbusters without any paths crossing.
+
+	The only case in which this algorithm will fail is if three or more 
+points are collinear, and this animation will check its input to make sure this
+case does not arise.
+
+
+Compilation & Execution:
+
+	To compile the program, you must first have XTANGO installed and the
+above files placed in the 'anims' subdirectory.  Then, type:
+
+	make -f ghostmake
+
+which will create the executable file 'ghost'.  To run the program, simply type
+'ghost'.  No parameters are necessary.
+
+	When the program is run, the XTANGO window will appear.  Push the 'run
+animation' button in that window to begin.  You can now begin selecting points 
+in the window using the mouse.  The first point selected will be marked with a
+'B' for ghostbuster, the second will be a 'G' for ghost, and the points you 
+select will continue to be alternately ghostbuster or ghost points.  If you 
+select a point collinear with two other points, you will be asked to select 
+another point.  (The algorithm being animated can't handle that case.)  Because
+of slight rounding differences between what's on the screen and what's dealt 
+with internally, what looks to be collinear may not be considered so with 
+rounded data and vice versa.  When you are done inserting points, select the 
+green box at the top of the XTANGO window with the mouse.  If you have not 
+entered an even number of points, you will be asked to add at least one more 
+point.  If you have entered an even number of points, the animation will begin
+and will work without further help from the user.
+
+
+Reference:
+
+"Introduction to Algorithms" by Cormen, Leiserson and Rivest, MIT press, 1990
+p. 914, problem 35-3
+
+This is where the ghostbuster problem was posed.
+ 

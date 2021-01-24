@@ -1,0 +1,369 @@
+          WHAT'S IN HERE?
+This directory contains a sample set of XTANGO algorithm animations
+that we have accumulated.  Browsing through this directory is a good
+way to become familiar with designing animations under XTANGO.  There
+are all different kinds of animations, and they utilize almost all of
+the capabilities of the system.
+
+Also take a look in the top-level directory called animator.  In there
+is a new front-end to xtango which simply reads an ascii file that has
+one animation command per line.  It's a simpler tool than the full
+xtango, but it's interpreted style can be advantageous, plus it isn't
+dependent on any particular language.
+
+The animations in this directory consist of a set of components.
+Below are listed the three different types of files:
+
+1. xxx.c	% the driving program that is being animated
+2. xxxscenes.c	% the tango animation code and scenes
+3. xxx.in	% sample input files
+
+The way that you typically get an animation going is by doing (we'll
+use bsort as an example--and remember to have your XTango X resources
+added to your X resource data base):
+1. "make PROG=bsort"
+2. "bsort"
+     or
+   "bsort < bsort.in"
+
+Many animations have sample *.in input files.  These are usually quite
+good to get a feel for the algorithm.  The input has been set up to
+achieve some nice effects.
+
+If you run an animation and it's all scrunched up, then you forgot to
+do something like
+   % xrdb -merge ../xtango.res
+
+
+USEFUL: To make all the animations in this directory, run the program
+"doscript."  But beware, that may use up a lot of memory.
+
+
+
+
+
+Here is a brief summary of the algorithm animations included in this directory:
+
+format:   title
+          file prefix
+          description
+
+
+
+*  Resource allocation
+   allocator
+   illustrates a resource allocation strategy
+
+*  Goofy animations
+   anim 
+   illustrates some of the graphics and animation capabilities of Tango
+
+*  AVL trees
+   avl
+   illustrates operations on AVL trees
+
+*  Binomial heaps
+   binoheap
+   illustrates ops on a binomial heap data structure
+
+*  Binary Trees
+   bintree
+   illustrates ops on a binary tree
+
+*  Boyer-Moore string matching
+   boyer
+   illustrates the Boyer-Moore string matching algorithm
+
+*  Bin-packing
+   bpack 
+   illustrates first-fit bin packing algorithm
+
+*  Bresenham's line drawing algo
+   bres
+   illustrates Bresenham's algorithm for scan converting lines
+
+*  Binary search
+   bsearch 
+   illustrates the binary search algorithm
+
+*  Bubble sort
+   bsort 
+   illustrates the bubble sort algorithm in vintage algo anim fashion
+
+*  B-trees
+   btree
+   illustrates operations on b-trees
+
+*  Bubble sort
+   bubsort 
+   illustrates the bubble sort algorithm as a pile of blocks
+
+*  Polygon clipping
+   clip
+   illustrates clipping a polygon against a rectangle
+
+*  Graph colorability
+   color 
+   illustrates a brute-force recursive graph colorability algo
+
+*  Combsort algorithm
+   combsort
+   illustrates the combsort algorithm
+
+*  Convex Hull
+   conhull
+   illustrates the Jarvis march convex hull algorithm
+
+*  Deterministic finite automata
+   dfa
+   illustrates the operations of a dfa
+
+*  Depth-first search
+   dfs 
+   illustrates the depth-first search algorithm
+
+*  Dijkstra's algorithm
+   dijkstra
+   illustrates dijkstra's shortest path algorithm   
+
+*  UNIX directory visualizer
+   dirviz
+   visualizes directory structures using treemap technique
+
+*  Computing factorials
+   fact
+   illustrates calculation of the factorial function
+
+*  Fast Fourier transform
+   fft
+   illustrates the Fast Fourier transformation   
+
+*  Fibonacci Heaps
+   fiboheap
+   illustrates operation on a Fibonacci heap data structure
+
+*  Shortest path
+   floydwar
+   illustrates the Floyd-Warshal shortest path algorithm
+
+*  The Game of Life
+   gameoflife
+   illustrates the game of life simulation
+
+*  Genetic TSP algorithm
+   gen
+   illustrates a genetic algorithm for solving travelling salesman
+
+*  ???
+   ghost
+   visualization of something about lines and angles in the plane
+
+*  Graham scan
+   graham
+   illustrates a Graham scan convex hull algorithm
+
+*  Towers of Hanoi problem
+   hanoi 
+   visualization of the Towers of Hanoi problem (pegs & disks)
+
+*  Hashing
+   hash
+   illustrates hashing 
+
+*  Heap sorting
+   heap 
+   illustrates a heap sort algorithm
+
+*  Hilbert Curves
+   hilbert
+   shows how hilbert curves are drawn
+
+*  Knuth-Morris-Prat string matching
+   kmp 
+   illustrates the KMP string matching algorithm
+
+*  Kepler's Laws
+   kepler
+   illustrates Kepler's Laws of Planetary motion
+
+*  Knight's tour
+   knight
+   illustrates a knight's tour on a chessboard (recursion & backtrack)
+
+*  Kruskal's MST algorithm
+   kruskal
+   illustrates kruskal's minimum spanning tree algorithm
+
+*  K-Selection
+   ksel
+   illustrates linear algorithm for choosing kth biggest element from set
+
+*  Linked lists
+   list
+   illustrate operations on a linked list (real nice one)
+
+*  Matrix multiplication
+   matrixmult
+   illustrates how matrix multiplication works
+
+*  Merge sort
+   merge 
+   illustrates merging of two sorted lists
+
+*  Pairing Heaps
+   pairheap
+   illustrates operations on a two-pass pairing heap data structure
+
+*  Producer-Consumer problem
+   pc 
+   illustrates functioning of a producer-consumer-monitor ring buffer
+
+*  Reverse Polish notation calculator
+   pol_calc
+   illustrates how a RPN calculator works
+
+*  Polygon scan conversion
+   polyscan
+   illustrates scan-converting a polygon
+
+*  Post office problem
+   post 
+   illustrates queueing via the post office problem
+
+*  Postfix conversion
+   postfix
+   illustrates converting an infix expression to a postfix one
+
+*  Prim's MST Algorithm
+   prim
+   illustrates Prim's minimum spannign tree algorithm
+
+*  Eight Queens problem
+   queens
+   illustrates 8-queens chess board problem
+
+*  Quicksort
+   quicksort
+   illustrates quicksort algorithm
+
+*  Quicksort
+   quicky
+   illustrates another view of quicksort algorithm
+
+*  Radix sort
+   radix
+   illustrates a radix sort
+
+*  Random number generator
+   random 
+   illustrates random # generation and hashing
+
+*  Red-Black trees
+   rbtree
+   illustrates operations on red-black trees
+
+*  Red-Black trees
+   rdblktree
+   illustrates operations on red-black trees (better one)
+
+*  Drunken cockroach problem
+   roach 
+   Illustrates a drunken cockroach wandering around a pattern
+
+*  Shakersort
+   shaker
+   illustrates shakersort algorithm
+
+*  Shellsort
+   shellsort
+   illustrates shellsort algorithm
+
+*  Card shuffling
+   shuffle 
+   illustrates random card shuffling
+
+*  Shortest path algorithm
+   spath 
+   illustrates finding the shortest path between vertices in a graph
+
+*  Search Tree
+   tree 
+   illustrates building a binary search tree
+  
+*  Treaps
+   treap
+   illustrates operations on a treap data structure
+  
+*  Tango mapping tester
+   test 
+   tests out the mapping capabilities offered by Tango
+
+*  Topological sort
+   topsort
+   illustrates a topological sort algorithm
+
+*  Travelling salesman problem
+   tsp
+   illustrates an algorithm for the travelling salesman problem
+
+*  3D viewing transformations
+   viewtran
+   illustrates how 3D viewing transformations work
+
+*  Virtual memory
+   vmem
+   illustrates a virtual memory replacment scheme
+
+
+*  There are also some sorting algorithms (insertion and select) 
+   without their own animation views.  You might want to tie them to one
+   of the existing views (bsort, bubsort, quicksort) or make up your own.
+
+
+If you have any questions or comments, please contact me via the address
+below.  I welcome suggestions, improvements, and especially, if you happen
+to create some neat new animations, I'd love to get the code for them and
+try them out.
+--John
+
+
+-------------------------------------------------------------------------
+
+          BUILDING AND RUNNING AN ALGORITHM ANIMATION
+
+To build an algorithm animation, you should create two files, one for the 
+program being animated, and one for the XTANGO animation control code.
+(They will be bound together eventually.)
+
+The program file should contain the program which you are trying to animate.
+To activate animation routines, you should place calls to the function
+TANGOalgoOp at appropriate positions within the program.  TANGOalgoOp
+requires the creation of a C structure which tells which animation scenes
+should be called for given algorithm operations.  TANGOalgoOp takes this
+structure's name as its first parameter, the algorithm operation name as its
+second parameter, and then any trailing operations parameters that follow.
+The name of an algorithm operation can be anything; it is made up by you.
+The special operations "BEGIN" and "END" should ALWAYS be included as the
+very first and last statements in your program.  The structure you create
+has fields for each algorithm operation.  An operation can map to any length
+sequence of animation routine calls.  You simply specify the number and names
+as fields of the structure.
+
+The animation control code file should contain C routines (animation scenes)
+that describe how the animation should appear.  These scenes are exactly like
+the ones that are used in TANGO.  (You should be able to reuse ones from the
+original TANGO exactly as is.)  To get a better feel for how to design
+scenes using XTANGO's four data types, location, image, path, and transition,
+see the two articles by John Stasko on the path-transition animation
+paradigm.
+
+To compile and make an animation, follow the example pattern in the
+Makefile of this directory.  The animation bpack is a good example to
+follow.  You must include the xtango.h file for compilation, then you
+must bind in xtango.o for loading.  The whole process should end up
+in one executable, which you run to generate the animation.  Note that
+many of the animations take "strange" input formats (or they plain
+don't prompt for input all that well), so we have included sample
+input files.  These are indicated by the suffix ".in" (for example,
+bsort.in, bpack.in, post.in).
+

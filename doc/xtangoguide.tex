@@ -1,0 +1,157 @@
+\documentstyle[]{article}
+
+\title{The XTANGO Environment and Differences from TANGO}
+\author{Doug Hayes}
+\date{3 November 1990}
+
+\textheight 9in
+\textwidth 6.5in
+\topmargin -0.5in
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+
+\begin{document}
+
+\maketitle
+
+\section{Running an Existing Animation}
+
+To run an XTANGO animation, just type the animation's name at the shell
+prompt.  A window frame will appear and, after positioning the window frame,
+a blank animation window with various pushbuttons will appear---most
+notably a pushbutton in the lower left-hand corner named {\bf run animation}.
+Select this pushbutton to display the animation.
+
+At any time before starting the animation with the {\bf run animation}
+pushbutton or while the animation is running, the other pushbuttons may be
+selected.  These pushbuttons affect what parts of an animation is
+displayed (the arrows and zoom pushbuttons labeled {\bf in} and {\bf out}
+along the left-hand edge) or the way XTANGO behaves (the pushbuttons
+along the bottom edge and the scrollbar along the right-hand edge).
+
+An animation may be aborted at any time by selecting the {\bf quit}
+pushbutton in the lower right-hand corner of the animation window.
+
+\subsection{Panning and Zooming}
+
+The pushbuttons along the left-hand edge of the animation screen affect
+what portions of an animation are displayed while an animation is running.
+To pan the animation window in a specific direction, select the
+appropriate arrow pushbutton.  To zoom in on a section of the animation
+select the {\bf in} pushbutton; select the {\bf out} pushbutton to zoom back
+out.
+
+\subsection{Pausing a Running Animation}
+
+After initially selecting the {\bf run animation} pushbutton to start the
+animation running, the {\bf run animation} pushbutton changes its name to
+{\bf pause}.  An animation may be paused at any time by selecting the
+{\bf pause} pushbutton which then pauses the animation and changes its name
+to {\bf unpause.} To continue the animation, select the {\bf unpause}
+pushbutton which then changes its name back to {\bf pause}.
+
+\subsection{Changing the Animation Refresh Mode}
+
+XTANGO currently supports three different times to redraw all images
+displayed in an animation: between each frame, between each scene, and
+none.  The default refresh mode is between each {\em frame}.
+
+There is a direct trade-off between the frequency of redrawing and the
+speed of the animation.  Refreshing {\bf by frame} produces a smooth
+animation but runs the slowest.  On the other hand, {\bf no refresh}
+produces a quick animation possibly with many holes in the images
+(created when one image passes over another).  Try the {\bf no refresh}
+mode when initially building an animation.  Then switch to {\bf by scene}
+to iron out the minor bugs.  Finally use the {\bf by frame} mode when an
+animation is complete.
+
+To change the refresh mode, select the {\bf mode} pushbutton either
+before running an animation or during the animation.  A menu will
+appear containing the three choices and the current choice will be
+indicated with a checkmark.  After selecting the appropriate choice,
+the new refresh mode will take effect immediately.
+
+Select the {\bf refresh} pushbutton located next to the {\bf quit}
+pushbutton to force a refresh at any time.
+
+\subsection{Slowing Down a Running Animation}
+
+Use the vertical scrollbar located along the right-hand edge of the
+animation window to control the amount of time between animation frames.
+The animation runs fastest when the scrollbar's ``thumb'' (the black,
+movable rectangle) is positioned at the top of the scrollbar; the
+animation becomes progressively slower as the thumb is moved towards
+the bottom of the scrollbar.
+
+To change the position of the thumb, either select the thumb and drag
+it to a new location, select a location within the scrollbar (and the
+thumb will jump there), or select one of the arrows located at the ends
+of the scrollbar (and the thumb will step in the desired direction).
+
+\section{Using {\tt TangoAlgoOp}}
+
+XTANGO differs from the original TANGO in only a few areas.  Most
+noticeably the algorithm to animate, the animation scenes, and the XTANGO
+engine are bound together at link time to create a stand-alone binary.
+Contrast this with the way the original TANGO is set up.  There, the algorithm
+to animate runs as a separate process which sends messages to another process,
+the TANGO engine.  The TANGO engine then dynamically loads animation
+scenes only as needed.
+
+In an attempt to keep the two environments as similar as possible we created
+a new mechanism, {\tt TANGOalgoOp}, to simulate the message-passing mechanism
+in TANGO, {\tt MSGsenda}.  Whenever {\tt MSGsenda} would be used for TANGO,
+{\tt TANGOalgoOp} should be used for XTANGO.
+
+The purpose of {\tt TANGOalgoOp} is to alias animation scene functions with a
+string and to be able to call a list of scene functions.  To do this
+{\tt TANGOalgOp} requires a little help to map between strings and function
+names by using the {\tt NAME\_FUNCT} structure.
+
+The {\tt NAME\_FUNCT} structure contains a list of string name aliases and
+a list of animation scene functions to call whenever the alias string is
+used.  This structure {\em must appear as the first argument}\/ to
+{\tt TANGOalgoOp} unlike TANGO's {\tt MSGsenda}.  The easiest way to set up a
+{\tt NAME\_FUNCT} structure is to initialize it staticly at the top of the
+program containing the algorithm to animate.  For example, this
+{\tt NAME\_FUNCT} was taken from ``bpack.c:''
+\begin{tt}
+\begin{verbatim}
+
+   void AnimInit(), AnimNewWeight(), AnimMoveTo(), AnimInPlace();
+
+   static NAME_FUNCT fcn[] = { {"Init",       1,  {VOID, (FPTR)AnimInit}},
+                               {"NewWeight",  1,  {VOID, (FPTR)AnimNewWeight}},
+                               {"Failure",    1,  {VOID, (FPTR)AnimMoveTo}},
+                               {"Success",    2, {{VOID, (FPTR)AnimMoveTo},
+                                                  {VOID, (FPTR)AnimInPlace}}},
+                               {NULL,         0,   NULL,       NULL} };
+
+\end{verbatim}
+\end{tt}
+Notice the list of scene functions to call when ``Success'' is used in
+{\tt TANGOalgoOp}.  Also notice the {\tt NULL}s used to terminate the
+structure.
+
+Here is an example of using {\tt TANGOalgoOp}, also taken from ``bpack.c:''
+\begin{tt}
+\begin{verbatim}
+
+   TANGOalgoOp(fcn, "Init", bin, numBins);
+
+\end{verbatim}
+\end{tt}
+
+There are two special string aliases used by XTANGO which are not declared in
+the {\tt NAME\_FUNCT} structure explicitly: ``BEGIN'' and ``END.''  A call to
+``BEGIN'' must be included {\em before} calling other string aliases because
+``BEGIN'' initializes XTANGO.  Place the call to ``END'' as the last function
+in your algorithm animation routine (usually {\tt main()}).  The ``END'' routine
+makes sure all animation scenes have been shown and waits until the {\bf quit}
+pushbutton is selected to end the animation.
+
+The best way to understand how this mechanism works is to look at a few
+examples.  Browse through the {\bf anims} subdirectory to get a better feel
+for {\tt TANGOalgoOp} and its usage.
+
+\end{document}

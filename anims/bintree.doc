@@ -1,0 +1,68 @@
+Binary Tree Insertion & Deletion animation
+
+Files:
+
+        bintree.c
+        bintreescenes.c
+        bintree.h
+        bintreemake
+        bintree.doc
+
+
+General info:
+
+	A binary search tree is perhaps the most basic of the tree data 
+structures.  Each node in such a tree can have up to two children, one called a
+left child and the other called a right child.  The fundamental rule for 
+organizing a binary search tree is:
+
+     For every node X in the binary search tree, all the nodes in its left 
+     subtree are less than or equal to X, and all the nodes in its right 
+     subtree are greater than or equal to X.
+
+	New data is always inserted as a leaf node, but any node, including the
+root node, may be deleted.  This program animates the binary search used to
+locate the node to be inserted or deleted, as well as whatever pointer
+manipulations are involved.  This is especially helpful for some of the
+deletion cases.
+
+
+Compilation and Execution:
+
+        To compile the program, you must first have XTANGO installed and the
+above files placed in the 'anims' subdirectory.  Then, type:
+
+        make -f bintreemake
+
+which will create the executable file 'bintree'.  To run the program, simply
+type 'bintree'.  No parameters are necessary, although input may be piped in.
+
+        When you run the program, after the XTANGO window appears you will be
+first asked whether or not you want to see the comparisons.  The comparisons
+slow down the finding of the node to be deleted or the location to insert a
+node, but if you haven't worked with binary trees in a while, it's a good
+reminder of how a binary search is done.  Type 'y' to see them, 'n' not to.
+
+        Next you'll get the instructions.  This program only deals with
+positive integers.  Type 'i' followed by a number to insert that number into
+the tree, 'd' followed by a number to delete that number from the tree, 'h' to
+see the instructions again, and 'q' to stop.
+
+        There are a limited number of levels in the tree; if you try to insert
+below the bottom level, it will animate the search down to the bottom of the
+screen, then stop, print an error message, and not insert the node.  The
+program will not crash, however, and you can continue inserting and deleting.
+
+        Also note that as of XTANGO version 1.42, the control buttons in the
+XTANGO window WILL NOT WORK when the program is waiting for your input from the
+keyboard.
+
+        You can also create an input file which can be piped in.  Just remember
+to make sure that the first character in the file is the 'y' or 'n', and the 
+last character is a 'q'.
+
+
+References:
+"Introduction to Algorithms" by Cormen, Leiserson & Rivest.  McGrawHill, 1990
+Chapter 13 on Binary Search Trees, pp 244-253
+

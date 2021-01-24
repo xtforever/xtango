@@ -1,0 +1,36 @@
+
+XTANGO is very similar to the original TANGO algorithm animation package.
+The primary difference is that the system now sits directly on top of
+the X11 Window System.  Another important difference is that XTANGO lacks
+the interprocess communication and dynamic loading capabilities of the 
+original TANGO.  If you are familiar with the original TANGO, using XTANGO
+should be quite straightforward.
+
+Here are some of the important differences to keep in mind:
+
+* The algorithm code and animation code get bound together (along with
+  the xtango library, xtango.o) in order to create an algorithm animation
+  under XTANGO.
+
+* XTANGO doesn't take command line options like TANGO did.  Its attributes
+  can be set through menu choices on the animation window prior to running
+  the animation.
+
+* XTANGO only does animation by blting from an offscreen bitmap.  It cannot
+  currently double buffer in the color table.
+
+* XTANGO will work well on black and white monitors (it has built-in 
+  environment checks.)  On B/W, patterns may represent either colors
+  or TANGO_FILL_STYLEs.
+
+* XTANGO allows any valid X color name to be used as the starting color
+  for an image.  (Currently, color can only be changed to one of the 8
+  basic types however.)
+
+* You must choose the "run animation" button to start running an 
+  animation in XTANGO.
+
+* Algorithm operations are now specified by the TANGOalgoOp command
+  and by defining their mapping in a special structure at the top of
+  a program.
+

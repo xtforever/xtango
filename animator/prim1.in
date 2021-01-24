@@ -1,0 +1,491 @@
+bg black
+coords 0 -0.1 1 1.2
+bigtext 2000 .5 1.1 1 white Prim's Algorithm
+circle 0 0.350000 0.300000 .015 white outline
+circle 1 0.250000 0.530000 .015 white outline
+circle 2 0.300000 0.850000 .015 white outline
+circle 3 0.400000 0.550000 .015 white outline
+circle 4 0.460000 0.800000 .015 white outline
+circle 5 0.700000 0.720000 .015 white outline
+circle 6 0.820000 0.600000 .015 white outline
+circle 7 0.500000 0.500000 .015 white outline
+circle 8 0.800000 0.200000 .015 white outline
+text 2001 .5 -.05 1 white Draw all paths in graph
+line 1000 0.350000 0.300000 -0.100000 0.230000 yellow thin
+line 1001 0.350000 0.300000 0.150000 0.200000 yellow thin
+line 1002 0.350000 0.300000 0.450000 -0.100000 yellow thin
+line 1003 0.250000 0.530000 0.050000 0.320000 yellow thin
+line 1004 0.250000 0.530000 0.150000 0.020000 yellow thin
+line 1005 0.300000 0.850000 0.100000 -0.300000 yellow thin
+line 1006 0.300000 0.850000 0.160000 -0.050000 yellow thin
+line 1007 0.400000 0.550000 0.060000 0.250000 yellow thin
+line 1008 0.400000 0.550000 0.100000 -0.050000 yellow thin
+line 1009 0.460000 0.800000 0.240000 -0.080000 yellow thin
+line 1010 0.700000 0.720000 0.120000 -0.120000 yellow thin
+line 1011 0.700000 0.720000 -0.200000 -0.220000 yellow thin
+line 1012 0.820000 0.600000 -0.020000 -0.400000 yellow thin
+line 1013 0.500000 0.500000 0.300000 -0.300000 yellow thin
+delay 30
+delete 2001
+delay 30
+fill 0 solid
+text 2001 .5 -.05 1 white Mark possible paths to an unshaded vertex
+color 1000 green
+color 1001 green
+color 1002 green
+delay 30
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Add shortest path and select vertex
+color 1001 red
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+vis 1001
+fill 7 solid
+color 1000 yellow
+color 1002 yellow
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Mark possible paths to an unshaded vertex
+color 1000 green
+color 1002 green
+color 1008 green
+color 1011 green
+color 1013 green
+delay 30
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Add shortest path and select vertex
+color 1008 red
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+vis 1008
+fill 3 solid
+color 1000 yellow
+color 1002 yellow
+color 1011 yellow
+color 1013 yellow
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Mark possible paths to an unshaded vertex
+color 1000 green
+color 1002 green
+color 1004 green
+color 1005 green
+color 1007 green
+color 1011 green
+color 1013 green
+delay 30
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Add shortest path and select vertex
+color 1004 red
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+vis 1004
+fill 1 solid
+color 1000 yellow
+color 1002 yellow
+color 1005 yellow
+color 1007 yellow
+color 1011 yellow
+color 1013 yellow
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Mark possible paths to an unshaded vertex
+color 1002 green
+color 1003 green
+color 1005 green
+color 1007 green
+color 1011 green
+color 1013 green
+delay 30
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Add shortest path and select vertex
+color 1007 red
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+vis 1007
+fill 4 solid
+color 1002 yellow
+color 1003 yellow
+color 1005 yellow
+color 1011 yellow
+color 1013 yellow
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Mark possible paths to an unshaded vertex
+color 1002 green
+color 1003 green
+color 1005 green
+color 1006 green
+color 1009 green
+color 1011 green
+color 1013 green
+delay 30
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Add shortest path and select vertex
+color 1006 red
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+vis 1006
+fill 2 solid
+color 1002 yellow
+color 1003 yellow
+color 1005 yellow
+color 1009 yellow
+color 1011 yellow
+color 1013 yellow
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Mark possible paths to an unshaded vertex
+color 1002 green
+color 1009 green
+color 1011 green
+color 1013 green
+delay 30
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Add shortest path and select vertex
+color 1009 red
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+vis 1009
+fill 5 solid
+color 1002 yellow
+color 1011 yellow
+color 1013 yellow
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Mark possible paths to an unshaded vertex
+color 1002 green
+color 1010 green
+color 1013 green
+delay 30
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Add shortest path and select vertex
+color 1010 red
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+vis 1010
+fill 6 solid
+color 1002 yellow
+color 1013 yellow
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Mark possible paths to an unshaded vertex
+color 1002 green
+color 1012 green
+color 1013 green
+delay 30
+delete 2001
+delay 30
+text 2001 .5 -.05 1 white Add shortest path and select vertex
+color 1012 red
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+vis 1012
+fill 8 solid
+color 1002 yellow
+color 1013 yellow
+delete 2001
+delay 30

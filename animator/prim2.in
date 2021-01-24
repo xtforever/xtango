@@ -1,0 +1,370 @@
+coords 0.0 0.0 1.0 1.3
+bigtext 0 0.5 1.20 1 orange PRIM Algorithm
+text 1002 0.2 1.10 0 green  Green  =  Not Visited
+text 1001 0.2 1.05 0 yellow Yellow =   Path Taken
+bg black
+circle  1 0.196000 0.940000 0.02 green solid
+text 51 0.196000 0.940000 1 blue 1
+circle  2 0.085000 0.891000 0.02 green solid
+text 52 0.085000 0.891000 1 blue 2
+circle  3 0.076000 0.770000 0.02 green solid
+text 53 0.076000 0.770000 1 blue 3
+circle  4 0.199000 0.835000 0.02 green solid
+text 54 0.199000 0.835000 1 blue 4
+circle  5 0.360000 0.817000 0.02 green solid
+text 55 0.360000 0.817000 1 blue 5
+circle  6 0.266000 0.654000 0.02 green solid
+text 56 0.266000 0.654000 1 blue 6
+circle  7 0.067000 0.496000 0.02 green solid
+text 57 0.067000 0.496000 1 blue 7
+circle  8 0.132000 0.326000 0.02 green solid
+text 58 0.132000 0.326000 1 blue 8
+circle  9 0.432000 0.335000 0.02 green solid
+text 59 0.432000 0.335000 1 blue 9
+circle  10 0.605000 0.547000 0.02 green solid
+text 60 0.605000 0.547000 1 blue 10
+circle  11 0.714000 0.775000 0.02 green solid
+text 61 0.714000 0.775000 1 blue 11
+circle  12 0.806000 0.873000 0.02 green solid
+text 62 0.806000 0.873000 1 blue 12
+circle  13 0.520000 0.951000 0.02 green solid
+text 63 0.520000 0.951000 1 blue 13
+circle  14 0.499000 0.663000 0.02 green solid
+text 64 0.499000 0.663000 1 blue 14
+circle  15 0.423000 0.493000 0.02 green solid
+text 65 0.423000 0.493000 1 blue 15
+circle  16 0.633000 0.257000 0.02 green solid
+text 66 0.633000 0.257000 1 blue 16
+circle  17 0.730000 0.446000 0.02 green solid
+text 67 0.730000 0.446000 1 blue 17
+circle  18 0.813000 0.598000 0.02 green solid
+text 68 0.813000 0.598000 1 blue 18
+circle  19 0.788000 0.223000 0.02 green solid
+text 69 0.788000 0.223000 1 blue 19
+circle  20 0.490000 0.118000 0.02 green solid
+text 70 0.490000 0.118000 1 blue 20
+circle  21 0.231000 0.145000 0.02 green solid
+text 71 0.231000 0.145000 1 blue 21
+circle  22 0.275000 0.254000 0.02 green solid
+text 72 0.275000 0.254000 1 blue 22
+circle  23 0.252000 0.471000 0.02 green solid
+text 73 0.252000 0.471000 1 blue 23
+circle  24 0.095000 0.156000 0.02 green solid
+text 74 0.095000 0.156000 1 blue 24
+circle  25 0.693000 0.129000 0.02 green solid
+text 75 0.693000 0.129000 1 blue 25
+circle  26 0.866000 0.346000 0.02 green solid
+text 76 0.866000 0.346000 1 blue 26
+circle  27 0.591000 0.395000 0.02 green solid
+text 77 0.591000 0.395000 1 blue 27
+circle  28 0.587000 0.779000 0.02 green solid
+text 78 0.587000 0.779000 1 blue 28
+circle  29 0.633000 0.897000 0.02 green solid
+text 79 0.633000 0.897000 1 blue 29
+circle  30 0.372000 0.902000 0.02 green solid
+text 80 0.372000 0.902000 1 blue 30
+circle  31 0.150000 0.612000 0.02 green solid
+text 81 0.150000 0.612000 1 blue 31
+circle  32 0.363000 0.580000 0.02 green solid
+text 82 0.363000 0.580000 1 blue 32
+circle  33 0.905000 0.721000 0.02 green solid
+text 83 0.905000 0.721000 1 blue 33
+circle  34 0.792000 0.708000 0.02 green solid
+text 84 0.792000 0.708000 1 blue 34
+circle  35 0.813000 0.125000 0.02 green solid
+text 85 0.813000 0.125000 1 blue 35
+line 101 0.196000 0.940000 -0.111000 -0.049000 green thin
+lower 101
+line 102 0.196000 0.940000 0.003000 -0.105000 green thin
+lower 102
+line 103 0.196000 0.940000 0.176000 -0.038000 green thin
+lower 103
+line 104 0.085000 0.891000 -0.009000 -0.121000 green thin
+lower 104
+line 105 0.076000 0.770000 0.123000 0.065000 green thin
+lower 105
+line 106 0.076000 0.770000 -0.009000 -0.274000 green thin
+lower 106
+line 107 0.076000 0.770000 0.074000 -0.158000 green thin
+lower 107
+line 108 0.199000 0.835000 0.161000 -0.018000 green thin
+lower 108
+line 109 0.199000 0.835000 0.067000 -0.181000 green thin
+lower 109
+line 110 0.360000 0.817000 -0.094000 -0.163000 green thin
+lower 110
+line 111 0.360000 0.817000 0.160000 0.134000 green thin
+lower 111
+line 112 0.360000 0.817000 0.139000 -0.154000 green thin
+lower 112
+line 113 0.360000 0.817000 0.012000 0.085000 green thin
+lower 113
+line 114 0.266000 0.654000 0.233000 0.009000 green thin
+lower 114
+line 115 0.266000 0.654000 -0.014000 -0.183000 green thin
+lower 115
+line 116 0.266000 0.654000 -0.116000 -0.042000 green thin
+lower 116
+line 117 0.067000 0.496000 0.065000 -0.170000 green thin
+lower 117
+line 118 0.067000 0.496000 0.028000 -0.340000 green thin
+lower 118
+line 119 0.067000 0.496000 0.083000 0.116000 green thin
+lower 119
+line 120 0.132000 0.326000 0.143000 -0.072000 green thin
+lower 120
+line 121 0.132000 0.326000 0.120000 0.145000 green thin
+lower 121
+line 122 0.132000 0.326000 -0.037000 -0.170000 green thin
+lower 122
+line 123 0.432000 0.335000 -0.009000 0.158000 green thin
+lower 123
+line 124 0.432000 0.335000 0.058000 -0.217000 green thin
+lower 124
+line 125 0.432000 0.335000 -0.157000 -0.081000 green thin
+lower 125
+line 126 0.432000 0.335000 0.159000 0.060000 green thin
+lower 126
+line 127 0.605000 0.547000 -0.106000 0.116000 green thin
+lower 127
+line 128 0.605000 0.547000 -0.182000 -0.054000 green thin
+lower 128
+line 129 0.605000 0.547000 0.208000 0.051000 green thin
+lower 129
+line 130 0.605000 0.547000 -0.014000 -0.152000 green thin
+lower 130
+line 131 0.605000 0.547000 0.187000 0.161000 green thin
+lower 131
+line 132 0.714000 0.775000 0.092000 0.098000 green thin
+lower 132
+line 133 0.714000 0.775000 -0.215000 -0.112000 green thin
+lower 133
+line 134 0.714000 0.775000 -0.127000 0.004000 green thin
+lower 134
+line 135 0.714000 0.775000 0.078000 -0.067000 green thin
+lower 135
+line 136 0.806000 0.873000 -0.173000 0.024000 green thin
+lower 136
+line 137 0.806000 0.873000 0.099000 -0.152000 green thin
+lower 137
+line 138 0.520000 0.951000 0.113000 -0.054000 green thin
+lower 138
+line 139 0.520000 0.951000 -0.148000 -0.049000 green thin
+lower 139
+line 140 0.499000 0.663000 0.088000 0.116000 green thin
+lower 140
+line 141 0.499000 0.663000 -0.136000 -0.083000 green thin
+lower 141
+line 142 0.423000 0.493000 -0.060000 0.087000 green thin
+lower 142
+line 143 0.633000 0.257000 0.097000 0.189000 green thin
+lower 143
+line 144 0.633000 0.257000 0.155000 -0.034000 green thin
+lower 144
+line 145 0.633000 0.257000 -0.143000 -0.139000 green thin
+lower 145
+line 146 0.633000 0.257000 0.060000 -0.128000 green thin
+lower 146
+line 147 0.730000 0.446000 0.083000 0.152000 green thin
+lower 147
+line 148 0.730000 0.446000 0.136000 -0.100000 green thin
+lower 148
+line 149 0.730000 0.446000 -0.139000 -0.051000 green thin
+lower 149
+line 150 0.813000 0.598000 -0.021000 0.110000 green thin
+lower 150
+line 151 0.788000 0.223000 -0.095000 -0.094000 green thin
+lower 151
+line 152 0.788000 0.223000 0.078000 0.123000 green thin
+lower 152
+line 153 0.788000 0.223000 0.025000 -0.098000 green thin
+lower 153
+line 154 0.490000 0.118000 -0.259000 0.027000 green thin
+lower 154
+line 155 0.490000 0.118000 0.203000 0.011000 green thin
+lower 155
+line 156 0.231000 0.145000 0.044000 0.109000 green thin
+lower 156
+line 157 0.231000 0.145000 -0.136000 0.011000 green thin
+lower 157
+line 158 0.275000 0.254000 -0.023000 0.217000 green thin
+lower 158
+line 159 0.252000 0.471000 0.111000 0.109000 green thin
+lower 159
+line 160 0.693000 0.129000 0.120000 -0.004000 green thin
+lower 160
+line 161 0.866000 0.346000 0.039000 0.375000 green thin
+lower 161
+line 162 0.587000 0.779000 0.046000 0.118000 green thin
+lower 162
+line 163 0.905000 0.721000 -0.113000 -0.013000 green thin
+lower 163
+color 1 yellow
+delay 20
+color 4 yellow
+color 102 yellow
+comment Shortest Path = 1 to 4
+delay 20
+color 2 yellow
+color 101 yellow
+comment Shortest Path = 1 to 2
+delay 20
+color 3 yellow
+color 104 yellow
+comment Shortest Path = 2 to 3
+delay 20
+vis 105
+color 5 yellow
+color 108 yellow
+comment Shortest Path = 4 to 5
+delay 20
+color 30 yellow
+color 113 yellow
+comment Shortest Path = 5 to 30
+delay 20
+vis 103
+color 13 yellow
+color 139 yellow
+comment Shortest Path = 30 to 13
+delay 20
+vis 111
+color 29 yellow
+color 138 yellow
+comment Shortest Path = 13 to 29
+delay 20
+color 28 yellow
+color 162 yellow
+comment Shortest Path = 29 to 28
+delay 20
+color 11 yellow
+color 134 yellow
+comment Shortest Path = 28 to 11
+delay 20
+color 34 yellow
+color 135 yellow
+comment Shortest Path = 11 to 34
+delay 20
+color 18 yellow
+color 150 yellow
+comment Shortest Path = 34 to 18
+delay 20
+color 33 yellow
+color 163 yellow
+comment Shortest Path = 34 to 33
+delay 20
+color 12 yellow
+color 132 yellow
+comment Shortest Path = 11 to 12
+delay 20
+vis 136
+vis 137
+color 14 yellow
+color 140 yellow
+comment Shortest Path = 28 to 14
+delay 20
+vis 112
+vis 133
+color 10 yellow
+color 127 yellow
+comment Shortest Path = 14 to 10
+delay 20
+vis 129
+vis 131
+color 27 yellow
+color 130 yellow
+comment Shortest Path = 10 to 27
+delay 20
+color 17 yellow
+color 149 yellow
+comment Shortest Path = 27 to 17
+delay 20
+vis 147
+color 32 yellow
+color 141 yellow
+comment Shortest Path = 14 to 32
+delay 20
+color 15 yellow
+color 142 yellow
+comment Shortest Path = 32 to 15
+delay 20
+vis 128
+color 23 yellow
+color 159 yellow
+comment Shortest Path = 32 to 23
+delay 20
+color 9 yellow
+color 123 yellow
+comment Shortest Path = 15 to 9
+delay 20
+vis 126
+color 26 yellow
+color 148 yellow
+comment Shortest Path = 17 to 26
+delay 20
+vis 161
+color 19 yellow
+color 152 yellow
+comment Shortest Path = 26 to 19
+delay 20
+color 35 yellow
+color 153 yellow
+comment Shortest Path = 19 to 35
+delay 20
+color 25 yellow
+color 160 yellow
+comment Shortest Path = 35 to 25
+delay 20
+vis 151
+color 16 yellow
+color 146 yellow
+comment Shortest Path = 25 to 16
+delay 20
+vis 143
+vis 144
+color 31 yellow
+color 107 yellow
+comment Shortest Path = 3 to 31
+delay 20
+color 6 yellow
+color 116 yellow
+comment Shortest Path = 31 to 6
+delay 20
+vis 109
+vis 110
+vis 114
+vis 115
+color 7 yellow
+color 119 yellow
+comment Shortest Path = 31 to 7
+delay 20
+vis 106
+color 22 yellow
+color 125 yellow
+comment Shortest Path = 9 to 22
+delay 20
+vis 158
+color 21 yellow
+color 156 yellow
+comment Shortest Path = 22 to 21
+delay 20
+color 24 yellow
+color 157 yellow
+comment Shortest Path = 21 to 24
+delay 20
+vis 118
+color 8 yellow
+color 120 yellow
+comment Shortest Path = 22 to 8
+delay 20
+vis 117
+vis 121
+vis 122
+color 20 yellow
+color 145 yellow
+comment Shortest Path = 16 to 20
+delay 20
+vis 124
+vis 154
+vis 155
+bigtext 1006 0.6 1.05 0 orange Finished !
+comment Done!

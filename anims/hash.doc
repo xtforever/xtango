@@ -1,0 +1,115 @@
+*************************  hash.README  ****************************
+
+Dean F. Jerding
+GIT
+October 16, 1992
+
+
+    This text file describes the operation of a program
+which implements and animates the method of hashing known
+as cyclic linear probing.  The animation is performed using
+the algorithm animation package XTANGO.
+    This document briefly describes the program's files and
+operation, and then discusses the actual animation.
+
+
+I.  Program File Description
+    hash.c:  Main file.  Reads instructions from input file
+             hash.in, processes them, and calls routines
+             in clprob.c. 
+    hash.in:  The input file for hash.c.  Commands are printed
+              line by line, with the following example file detailing
+              the format: 
+
+             File Contents:      Comments:
+                  a               :add/update command 
+                  100             :key to add/update 
+                  data here       :data
+                  i               :in table?, lookup command
+                  100             :key to lookup
+                  e               :print element (for debugging)
+                  100             :key to print
+                  t               :print hash table (for debugging)
+                  d               :delete command 
+                  100             :key to delete
+
+    clprob.c:  Implements the cyclic linear probing algorithm
+               for a hash table.  Makes calls to animation routines
+               to animate the algorithm.  Data types of keys
+               and elements are abstract in this file.  However,
+               the animation routines called were designed for
+               specific data types, namely, integer keys and
+               character string elements.
+    element.c:  Contains routines that operate on keys and
+                elements.  This file, along with element.h,
+                supports abstraction of the data types in
+                the hash table.  Additionally, the hash table
+                size and indices are set up in element.h.
+    hashscenes.c:  Animation routines that utilize XTANGO routines
+                   to perform the animation.  The routines expect
+                   particular data types for keys, and elements,
+                   due to display constraints.
+
+
+II.  Algorithm Operation
+
+    The executable file, hash, implements and animates hashing
+using cyclic linear probing.  Operations supported are
+element addition, element updating, table lookup, and element
+deletion.  A "status" flag is used with each slot in the table to
+indicate whether the slot is empty, valid, or deleted.  The hash function
+is abstracted in element.c, but must return an integer.  Currently,
+hash index = key MOD TABLESIZE; TABLESIZE should always be a prime number. 
+
+    The add and update operations are performed by the same routine.  
+If the new key is found while searching the table, the element is updated,
+otherwise, the element is added.  To perform these operations, 
+the index is intially set using the hash function, and the corresponding
+slot's status is checked.  There are three possible actions taken, depending
+on the value of the status flag.  If the slot is empty, the element is placed
+there, and the status flag is set to valid.  If the slot is already valid,
+the key is checked to see if there is a match between the slot key and the
+new key. If so, the element is updated.  If the slot is marked deleted, and
+it is the first such slot encountered in the current search, its index is
+recorded.  This is done so that if there are no more empty slots in the 
+table, the algorithm will remember a slot where the new element can be added.
+The cyclic linear probing  algorithm proceeds linearly through
+the hash table until the new element is added or updated, or the search
+reveals no empty slots.  If the last condition occurs, the new element is 
+placed in the first slot marked deleted.  If there are no deleted slots,
+the table is full and the element is discarded.
+
+    Key lookup operates with exactly the same search pattern, except that
+no data is altered when/if the key is found.  To perform deletion, the
+algorithm simply looks for the key (again the same search algorithm),
+and if it is found, sets that slot's status to be deleted.  Note that it
+is not necessary to alter any of the slot's data.
+
+    For debugging purposes, functions are implemented to print specific
+elements, or the entire hash table.  These functions are not animated.
+
+
+III.  Animation
+
+    The animation routines utilize the XTANGO algorithm animation
+package to graphically animate the algorithm.  Initially, the screen
+shows the hash table, with its key, data, and status columns.  There
+are also designated spaces for the following:  current action, current
+key, and current data.  
+
+    The animation begins by animating the initialization process, in
+which all slots are set to empty.  Then, as the program performs 
+various operations on the table, the animation mirrors these 
+processes.  The current action is displayed at the top of the window.  
+An index pointer indicates the current slot being accessed.  A 
+flashing pointer simulates the calculation of the hash index, after
+which the arrow scrolls to the appropriate location.
+
+    The key and status of various slots are highlighted when
+their data is checked or compared.  A match between the current
+key and a key in the slot is indicated by a blinking slot key.
+
+    Addition of elements is shown by the current key and data 
+moving from their initial spot on the screen into the appropriate
+slot of the table.  When a slot's status is updated, the slot flashes,
+and the status string is changed to one of 'E', 'V', or 'D'.

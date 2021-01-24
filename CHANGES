@@ -1,0 +1,78 @@
+Changes in developing:
+
+version 1.40
+------------
+* Fixed bug in copying text images
+* Fixed bug in calculating image locs for text when window is zoomed
+* Modified TANGOloc_equal to be a little more generous
+* Added new ASSOCdelete routine
+* Added new TAP high-level transition macro package
+* Added new transition type ZOOM
+* Added TANGOset_coord and TANGOinq_coord which provide generic
+  animation controlled zooming and panning capabilities
+* Panning works a little better
+* Added little error padding to TANGOinput_image (you can now pick
+  vertical and horizontal lines)
+* Added lots of new example animations
+
+version 1.41
+------------
+* Fixed some panning and zooming problems
+* Added new animations
+
+version 1.42
+------------
+* Fixed bug in copying composite Images
+* Increased maximum number of colors to 50
+* Added new animations
+
+version 1.43
+------------
+* Fixed bug in drawing centered text
+* Fixed bug in copying polygon, polyline and spline Images
+* Supports more colors active at once
+* Added window background color capability
+* Added new animations
+* Added Animator front-end interpreter
+
+version 1.50
+------------
+* Changed the way animation is done with X to markedly 
+  improve animation speed
+
+version 1.51
+------------
+* Fixed "dropppings" bugs in new animation methodology
+* Fixed bug in drawing bitmap images
+* Fixed memory leak in splines
+* Fixed up input_coord and input_image routines
+* Fixed ZOOM transition
+* Cleaned up internal code a lot
+  (Many thanks to Niels Mayer for these fixes)
+
+version 1.52
+------------
+* Improved text positioning and drawing
+* Improved animation bound box calculations
+  (Many thanks to Niels Mayer for these fixes)
+* Fixed bug in panning or zooming while paused
+* Added a group of new animations
+  
+version 1.53
+------------
+* Added some commands to animator program
+* Fixed a few things in animations
+
+verion 1.54   12/15/95
+-----------
+Fixed a problem in varargs version for DEC Alphas
+
+
+
+
+possible future developments
+----------------------------
+* Rewind capability
+* Step mode
+* Dialog boxes and buttons
+* Constraints

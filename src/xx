@@ -1,0 +1,266 @@
+xtangoimage.c: In function ‘image_create2’:
+xtangoimage.c:491:22: error: ‘param’ undeclared (first use in this function)
+    new_image->type = param->type;
+                      ^~~~~
+xtangoimage.c:491:22: note: each undeclared identifier is reported only once for each function it appears in
+xtangoimage.c:514:3: error: ‘polyline_create_new_image’ undeclared (first use in this function); did you mean ‘polyline_create’?
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+   polyline_create
+xtangoimage.c:514:28: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                            ^
+xtangoimage.c:514:32: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                ^
+xtangoimage.c:514:35: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                   ^
+xtangoimage.c:514:39: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                       ^
+xtangoimage.c:514:42: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                          ^
+xtangoimage.c:514:46: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                              ^
+xtangoimage.c:514:50: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                                  ^
+xtangoimage.c:514:54: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                                      ^
+xtangoimage.c:514:58: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                                          ^
+xtangoimage.c:514:62: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                                              ^
+xtangoimage.c:514:67: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                                                   ^
+xtangoimage.c:514:71: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+                                                                       ^
+xtangoimage.c:515:12: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+         p12,p13, p14);
+            ^
+xtangoimage.c:515:16: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+         p12,p13, p14);
+                ^
+xtangoimage.c:514:3: warning: statement with no effect [-Wunused-value]
+   polyline_create_new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9, p10,p11,
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+xtangoimage.c:515:21: error: expected ‘;’ before ‘)’ token
+         p12,p13, p14);
+                     ^
+xtangoimage.c:515:21: error: expected statement before ‘)’ token
+xtangoimage.c: In function ‘image_copy’:
+xtangoimage.c:575:10: error: too many arguments to function ‘image_create2’
+   return(image_create2(image,TANGO_IMAGE_TYPE_LINE,line));
+          ^~~~~~~~~~~~~
+xtangoimage.c:485:1: note: declared here
+ image_create2( TANGO_IMAGE image, int type)
+ ^~~~~~~~~~~~~
+xtangoimage.c:584:3: error: ‘myimage’ undeclared (first use in this function); did you mean ‘image’?
+   myimage.type=TANGO_IMAGE_TYPE_LINE;
+   ^~~~~~~
+   image
+xtangoimage.c:592:10: error: too few arguments to function ‘image_create2’
+   return(image_create2(&myimage));
+          ^~~~~~~~~~~~~
+xtangoimage.c:485:1: note: declared here
+ image_create2( TANGO_IMAGE image, int type)
+ ^~~~~~~~~~~~~
+xtangoimage.c: In function ‘image_create2’:
+xtangoimage.c:3353:1: error: expected declaration or statement at end of input
+ }
+ ^
+xtangoimage.c:488:75: warning: unused variable ‘p20’ [-Wunused-variable]
+    int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20;
+                                                                           ^~~
+xtangoimage.c:488:71: warning: unused variable ‘p19’ [-Wunused-variable]
+    int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20;
+                                                                       ^~~
+xtangoimage.c:488:67: warning: unused variable ‘p18’ [-Wunused-variable]
+    int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20;
+                                                                   ^~~
+xtangoimage.c:488:63: warning: unused variable ‘p17’ [-Wunused-variable]
+    int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20;
+                                                               ^~~
+xtangoimage.c:488:59: warning: unused variable ‘p16’ [-Wunused-variable]
+    int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20;
+                                                           ^~~
+xtangoimage.c:488:55: warning: unused variable ‘p15’ [-Wunused-variable]
+    int p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20;
+                                                       ^~~
+xtangoimage.c: In function ‘image_create’:
+xtangoimage.c:482:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+xtangoimage.c: In function ‘image_create2’:
+xtangoimage.c:3353:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+xtangoimage.c:3332:1: warning: ‘TANGO_clear_screen’ defined but not used [-Wunused-function]
+ TANGO_clear_screen (void)
+ ^~~~~~~~~~~~~~~~~~
+xtangoimage.c:3221:1: warning: ‘TANGO_damage_clear_screen’ defined but not used [-Wunused-function]
+ TANGO_damage_clear_screen (void)
+ ^~~~~~~~~~~~~~~~~~~~~~~~~
+xtangoimage.c:3171:1: warning: ‘TANGO_bounding_box’ defined but not used [-Wunused-function]
+ TANGO_bounding_box (TANGO_IMAGE im, WIN_COORD *lx, WIN_COORD *by, WIN_COORD *rx, WIN_COORD *ty)
+ ^~~~~~~~~~~~~~~~~~
+xtangoimage.c:3134:1: warning: ‘get_linestyle’ defined but not used [-Wunused-function]
+ get_linestyle (double width, double style)
+ ^~~~~~~~~~~~~
+xtangoimage.c:3119:1: warning: ‘get_fillstyle’ defined but not used [-Wunused-function]
+ get_fillstyle (double val)
+ ^~~~~~~~~~~~~
+xtangoimage.c:3088:1: warning: ‘get_color’ defined but not used [-Wunused-function]
+ get_color (char *str)
+ ^~~~~~~~~
+xtangoimage.c:3039:1: warning: ‘inquire_pathcolor’ defined but not used [-Wunused-function]
+ inquire_pathcolor (WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~~~~~
+xtangoimage.c:2991:1: warning: ‘decode_trans’ defined but not used [-Wunused-function]
+ decode_trans (TANGO_TRANS_TYPE t)
+ ^~~~~~~~~~~~
+xtangoimage.c:2954:1: warning: ‘arrow_poly_direction’ defined but not used [-Wunused-function]
+ arrow_poly_direction (int num, WIN_COORD vert[7][2], WIN_COORD *fx, WIN_COORD *fy, WIN_COORD *bx, WIN_COORD *by)
+ ^~~~~~~~~~~~~~~~~~~~
+xtangoimage.c:2919:1: warning: ‘compute_arrow_off’ defined but not used [-Wunused-function]
+ compute_arrow_off (double dx, double dy, double *adx1, double *ady1, double *adx2, double *ady2)
+ ^~~~~~~~~~~~~~~~~
+xtangoimage.c:2876:1: warning: ‘copy_composite’ defined but not used [-Wunused-function]
+ copy_composite (TANGO_IMAGE sourceim, TANGO_IMAGE destim)
+ ^~~~~~~~~~~~~~
+xtangoimage.c:2708:1: warning: ‘read_composite’ defined but not used [-Wunused-function]
+ read_composite (TANGO_IMAGE_COMPONENT images[])
+ ^~~~~~~~~~~~~~
+xtangoimage.c:2604:1: warning: ‘composite_loc’ defined but not used [-Wunused-function]
+ composite_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~~~~~~
+xtangoimage.c:2583:1: warning: ‘composite_trans’ defined but not used [-Wunused-function]
+ composite_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~~~
+xtangoimage.c:2562:1: warning: ‘composite_draw’ defined but not used [-Wunused-function]
+ composite_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~~
+xtangoimage.c:2541:1: warning: ‘composite_create’ defined but not used [-Wunused-function]
+ composite_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, TANGO_IMAGE_COMPONENT subimages[])
+ ^~~~~~~~~~~~~~~~
+xtangoimage.c:2480:1: warning: ‘bmap_loc’ defined but not used [-Wunused-function]
+ bmap_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~
+xtangoimage.c:2464:1: warning: ‘bmap_trans’ defined but not used [-Wunused-function]
+ bmap_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~
+xtangoimage.c:2435:1: warning: ‘bmap_draw’ defined but not used [-Wunused-function]
+ bmap_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~
+xtangoimage.c:2396:1: warning: ‘bmap_copy’ defined but not used [-Wunused-function]
+ bmap_copy (TANGO_IMAGE destImage, TANGO_IMAGE srcImage)
+ ^~~~~~~~~
+xtangoimage.c:2354:1: warning: ‘bmap_create’ defined but not used [-Wunused-function]
+ bmap_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, int *bmaps, int n, int width, int height)
+ ^~~~~~~~~~~
+xtangoimage.c:2257:1: warning: ‘text_loc’ defined but not used [-Wunused-function]
+ text_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~
+xtangoimage.c:2232:1: warning: ‘text_trans’ defined but not used [-Wunused-function]
+ text_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~
+xtangoimage.c:2191:1: warning: ‘text_draw’ defined but not used [-Wunused-function]
+ text_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~
+xtangoimage.c:2156:1: warning: ‘text_create’ defined but not used [-Wunused-function]
+ text_create(TANGO_IMAGE image, WIN_COORD lx,WIN_COORD ly,int vis,int color,char *fontname,char *string,int orient)
+ ^~~~~~~~~~~
+xtangoimage.c:2066:1: warning: ‘spline_loc’ defined but not used [-Wunused-function]
+ spline_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~~~
+xtangoimage.c:2017:1: warning: ‘spline_trans’ defined but not used [-Wunused-function]
+ spline_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~
+xtangoimage.c:1973:1: warning: ‘spline_draw’ defined but not used [-Wunused-function]
+ spline_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~
+xtangoimage.c:1944:1: warning: ‘spline_create’ defined but not used [-Wunused-function]
+ spline_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, int color, int vertices, double vertexX[], double vertexY[], double width, double style)
+ ^~~~~~~~~~~~~
+xtangoimage.c:1876:1: warning: ‘polygon_loc’ defined but not used [-Wunused-function]
+ polygon_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~~~~
+xtangoimage.c:1832:1: warning: ‘polygon_trans’ defined but not used [-Wunused-function]
+ polygon_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~
+xtangoimage.c:1780:1: warning: ‘polygon_draw’ defined but not used [-Wunused-function]
+ polygon_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~
+xtangoimage.c:1752:1: warning: ‘polygon_create’ defined but not used [-Wunused-function]
+ polygon_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, int color, int sides, double vertexX[], double vertexY[], double fill)
+ ^~~~~~~~~~~~~~
+xtangoimage.c:1622:1: warning: ‘polyline_loc’ defined but not used [-Wunused-function]
+ polyline_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~~~~~
+xtangoimage.c:1559:1: warning: ‘polyline_trans’ defined but not used [-Wunused-function]
+ polyline_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~~
+xtangoimage.c:1499:1: warning: ‘polyline_draw’ defined but not used [-Wunused-function]
+ polyline_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~
+xtangoimage.c:1456:1: warning: ‘polyline_create’ defined but not used [-Wunused-function]
+ polyline_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, int color, int vertices, double vertexX[], double vertexY[], double width, double style, int arrow)
+ ^~~~~~~~~~~~~~~
+xtangoimage.c:1392:1: warning: ‘ellipse_loc’ defined but not used [-Wunused-function]
+ ellipse_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~~~~
+xtangoimage.c:1354:1: warning: ‘ellipse_trans’ defined but not used [-Wunused-function]
+ ellipse_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~
+xtangoimage.c:1306:1: warning: ‘ellipse_draw’ defined but not used [-Wunused-function]
+ ellipse_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~
+xtangoimage.c:1282:1: warning: ‘ellipse_create’ defined but not used [-Wunused-function]
+ ellipse_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, int color, WIN_COORD rx, WIN_COORD ry, double fill)
+ ^~~~~~~~~~~~~~
+xtangoimage.c:1220:1: warning: ‘circle_loc’ defined but not used [-Wunused-function]
+ circle_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~~~
+xtangoimage.c:1185:1: warning: ‘circle_trans’ defined but not used [-Wunused-function]
+ circle_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~
+xtangoimage.c:1140:1: warning: ‘circle_draw’ defined but not used [-Wunused-function]
+ circle_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~
+xtangoimage.c:1117:1: warning: ‘circle_create’ defined but not used [-Wunused-function]
+ circle_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, int color, WIN_COORD radius, double fill)
+ ^~~~~~~~~~~~~
+xtangoimage.c:1058:1: warning: ‘rectangle_loc’ defined but not used [-Wunused-function]
+ rectangle_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~~~~~~
+xtangoimage.c:1020:1: warning: ‘rectangle_trans’ defined but not used [-Wunused-function]
+ rectangle_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~~~
+xtangoimage.c:974:1: warning: ‘rectangle_draw’ defined but not used [-Wunused-function]
+ rectangle_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~~~~~
+xtangoimage.c:950:1: warning: ‘rectangle_create’ defined but not used [-Wunused-function]
+ rectangle_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, int color, WIN_COORD sx, WIN_COORD sy, double fill)
+ ^~~~~~~~~~~~~~~~
+xtangoimage.c:825:1: warning: ‘line_loc’ defined but not used [-Wunused-function]
+ line_loc (TANGO_IMAGE image, TANGO_PART_TYPE part)
+ ^~~~~~~~
+xtangoimage.c:779:1: warning: ‘line_trans’ defined but not used [-Wunused-function]
+ line_trans (TANGO_IMAGE image, TANGO_TRANS_TYPE trans_type, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~~
+xtangoimage.c:723:1: warning: ‘line_draw’ defined but not used [-Wunused-function]
+ line_draw (TANGO_IMAGE super_im, TANGO_IMAGE image, WIN_COORD dx, WIN_COORD dy)
+ ^~~~~~~~~
+xtangoimage.c:691:1: warning: ‘line_create’ defined but not used [-Wunused-function]
+ line_create (TANGO_IMAGE image, WIN_COORD lx, WIN_COORD ly, int vis, int color, WIN_COORD sx, WIN_COORD sy, double width, double style, int arrow)
+ ^~~~~~~~~~~
+make: *** [<eingebaut>: xtangoimage.o] Fehler 1

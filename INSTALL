@@ -1,0 +1,203 @@
+#!/bin/sh
+#
+#******************************************************************************#
+# 				XTANGO INSTALL Script			       #
+#******************************************************************************#
+#		Copyright 1990 Georgia Institute of Technology		       #
+#			John T. Stasko and Doug Hayes			       #
+#******************************************************************************#
+#									       #
+# This script does a complete install of the XTANGO system plus a few sample   #
+# animations. It should be run from the root XTANGO directory (*/xtango/*).    #
+#									       #
+#******************************************************************************#
+#									       #
+# Modification Date  Description					       #
+# -----------------  --------------------------------------------------------- #
+# 90/11/13   JDH     Baselined.						       #
+#									       #
+#******************************************************************************#
+
+BASEDIR=`pwd`
+XTANGOHOME=$BASEDIR
+ANIMSDIR=$XTANGOHOME/anims
+BITMAPDIR=$XTANGOHOME/bitmap
+LIBDIR=$XTANGOHOME/lib
+SRCDIR=$XTANGOHOME/src
+
+#
+# Find out which widget set to build.
+#
+clear
+cat <<!
+
+	Welcome to XTANGO.  This installation script will help you set up
+	XTANGO for your particular system and create a few sample animations
+	to get you started.
+
+	But first we need a little information:
+
+	Which widget set would you like to use?
+
+		1)  HP X Widgets
+
+		2)  Motif Widgets
+
+		3)  Athena Widgets (default)
+
+
+	NOTE:  If your file system uses automount, this installation may
+	       NOT WORK (it uses pwd).  If it doesn't, you will probably
+	       want to edit the INSTALL file or just do the makes manually.
+
+
+	Choice (1-3)?
+!
+read CHOICE
+case $CHOICE in
+   1) WIDGET=hp ;;
+   2) WIDGET=motif ;;
+   *) WIDGET=athena ;;
+esac
+#
+# Change a few system dependent variables in anims/Makefile & xtangoathena.res.
+#
+case $WIDGET in
+  hp) cat <<!
+
+	using HP X Widgets
+!
+      cd $ANIMSDIR ;
+      cat Makefile | sed '{ 12 s/\(#*\)\(.*\)/\2/; 13 s/\(#*\)\(.*\)/#\2/;
+			    14 s/\(#*\)\(.*\)/#\2/; }' >Makefile.temp ;
+      mv -f Makefile.temp Makefile ;
+      cd .. ;;
+  motif) cat <<!
+
+	using Motif Widgets
+!
+      cd $ANIMSDIR ;
+      cat Makefile | sed '{ 12 s/\(#*\)\(.*\)/#\2/; 13 s/\(#*\)\(.*\)/#\2/;
+			    14 s/\(#*\)\(.*\)/\2/; }' >Makefile.temp ;
+      mv -f Makefile.temp Makefile ;
+      cd .. ;;
+   *) cat <<!
+
+	using Athena Widgets
+!
+      cd $ANIMSDIR ;
+      cat Makefile | sed '{ 12 s/\(#*\)\(.*\)/#\2/; 13 s/\(#*\)\(.*\)/\2/;
+			    14 s/\(#*\)\(.*\)/#\2/; }' >Makefile.temp ;
+      mv -f Makefile.temp Makefile ;
+      cd $LIBDIR ;
+      cat xtangoathena.res | sed "47 s^\(#define HOME\).*^\1 $BASEDIR^"\
+	  >ath.res.temp ;
+      mv -f ath.res.temp xtangoathena.res ;
+      cd $XTANGOHOME ;;
+esac
+#
+# Build XTANGO object file using the appropriate widget set.
+#
+cat <<!
+	building XTANGO (please be patient)
+
+!
+cd $SRCDIR
+make install
+make $WIDGET
+#
+# Build an animation.
+#
+cat <<!
+
+	building an example animation
+
+!
+cd $ANIMSDIR
+make PROG=bpack
+cd $XTANGOHOME
+#
+# Now tell everyone how to setup X11 to locate XTANGO's resources.
+# (Save these recommendations in a file called "RECOMMEND" for future
+# reference).
+#
+clear
+cat >RECOMMEND <<!
+
+	Installation is complete.
+
+	XTANGO uses a resource file, "xtango.res", to change where widgets
+	appear and how they behave; however, XTANGO must be able to find this
+	file.  Here are three suggested methods to tell XTANGO where to locate
+	its widget resource file:
+
+!
+echo "		1) cp $XTANGOHOME/xtango.res /usr/lib/X11/app-defaults/XTango"\
+     >>RECOMMEND
+cat >>RECOMMEND <<!
+
+
+		   After the resource file is located in X11/app-defaults,
+		   any users can use XTANGO from anywhere in the system.
+		   You need to copy the resource file into X11/app-defaults
+		   only once (or whenever you change widget sets).  The next
+		   time you login, you can immediately use XTANGO without
+		   any special setup.  Note that you probably have to be the
+		   super-user (root) to write into this directory, so you may
+		   want to ask your system administrator to set this up for you.
+
+!
+echo "          2) cp $XTANGOHOME/xtango.res $HOME/app-defaults/XTango" >>RECOMMEND
+cat >>RECOMMEND <<!
+                   
+                   Make your own app-defaults directory under your
+                   home directory, then copy the xtango resources into
+                   there as the file Xtango.  Then, in your .login, place
+                   
+                   setenv XAPPLRESDIR $HOME/app-defaults
+
+                   Basically, this builds your own application
+                   defaults resource file.  (This is a good way to do it.)
+
+!
+echo "		3) setenv XENVIRONMENT $XTANGOHOME/xtango.res" >>RECOMMEND
+cat >>RECOMMEND <<!
+
+		   To use this method, you must set XENVIRONMENT
+		   *every* time you login, before using XTANGO.
+		   An easy way to do this is to place this line in your
+		   ".cshrc" (or whatever shell initialization file you're
+		   using).  After that, you can immediately use XTANGO
+		   every time you login without any further setup.
+
+!
+echo "		4) cat $XTANGOHOME/xtango.res >>$HOME/.Xdefaults" >>RECOMMEND
+cat >>RECOMMEND <<!
+
+		   Use this method if you are already using XENVIRONMENT.
+		   ".Xdefaults" is the standard place to put resources for
+		   all X11 applications you use; however, this file is
+		   usually used to customize an application (ie. change
+		   colors, etc).  If you choose this method, you only have
+		   to place XTANGO's resources in ".Xdefaults" once.
+	
+!
+echo "		5) xrdb -merge $XTANGOHOME/xtango.res" >>RECOMMEND
+cat >>RECOMMEND <<!
+
+		   This is a last resort as you must manually tell XTANGO
+		   where to find it's resources *every* time you start
+		   X11.  An easy way to do this is to place this line in
+		   your ".xinitrc" file.  After that, you can immediately
+		   use XTANGO every time you login and start X11 without
+		   any further setup.
+	
+
+	To try out the animations, select the appropriate method above to tell
+	XTANGO where to find its widget resources.  Then change to the "anims"
+	subdirectory and execute one of the binaries.
+
+	(These four methods to tell XTANGO where to find its resources are
+	 saved in a file named "RECOMMEND" for future reference).
+!
+more RECOMMEND

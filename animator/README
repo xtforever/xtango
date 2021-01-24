@@ -1,0 +1,16 @@
+This directory holds the new Animator front-end to xtango.  For more
+information about the tool itself, read the animator.txt or
+animator.ps (better) file.  
+
+To compile the program, first look at (edit) the Makefile.  If you are
+using the Motif widget set, there's nothing to change.  If you are
+using either Athena or HP widgets, go in and uncomment the appropriate
+#WIDGETS line and comment out the Xm one.  Then simply give the
+"make" command in this directory.  
+
+I have included a few sample animations (sample.in, prim1.in,
+prim2.in, kruskal1.in, kruskal2.in, quicksort1.in) for you to try out.
+To see what really can be done, try out the input file OSsimulator
+(from Kay and Steve Robbins).  Make sure to resize your window to be
+just about the whole screen.
+--John

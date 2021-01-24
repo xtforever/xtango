@@ -1,0 +1,98 @@
+Treap  Insertion  animation
+
+
+Files:
+	Makefile
+	treap.h
+	treap.c
+	treapscenes.c
+	treap.doc  ( this file )
+	treapmake  ( mirror image of Makefile )	
+        
+
+
+General info:
+
+	A treap is a combination of a binary search tree (BST) and a heap.  
+It uses a probablistic process to help maintain a balanced tree.  Each node 
+in the treap has two 'keys'.  The first is the "binary search key'.  This key 
+is used when performing binary tree operations on the abstract data structure
+(ADT).   The 'heap key' is used to try and keep the tree balanced.  The
+relationships between the nodes in the treap are organized so that they
+fullfill the conditions for a binary tree AND a heap ( though it the 
+heap is not a complete tree it still meets the property that all the 
+'heap key's below a given node are less than that node's 'heap key' ).
+The binary tree property meet is that all left children are less than or
+equal to the root.
+
+	The heap keys are picked randomly.  This randomization of the process
+helps keep the tree balanced.
+
+
+	See comments of treap.c for Credits. (  borrowed code sources 
+and comments on code. )
+
+
+Compilation and Execution:
+
+        To compile the program, you must first have XTANGO installed [ see
+the makefile to see if your directory structure matches what is there ]. If 
+so typing :
+
+
+        make -f treapmake PROG=treap
+
+Should do the job. [ if this has been loaded into a directory by itself then
+typing just "make" will work just as well ]. This will create the executable
+file 'treap'.  To run the program type 'treap'.
+
+
+        When you run the program the program will ask which mode you 
+would like to run the program in. There are two modes.
+Demo mode will attempt to insert 20 nodes into the treap.  Randomly picking
+both the BST and Heap keys. In user mode the user picks the BST key and
+the program picks the random heap key. 
+
+	After you answer this question then the XTango window will pop up.
+
+        If you are in demo mode just press the run animation button and
+watch.
+
+	If you are in user mode will get a prompt in X Window in which you
+started the program, AFTER you press the run animation mode.  
+The user can enter up to 20 nodes.  Entering 0 will stop the process.
+The user must hit the quit button to exit the program. 
+
+        Also note that as of XTANGO version 1.42, the control buttons in the
+XTANGO window WILL NOT WORK when the program is waiting for your input from the
+keyboard.
+
+     There are a limited number of levels in the tree; if you try to insert
+below the bottom level, it will animate the search down to the bottom of the
+screen, then stop, print an error message, and not insert the node.  The
+program will not crash, however, and you can continue inserting and deleting.
+And if you insert, which causes are rotate that is below the bottom of the
+tree the program will also give a message.
+
+
+
+    You can also create an input file which can be piped in.  Just remember
+to make sure that the first character in the file is a 'u' followed by a 
+return   and the last entry a 0 followed by a return.  Each entry should be
+on a line by itself.
+
+
+References:
+
+"Randomized Search Trees" Aragon, Cecilia R. and Seidel, Raimund G.
+ Computer Science Division  University of California at Berkeley.
+
+
+"Introduction to Algorithms" by Cormen, Leiserson & Rivest.  McGrawHill, 1990
+Chapter 13 on Binary Search Trees, pp 244-253  and Chapter 7 on Heaps, 
+pp 140-152.
+
+
+
+
+

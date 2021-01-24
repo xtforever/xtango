@@ -1,0 +1,152 @@
+coords 0.0 0.0 11 100
+bigtext -20 5.500000 95.0 1 blue Quicksort Animation
+text -21 5.500000 90.0 1 black With the quicksort algorithm, a pivot value is used to compare
+text -22 5.500000 87.0 1 black each element in the array as each index, i and j, traverse
+text -23 5.500000 84.0 1 black toward each other.  When i encounters a number larger than the
+text -24 5.500000 81.0 1 black pivot, it stops, and when j encounters a number less than the
+text -29 5.500000 78.0 1 black pivot, the values at positions i and j are swapped.  In the
+text -25 5.500000 75.0 1 black diagram, i is in blue and j is in red. As quicksort gets called
+text -26 5.500000 72.0 1 black boxes are drawn around the subarrays to show recursion.
+text -27 5.500000 69.0 1 black The current pivot value is shown in red and all previous pivots
+text -28 5.500000 66.0 1 black are highlighted in blue.
+text -11 1 46 1 blue i
+text -10 10 46 1 red j
+text 1 1.0 50.0 1 black 7
+text 2 2.0 50.0 1 black 2
+text 3 3.0 50.0 1 black 9
+text 4 4.0 50.0 1 black 5
+text 5 5.0 50.0 1 black 4
+text 6 6.0 50.0 1 black 6
+text 7 7.0 50.0 1 black 1
+text 8 8.0 50.0 1 black 10
+text 9 9.0 50.0 1 black 8
+text 10 10.0 50.0 1 black 3
+rectangle -101 0.520000 38 9.960000 24 black outline
+color 1 red
+jump -10 10 46
+jump -11 1 46
+move -10 10 46
+move -11 1 46
+move 1 1.0 54.0
+move 10 10.0 54.0
+exchangepos 1 10
+move 10 1.0 50.0
+move 1 10.0 50.0
+move -10 9 46
+move -10 8 46
+move -10 7 46
+move -11 2 46
+move -11 3 46
+move 3 3.0 54.0
+move 7 7.0 54.0
+exchangepos 3 7
+move 7 3.0 50.0
+move 3 7.0 50.0
+move -10 6 46
+move -11 4 46
+move -11 5 46
+move -11 6 46
+move -11 7 46
+color 1 blue
+rectangle -102 0.540000 39 5.920000 22 black outline
+color 10 red
+jump -10 6 46
+jump -11 1 46
+move -10 6 46
+move -10 5 46
+move -10 4 46
+move -10 3 46
+move -11 1 46
+move 10 1.0 54.0
+move 7 3.0 54.0
+exchangepos 10 7
+move 7 1.0 50.0
+move 10 3.0 50.0
+move -10 2 46
+move -11 2 46
+move -11 3 46
+color 10 blue
+rectangle -103 0.560000 40 1.880000 20 black outline
+color 7 red
+jump -10 2 46
+jump -11 1 46
+move -10 2 46
+move -10 1 46
+move -11 1 46
+color 7 blue
+rectangle -104 2.560000 40 3.880000 20 black outline
+color 10 red
+jump -10 6 46
+jump -11 3 46
+move -10 6 46
+move -10 5 46
+move -10 4 46
+move -10 3 46
+move -11 3 46
+color 10 blue
+rectangle -105 3.580000 41 2.840000 18 black outline
+color 4 red
+jump -10 6 46
+jump -11 4 46
+move -10 6 46
+move -10 5 46
+move -11 4 46
+move 4 4.0 54.0
+move 5 5.0 54.0
+exchangepos 4 5
+move 5 4.0 50.0
+move 4 5.0 50.0
+move -10 4 46
+move -11 5 46
+color 4 blue
+rectangle -106 4.600000 42 1.800000 16 black outline
+color 4 red
+jump -10 6 46
+jump -11 5 46
+move -10 6 46
+move -10 5 46
+move -11 5 46
+color 4 blue
+rectangle -107 6.540000 39 3.920000 22 black outline
+color 3 red
+jump -10 10 46
+jump -11 7 46
+move -10 10 46
+move -11 7 46
+move 3 7.0 54.0
+move 1 10.0 54.0
+exchangepos 3 1
+move 1 7.0 50.0
+move 3 10.0 50.0
+move -10 9 46
+move -11 8 46
+move 8 8.0 54.0
+move 9 9.0 54.0
+exchangepos 8 9
+move 9 8.0 50.0
+move 8 9.0 50.0
+move -10 8 46
+move -11 9 46
+color 3 blue
+rectangle -108 6.560000 40 1.880000 20 black outline
+color 1 red
+jump -10 8 46
+jump -11 7 46
+move -10 8 46
+move -10 7 46
+move -11 7 46
+color 1 blue
+rectangle -109 8.560000 40 1.880000 20 black outline
+color 8 red
+jump -10 10 46
+jump -11 9 46
+move -10 10 46
+move -11 9 46
+move 8 9.0 54.0
+move 3 10.0 54.0
+exchangepos 8 3
+move 3 9.0 50.0
+move 8 10.0 50.0
+move -10 9 46
+move -11 10 46
+color 8 blue

@@ -1,0 +1,47 @@
+comment This is a sample animation script
+circle 1 0.8 0.8 0.1 red half
+line 2 0.1 0.1 0.2 0.2 green thin
+rectangle 3 0.1 0.9 0.1 0.1 blue solid
+text 4 0.0 0.0 0 black Hello
+text 5 0.5 0.5 1 black RealLongStringandThenSomeAndEvenMore
+circle 6 0.3 0.3 0.2 wheat solid
+triangle 7 0.5 1.0 0.6 0.8 0.4 0.9 cyan solid
+bigtext 8 0.2 0.2 0 black Some Big Text
+moveto 1 6
+moverelative 3 0.05 -0.4
+jumprelative 4 0.4 0.4
+raise 1
+lower 1
+color 6 blue
+move 3 0.5 0.5
+jump 3 0.9 0.9
+jumpto 3 6
+raise 3
+fill 3 half
+fill 3 outline
+fill 3 half
+vis 3
+vis 3
+vis 6
+delete 8
+line 200 0.9 0.2 0.0 0.6 black thick
+bigtext 8  0.6 0.2 0   DeepPink    More Big Text
+flextext 88  0.4 0.3 0   magenta  8x13bold    Flex Text 8x13bold
+rectangle 12 0.7 0.7 0.1 0.1 green solid
+exchangepos 12 3
+exchangepos 12 3
+exchangepos 12 3
+exchangepos 12 3
+switchpos 12 3
+circle 99 0.8 0.8 0.15 black outline
+exchangepos 1 99
+bg pink
+bg LemonChiffon2
+coords -0.5 -0. 1.5 1.5
+delay 30
+move 2 0.5 0.5
+rectangle 30 0.0 0.0 0.2 0.6 orange solid
+rectangle 31 0.9 0.0 0.2 0.6 maroon solid
+swapid 30 31
+move 30 0.7 0.9
+

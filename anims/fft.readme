@@ -1,0 +1,130 @@
+			FFT Animation using XTANGO
+			  Done By: Timothy Dean
+			 email: dean@cc.gatech.edu
+			       May 5, 1992
+
+
+
+Description
+-----------
+This XTango animation demonstrates the computation of the Fast Fourier
+Transform (FFT).  In particular, it computes the FFT using the radix-2
+decimation-in-time Cooley-Tukey algorithm.  This algorithm requires an
+input consisting of N complex data values, where N is a power of 2. This
+is implemented with an array of size 2*N, with array values alternating
+between the real and the imaginary parts of each input value. The first 
+input value to the program should be the value 2*N, and then there should 
+be 2*N data values.  For example, to take the 4 point FFT of the values
+1.0,-j,-1.0,j, with j representing the square root of -1, the input should
+read as follows:
+
+8
+ 1.0  0.0
+ 0.0 -1.0
+-1.0  0.0
+ 0.0  1.0
+
+There are several data files included in this directory which can be used
+by typing:
+
+% fft < fft.dataX
+
+where X represents either 1,2,3, or 4.  All of these files contain 8 data
+points.  This is because the animation was designed with 8 points as an 
+example.  A larger or smaller value for N may be used, but 8 is optimal. A 
+smaller value of N causes the solution to be fairly trivial, and the 
+algorithm is not fully demonstrated.  An N value of 16 will fully demonstrate
+the algorithm, but has two setbacks.  Firstly, animating the 16 point FFT
+takes an appreciable amount of time, and secondly, not all values are visible
+on the screen at once.
+
+
+Brief Summary of FFT Algorithm
+------------------------------
+For those who don't know what the FFT is, it basically is a quick and
+efficient way of implementing the Discrete Fourier Transform(DFT). This
+is a mathematical transform which breaks a discrete time input signal into
+its frequency components. In other words, it finds a signal's projection onto
+a sequence of complex exponential basis functions, each exponential with a
+different frequency. Directly calculating the DFT for a one dimensional 
+input signal requires O(N^2) complex multiplications.  
+
+The FFT removes this high order of complexity from DFT computation. It is a
+divide-and-conquer algorithm which breaks an N point FFT into two N/2 point
+FFT's, and so on, until only 2 point FFT's are left.  Each 2 point FFT is a
+trivial task, requiring no multiplications at all.  The operation of 
+rebuilding results from the 2 point FFT outputs requires some complex 
+multiplies, but the total complexity of the alorithm is only (N/2)log N.
+
+There are basically 3 seperate operations involved in FFT computations. They
+are:
+
+  1)  Bit Reversal:  This is done only once at the beginning of the 
+      algorithm. This consists of taking the array index number of
+      a data value, writing its binary equivalent, "flipping" that
+      bit pattern, writing the new bit pattern as a decimal value,
+      and accessing the value indexed by this number. The two data
+      values are then swapped in the array.  For example, if we were
+      computing the FFT of 8 data values, we would take the first 4
+      values and bit reverse bits.  The 4th data value would be in 
+      array index 3 in the data array.  3 written in binary is 011. 
+      Flipping this gives 110 which is 6 in decimal.  Therefore, we
+      must swap the values in array indices 3 and 6.  For array index
+      2, the binary is 010, which when flipped is still 010, so this
+      values will not be swapped.  This procedure is done for the 1st
+      half of the data list only, since doing it for all values would 
+      put data values back in their original positions, leaving no net
+      effect.
+
+  2)  Twiddle Factor Multiplication:  This is done at all stages of the
+      algorithm.  A twiddle factor is a complex value that can be taken
+      from a unit circle in the real-complex plane.  This unit circle is
+      shown during the animation as the twiddle factors are pulled off
+      of the circle. The general rule for what values are used is as
+      follows: When combining the outputs of two P point FFT's into 
+      one sequence of 2*P points, the unit circle is divided with 2*P
+      equally spaced points.  Then, starting at the point (1.0,0.0), P
+      of these points are taken from the circle, moving in a clockwise
+      direction around the circle.  These P points are individually
+      multiplied by the P points output by the second or "bottom" FFT of
+      the previous stage.  This is hard to visualize without seeing it in
+      action.  After watching it a couple of times, you should get it.
+
+  3)  Butterfly Computation:  A butterfly is a computation of one complex
+      addition and one complex subtraction. After twiddle factor multiplies
+      for a given stage, a butterfly operation is performed.  Using the same
+      example as above, the operation is as follows: Take the outputs of the
+      2nd P point FFT, and add to them the outputs of the 1st P point FFT. 
+      The result are placed in the first P points of a size 2*P sequence. 
+      Then take the outputs of the 2nd P point FFT and subtract them from
+      the outputs of the 1st. The results are placed in the last P points
+      of the new sequence.  You are left with one sequence of length 2*P. 
+      This is the 2*P point FFT result.
+
+Stages 2 and 3 above are repeated until the result is one sequence of length
+N.  That is the end of it.
+
+
+Special Note
+------------
+Because of the high amount of symmetry in the algorithm, it can be
+performed very efficiently.  The algorithm I used takes advantage of this
+symmetry by computing one twiddle factor at a time, multiplying by it, and then
+butterflying the result on a point by point basis.  This allows for fast 
+computation and minimal use of extra memory storage, and it is in this way
+that the algorithm is usually implemented.  However, the animation was 
+designed to try and demonstrate the divide-and-conquer nature of the algorithm.
+To accomplish this, I wanted all "parallel" portions of the algorithm to be
+animated simultaneously.  This was done by storing all animation transitions
+until a certain "checkpoint" was reached.  Once reached, the cumalative 
+transition is performed.
+
+
+
+Warning
+-------
+The radix-2 FFT algorithm requires that the length of the input signal be
+a power of 2.  There ar no checks of this in either the FFT algorithm or
+the animation code.  Use of inputs which violate this will produce results
+that are unpredictable, if the program runs at all
+

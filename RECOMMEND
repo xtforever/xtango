@@ -1,0 +1,65 @@
+
+	Installation is complete.
+
+	XTANGO uses a resource file, "xtango.res", to change where widgets
+	appear and how they behave; however, XTANGO must be able to find this
+	file.  Here are three suggested methods to tell XTANGO where to locate
+	its widget resource file:
+
+		1) cp /u1/pro/xtangoftp/tester/xtango/xtango.res /usr/lib/X11/app-defaults/Xtango
+
+
+		   After the resource file is located in X11/app-defaults,
+		   any users can use XTANGO from anywhere in the system.
+		   You need to copy the resource file into X11/app-defaults
+		   only once (or whenever you change widget sets).  The next
+		   time you login, you can immediately use XTANGO without
+		   any special setup.  Note that you probably have to be the
+		   super-user (root) to write into this directory, so you may
+		   want to ask your system administrator to set this up for you.
+
+          2) cp /u1/pro/xtangoftp/tester/xtango/xtango.res /usr/dudes/stasko/app-defaults/Xtango
+                   
+                   Make your own app-defaults directory under your
+                   home directory, then copy the xtango resources into
+                   there as the file Xtango.  Then, in your .login, place
+                   
+                   setenv XAPPLRESDIR /usr/dudes/stasko/app-defaults
+
+                   Basically, this builds your own application
+                   defaults resource file.  (This is a good way to do it.)
+
+		3) setenv XENVIRONMENT /u1/pro/xtangoftp/tester/xtango/xtango.res
+
+		   To use this method, you must set XENVIRONMENT
+		   *every* time you login, before using XTANGO.
+		   An easy way to do this is to place this line in your
+		   ".cshrc" (or whatever shell initialization file you're
+		   using).  After that, you can immediately use XTANGO
+		   every time you login without any further setup.
+
+		4) cat /u1/pro/xtangoftp/tester/xtango/xtango.res >>/usr/dudes/stasko/.Xdefaults
+
+		   Use this method if you are already using XENVIRONMENT.
+		   ".Xdefaults" is the standard place to put resources for
+		   all X11 applications you use; however, this file is
+		   usually used to customize an application (ie. change
+		   colors, etc).  If you choose this method, you only have
+		   to place XTANGO's resources in ".Xdefaults" once.
+	
+		5) xrdb -merge /u1/pro/xtangoftp/tester/xtango/xtango.res
+
+		   This is a last resort as you must manually tell XTANGO
+		   where to find it's resources *every* time you start
+		   X11.  An easy way to do this is to place this line in
+		   your ".xinitrc" file.  After that, you can immediately
+		   use XTANGO every time you login and start X11 without
+		   any further setup.
+	
+
+	To try out the animations, select the appropriate method above to tell
+	XTANGO where to find its widget resources.  Then change to the "anims"
+	subdirectory and execute one of the binaries.
+
+	(These four methods to tell XTANGO where to find its resources are
+	 saved in a file named "RECOMMEND" for future reference).

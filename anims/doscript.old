@@ -1,0 +1,11 @@
+#! /bin/csh -f
+
+echo creating executable files
+foreach i (anim bmap bpack bsearch bsort bubsort color dfs hanoi\
+     heap kmp merge pc post quicksort random roach\
+     shuffle spath test tree)
+   echo $i
+   make PROG=$i
+end
+echo done
+

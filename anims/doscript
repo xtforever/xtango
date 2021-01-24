@@ -1,0 +1,11 @@
+#!/bin/csh -f
+echo creating executable files
+foreach j (*scenes.c)
+   set i = `basename $j scenes.c`
+   echo $i
+   make PROG=$i
+end
+rm *.o
+echo done
+
+

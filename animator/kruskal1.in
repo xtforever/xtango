@@ -1,0 +1,692 @@
+bg gray
+bigtext 500 0.500000 0.600000 1 black KRUSKAL'S ALGORITHM
+text 501 0.700000 0.050000 0 black By Jeff Linderoth
+delay 120
+vis 500
+vis 501
+text 502 0.100000 0.900000 0 black The idea behind Kruskal's algorithm is simple...
+text 503 0.150000 0.750000 0 black 1) Sort the edges in order of increasing weight.
+text 504 0.150000 0.650000 0 black 2) Look at the edges in this order.
+text 505 0.200000 0.600000 0 black If the vertices that this edge connects belong
+text 506 0.200000 0.550000 0 black to the same set, (in this example,
+text 507 0.200000 0.500000 0 black sets are connected by thick blue lines)
+text 508 0.200000 0.450000 0 black then add this edge to the set.
+text 509 0.150000 0.350000 0 black 3) After you've looked at all the edges,
+text 510 0.200000 0.300000 0 black you'll have the minimal spanning tree.
+delay 240
+vis 502
+vis 503
+vis 504
+vis 505
+vis 506
+vis 507
+vis 508
+vis 509
+vis 510
+circle 1 0.350000 0.300000 .02 red solid
+circle 2 0.250000 0.530000 .02 red solid
+circle 3 0.300000 0.850000 .02 red solid
+circle 4 0.400000 0.550000 .02 red solid
+circle 5 0.460000 0.800000 .02 red solid
+circle 6 0.700000 0.720000 .02 red solid
+circle 7 0.820000 0.600000 .02 red solid
+circle 8 0.500000 0.500000 .02 red solid
+circle 9 0.800000 0.200000 .02 red solid
+text 10 0.350000 0.250000 1 black 1
+text 11 0.250000 0.480000 1 black 2
+text 12 0.300000 0.800000 1 black 3
+text 13 0.400000 0.500000 1 black 4
+text 14 0.460000 0.750000 1 black 5
+text 15 0.700000 0.670000 1 black 6
+text 16 0.820000 0.550000 1 black 7
+text 17 0.500000 0.450000 1 black 8
+text 18 0.800000 0.150000 1 black 9
+line 19 0.350000 0.300000 -0.100000 0.230000 black thin
+line 20 0.350000 0.300000 0.150000 0.200000 black thin
+line 21 0.350000 0.300000 0.450000 -0.100000 black thin
+line 22 0.250000 0.530000 0.100000 -0.230000 black thin
+line 23 0.250000 0.530000 0.050000 0.320000 black thin
+line 24 0.250000 0.530000 0.150000 0.020000 black thin
+line 25 0.300000 0.850000 -0.050000 -0.320000 black thin
+line 26 0.300000 0.850000 0.100000 -0.300000 black thin
+line 27 0.300000 0.850000 0.160000 -0.050000 black thin
+line 28 0.400000 0.550000 -0.150000 -0.020000 black thin
+line 29 0.400000 0.550000 -0.100000 0.300000 black thin
+line 30 0.400000 0.550000 0.060000 0.250000 black thin
+line 31 0.400000 0.550000 0.100000 -0.050000 black thin
+line 32 0.460000 0.800000 -0.160000 0.050000 black thin
+line 33 0.460000 0.800000 -0.060000 -0.250000 black thin
+line 34 0.460000 0.800000 0.240000 -0.080000 black thin
+line 35 0.700000 0.720000 -0.240000 0.080000 black thin
+line 36 0.700000 0.720000 0.120000 -0.120000 black thin
+line 37 0.700000 0.720000 -0.200000 -0.220000 black thin
+line 38 0.820000 0.600000 -0.120000 0.120000 black thin
+line 39 0.820000 0.600000 -0.020000 -0.400000 black thin
+line 40 0.500000 0.500000 -0.150000 -0.200000 black thin
+line 41 0.500000 0.500000 -0.100000 0.050000 black thin
+line 42 0.500000 0.500000 0.200000 0.220000 black thin
+line 43 0.500000 0.500000 0.300000 -0.300000 black thin
+line 44 0.800000 0.200000 -0.450000 0.100000 black thin
+line 45 0.800000 0.200000 0.020000 0.400000 black thin
+line 46 0.800000 0.200000 -0.300000 0.300000 black thin
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+vis 4
+vis 8
+text 511 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 512 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 511
+vis 512
+text 513 0.500000 0.025000 1 black No, so union the two sets by adding this edge
+delay 40
+vis 513
+line 1000 0.400000 0.550000 0.100000 -0.050000 blue thin
+line 1001 0.400000 0.550000 0.100000 -0.050000 blue thin
+line 1002 0.400000 0.550000 0.100000 -0.050000 blue thin
+line 1003 0.400000 0.550000 0.100000 -0.050000 blue thin
+line 1004 0.400447 0.550894 0.100000 -0.050000 blue thin
+line 1005 0.399553 0.549106 0.100000 -0.050000 blue thin
+line 1006 0.400000 0.550000 0.100000 -0.050000 blue thin
+line 1007 0.400894 0.551789 0.100000 -0.050000 blue thin
+line 1008 0.399106 0.548211 0.100000 -0.050000 blue thin
+line 1009 0.400000 0.550000 0.100000 -0.050000 blue thin
+line 1010 0.401342 0.552683 0.100000 -0.050000 blue thin
+line 1011 0.398658 0.547317 0.100000 -0.050000 blue thin
+line 1012 0.400000 0.550000 0.100000 -0.050000 blue thin
+line 1013 0.401789 0.553578 0.100000 -0.050000 blue thin
+line 1014 0.398211 0.546422 0.100000 -0.050000 blue thin
+line 1015 0.400000 0.550000 0.100000 -0.050000 blue thin
+line 1016 0.402236 0.554472 0.100000 -0.050000 blue thin
+line 1017 0.397764 0.545528 0.100000 -0.050000 blue thin
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+vis 2
+vis 4
+text 514 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 515 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 514
+vis 515
+text 516 0.500000 0.025000 1 black No, so union the two sets by adding this edge
+delay 40
+vis 516
+line 1018 0.250000 0.530000 0.150000 0.020000 blue thin
+line 1019 0.250000 0.530000 0.150000 0.020000 blue thin
+line 1020 0.250000 0.530000 0.150000 0.020000 blue thin
+line 1021 0.250000 0.530000 0.150000 0.020000 blue thin
+line 1022 0.249868 0.530991 0.150000 0.020000 blue thin
+line 1023 0.250132 0.529009 0.150000 0.020000 blue thin
+line 1024 0.250000 0.530000 0.150000 0.020000 blue thin
+line 1025 0.249736 0.531982 0.150000 0.020000 blue thin
+line 1026 0.250264 0.528018 0.150000 0.020000 blue thin
+line 1027 0.250000 0.530000 0.150000 0.020000 blue thin
+line 1028 0.249604 0.532974 0.150000 0.020000 blue thin
+line 1029 0.250396 0.527026 0.150000 0.020000 blue thin
+line 1030 0.250000 0.530000 0.150000 0.020000 blue thin
+line 1031 0.249471 0.533965 0.150000 0.020000 blue thin
+line 1032 0.250529 0.526035 0.150000 0.020000 blue thin
+line 1033 0.250000 0.530000 0.150000 0.020000 blue thin
+line 1034 0.249339 0.534956 0.150000 0.020000 blue thin
+line 1035 0.250661 0.525044 0.150000 0.020000 blue thin
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+vis 3
+vis 5
+text 517 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 518 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 517
+vis 518
+text 519 0.500000 0.025000 1 black No, so union the two sets by adding this edge
+delay 40
+vis 519
+line 1036 0.300000 0.850000 0.160000 -0.050000 blue thin
+line 1037 0.300000 0.850000 0.160000 -0.050000 blue thin
+line 1038 0.300000 0.850000 0.160000 -0.050000 blue thin
+line 1039 0.300000 0.850000 0.160000 -0.050000 blue thin
+line 1040 0.300298 0.850954 0.160000 -0.050000 blue thin
+line 1041 0.299702 0.849046 0.160000 -0.050000 blue thin
+line 1042 0.300000 0.850000 0.160000 -0.050000 blue thin
+line 1043 0.300597 0.851909 0.160000 -0.050000 blue thin
+line 1044 0.299403 0.848091 0.160000 -0.050000 blue thin
+line 1045 0.300000 0.850000 0.160000 -0.050000 blue thin
+line 1046 0.300895 0.852863 0.160000 -0.050000 blue thin
+line 1047 0.299105 0.847137 0.160000 -0.050000 blue thin
+line 1048 0.300000 0.850000 0.160000 -0.050000 blue thin
+line 1049 0.301193 0.853818 0.160000 -0.050000 blue thin
+line 1050 0.298807 0.846182 0.160000 -0.050000 blue thin
+line 1051 0.300000 0.850000 0.160000 -0.050000 blue thin
+line 1052 0.301491 0.854772 0.160000 -0.050000 blue thin
+line 1053 0.298509 0.845228 0.160000 -0.050000 blue thin
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+vis 7
+vis 6
+text 520 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 521 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 520
+vis 521
+text 522 0.500000 0.025000 1 black No, so union the two sets by adding this edge
+delay 40
+vis 522
+line 1054 0.820000 0.600000 -0.120000 0.120000 blue thin
+line 1055 0.820000 0.600000 -0.120000 0.120000 blue thin
+line 1056 0.820000 0.600000 -0.120000 0.120000 blue thin
+line 1057 0.820000 0.600000 -0.120000 0.120000 blue thin
+line 1058 0.819293 0.599293 -0.120000 0.120000 blue thin
+line 1059 0.820707 0.600707 -0.120000 0.120000 blue thin
+line 1060 0.820000 0.600000 -0.120000 0.120000 blue thin
+line 1061 0.818586 0.598586 -0.120000 0.120000 blue thin
+line 1062 0.821414 0.601414 -0.120000 0.120000 blue thin
+line 1063 0.820000 0.600000 -0.120000 0.120000 blue thin
+line 1064 0.817879 0.597879 -0.120000 0.120000 blue thin
+line 1065 0.822121 0.602121 -0.120000 0.120000 blue thin
+line 1066 0.820000 0.600000 -0.120000 0.120000 blue thin
+line 1067 0.817172 0.597172 -0.120000 0.120000 blue thin
+line 1068 0.822828 0.602828 -0.120000 0.120000 blue thin
+line 1069 0.820000 0.600000 -0.120000 0.120000 blue thin
+line 1070 0.816464 0.596464 -0.120000 0.120000 blue thin
+line 1071 0.823536 0.603536 -0.120000 0.120000 blue thin
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+vis 1
+vis 8
+text 523 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 524 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 523
+vis 524
+text 525 0.500000 0.025000 1 black No, so union the two sets by adding this edge
+delay 40
+vis 525
+line 1072 0.350000 0.300000 0.150000 0.200000 blue thin
+line 1073 0.350000 0.300000 0.150000 0.200000 blue thin
+line 1074 0.350000 0.300000 0.150000 0.200000 blue thin
+line 1075 0.350000 0.300000 0.150000 0.200000 blue thin
+line 1076 0.349200 0.300600 0.150000 0.200000 blue thin
+line 1077 0.350800 0.299400 0.150000 0.200000 blue thin
+line 1078 0.350000 0.300000 0.150000 0.200000 blue thin
+line 1079 0.348400 0.301200 0.150000 0.200000 blue thin
+line 1080 0.351600 0.298800 0.150000 0.200000 blue thin
+line 1081 0.350000 0.300000 0.150000 0.200000 blue thin
+line 1082 0.347600 0.301800 0.150000 0.200000 blue thin
+line 1083 0.352400 0.298200 0.150000 0.200000 blue thin
+line 1084 0.350000 0.300000 0.150000 0.200000 blue thin
+line 1085 0.346800 0.302400 0.150000 0.200000 blue thin
+line 1086 0.353200 0.297600 0.150000 0.200000 blue thin
+line 1087 0.350000 0.300000 0.150000 0.200000 blue thin
+line 1088 0.346000 0.303000 0.150000 0.200000 blue thin
+line 1089 0.354000 0.297000 0.150000 0.200000 blue thin
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+vis 2
+vis 1
+text 526 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 527 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 526
+vis 527
+text 528 0.500000 0.025000 1 black Yes, so do not union the two sets.
+delay 40
+vis 528
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+vis 5
+vis 6
+text 529 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 530 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 529
+vis 530
+text 531 0.500000 0.025000 1 black No, so union the two sets by adding this edge
+delay 40
+vis 531
+line 1090 0.460000 0.800000 0.240000 -0.080000 blue thin
+line 1091 0.460000 0.800000 0.240000 -0.080000 blue thin
+line 1092 0.460000 0.800000 0.240000 -0.080000 blue thin
+line 1093 0.460000 0.800000 0.240000 -0.080000 blue thin
+line 1094 0.460316 0.800949 0.240000 -0.080000 blue thin
+line 1095 0.459684 0.799051 0.240000 -0.080000 blue thin
+line 1096 0.460000 0.800000 0.240000 -0.080000 blue thin
+line 1097 0.460632 0.801897 0.240000 -0.080000 blue thin
+line 1098 0.459368 0.798103 0.240000 -0.080000 blue thin
+line 1099 0.460000 0.800000 0.240000 -0.080000 blue thin
+line 1100 0.460949 0.802846 0.240000 -0.080000 blue thin
+line 1101 0.459051 0.797154 0.240000 -0.080000 blue thin
+line 1102 0.460000 0.800000 0.240000 -0.080000 blue thin
+line 1103 0.461265 0.803795 0.240000 -0.080000 blue thin
+line 1104 0.458735 0.796205 0.240000 -0.080000 blue thin
+line 1105 0.460000 0.800000 0.240000 -0.080000 blue thin
+line 1106 0.461581 0.804743 0.240000 -0.080000 blue thin
+line 1107 0.458419 0.795257 0.240000 -0.080000 blue thin
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+vis 5
+vis 4
+text 532 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 533 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 532
+vis 533
+text 534 0.500000 0.025000 1 black No, so union the two sets by adding this edge
+delay 40
+vis 534
+line 1108 0.460000 0.800000 -0.060000 -0.250000 blue thin
+line 1109 0.460000 0.800000 -0.060000 -0.250000 blue thin
+line 1110 0.460000 0.800000 -0.060000 -0.250000 blue thin
+line 1111 0.460000 0.800000 -0.060000 -0.250000 blue thin
+line 1112 0.460972 0.799767 -0.060000 -0.250000 blue thin
+line 1113 0.459028 0.800233 -0.060000 -0.250000 blue thin
+line 1114 0.460000 0.800000 -0.060000 -0.250000 blue thin
+line 1115 0.461945 0.799533 -0.060000 -0.250000 blue thin
+line 1116 0.458055 0.800467 -0.060000 -0.250000 blue thin
+line 1117 0.460000 0.800000 -0.060000 -0.250000 blue thin
+line 1118 0.462917 0.799300 -0.060000 -0.250000 blue thin
+line 1119 0.457083 0.800700 -0.060000 -0.250000 blue thin
+line 1120 0.460000 0.800000 -0.060000 -0.250000 blue thin
+line 1121 0.463890 0.799067 -0.060000 -0.250000 blue thin
+line 1122 0.456110 0.800933 -0.060000 -0.250000 blue thin
+line 1123 0.460000 0.800000 -0.060000 -0.250000 blue thin
+line 1124 0.464862 0.798833 -0.060000 -0.250000 blue thin
+line 1125 0.455138 0.801167 -0.060000 -0.250000 blue thin
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+vis 6
+vis 8
+text 535 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 536 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 535
+vis 536
+text 537 0.500000 0.025000 1 black Yes, so do not union the two sets.
+delay 40
+vis 537
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+vis 3
+vis 4
+text 538 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 539 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 538
+vis 539
+text 540 0.500000 0.025000 1 black Yes, so do not union the two sets.
+delay 40
+vis 540
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+vis 2
+vis 3
+text 541 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 542 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 541
+vis 542
+text 543 0.500000 0.025000 1 black Yes, so do not union the two sets.
+delay 40
+vis 543
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+vis 9
+vis 7
+text 544 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 545 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 544
+vis 545
+text 546 0.500000 0.025000 1 black No, so union the two sets by adding this edge
+delay 40
+vis 546
+line 1126 0.800000 0.200000 0.020000 0.400000 blue thin
+line 1127 0.800000 0.200000 0.020000 0.400000 blue thin
+line 1128 0.800000 0.200000 0.020000 0.400000 blue thin
+line 1129 0.800000 0.200000 0.020000 0.400000 blue thin
+line 1130 0.799001 0.200050 0.020000 0.400000 blue thin
+line 1131 0.800999 0.199950 0.020000 0.400000 blue thin
+line 1132 0.800000 0.200000 0.020000 0.400000 blue thin
+line 1133 0.798002 0.200100 0.020000 0.400000 blue thin
+line 1134 0.801998 0.199900 0.020000 0.400000 blue thin
+line 1135 0.800000 0.200000 0.020000 0.400000 blue thin
+line 1136 0.797004 0.200150 0.020000 0.400000 blue thin
+line 1137 0.802996 0.199850 0.020000 0.400000 blue thin
+line 1138 0.800000 0.200000 0.020000 0.400000 blue thin
+line 1139 0.796005 0.200200 0.020000 0.400000 blue thin
+line 1140 0.803995 0.199800 0.020000 0.400000 blue thin
+line 1141 0.800000 0.200000 0.020000 0.400000 blue thin
+line 1142 0.795006 0.200250 0.020000 0.400000 blue thin
+line 1143 0.804994 0.199750 0.020000 0.400000 blue thin
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+vis 8
+vis 9
+text 547 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 548 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 547
+vis 548
+text 549 0.500000 0.025000 1 black Yes, so do not union the two sets.
+delay 40
+vis 549
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+vis 1
+vis 9
+text 550 0.500000 0.040000 1 black Are these two vertices in the same set?
+text 551 0.500000 0.012500 1 black (Do blue lines connect them?)
+delay 40
+vis 550
+vis 551
+text 552 0.500000 0.025000 1 black Yes, so do not union the two sets.
+delay 40
+vis 552
+vis 19
+vis 20
+vis 21
+vis 22
+vis 23
+vis 24
+vis 25
+vis 26
+vis 27
+vis 28
+vis 29
+vis 30
+vis 31
+vis 32
+vis 33
+vis 34
+vis 35
+vis 36
+vis 37
+vis 38
+vis 39
+vis 40
+vis 41
+vis 42
+vis 43
+vis 44
+vis 45
+vis 46
+bigtext 553 0.000000 0.000000 0 black MINIMAL SPANNING TREE

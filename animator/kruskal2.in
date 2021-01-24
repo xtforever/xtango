@@ -1,0 +1,1393 @@
+line 101 0.360 0.817 0.012 0.085 Black thin
+line 102 0.788 0.223 0.025 -0.098 Black thin
+line 103 0.714 0.775 0.078 -0.067 Black thin
+line 104 0.196 0.940 0.003 -0.105 Black thin
+line 105 0.423 0.493 -0.060 0.087 Black thin
+line 106 0.813 0.598 -0.021 0.110 Black thin
+line 107 0.905 0.721 -0.113 -0.013 Black thin
+line 108 0.231 0.145 0.044 0.109 Black thin
+line 109 0.693 0.129 0.120 -0.004 Black thin
+line 110 0.085 0.891 -0.009 -0.121 Black thin
+line 111 0.196 0.940 -0.111 -0.049 Black thin
+line 112 0.266 0.654 -0.116 -0.042 Black thin
+line 113 0.520 0.951 0.113 -0.054 Black thin
+line 114 0.587 0.779 0.046 0.118 Black thin
+line 115 0.714 0.775 -0.127 0.004 Black thin
+line 116 0.788 0.223 -0.095 -0.094 Black thin
+line 117 0.714 0.775 0.092 0.098 Black thin
+line 118 0.231 0.145 -0.136 0.011 Black thin
+line 119 0.076 0.770 0.123 0.065 Black thin
+line 120 0.633 0.257 0.060 -0.128 Black thin
+line 121 0.067 0.496 0.083 0.116 Black thin
+line 122 0.499 0.663 0.088 0.116 Black thin
+line 123 0.788 0.223 0.078 0.123 Black thin
+line 124 0.730 0.446 -0.139 -0.051 Black thin
+line 125 0.605 0.547 -0.014 -0.152 Black thin
+line 126 0.252 0.471 0.111 0.109 Black thin
+line 127 0.520 0.951 -0.148 -0.049 Black thin
+line 128 0.605 0.547 -0.106 0.116 Black thin
+line 129 0.432 0.335 -0.009 0.158 Black thin
+line 130 0.633 0.257 0.155 -0.034 Black thin
+line 131 0.499 0.663 -0.136 -0.083 Black thin
+line 132 0.132 0.326 0.143 -0.072 Black thin
+line 133 0.199 0.835 0.161 -0.018 Black thin
+line 134 0.730 0.446 0.136 -0.100 Black thin
+line 135 0.432 0.335 0.159 0.060 Black thin
+line 136 0.730 0.446 0.083 0.152 Black thin
+line 137 0.132 0.326 -0.037 -0.170 Black thin
+line 138 0.076 0.770 0.074 -0.158 Black thin
+line 139 0.806 0.873 -0.173 0.024 Black thin
+line 140 0.432 0.335 -0.157 -0.081 Black thin
+line 141 0.196 0.940 0.176 -0.038 Black thin
+line 142 0.806 0.873 0.099 -0.152 Black thin
+line 143 0.067 0.496 0.065 -0.170 Black thin
+line 144 0.266 0.654 -0.014 -0.183 Black thin
+line 145 0.360 0.817 -0.094 -0.163 Black thin
+line 146 0.132 0.326 0.120 0.145 Black thin
+line 147 0.605 0.547 -0.182 -0.054 Black thin
+line 148 0.199 0.835 0.067 -0.181 Black thin
+line 149 0.633 0.257 -0.143 -0.139 Black thin
+line 150 0.490 0.118 0.203 0.011 Black thin
+line 151 0.360 0.817 0.139 -0.154 Black thin
+line 152 0.360 0.817 0.160 0.134 Black thin
+line 153 0.633 0.257 0.097 0.189 Black thin
+line 154 0.605 0.547 0.208 0.051 Black thin
+line 155 0.275 0.254 -0.023 0.217 Black thin
+line 156 0.432 0.335 0.058 -0.217 Black thin
+line 157 0.266 0.654 0.233 0.009 Black thin
+line 158 0.714 0.775 -0.215 -0.112 Black thin
+line 159 0.605 0.547 0.187 0.161 Black thin
+line 160 0.490 0.118 -0.259 0.027 Black thin
+line 161 0.076 0.770 -0.009 -0.274 Black thin
+line 162 0.067 0.496 0.028 -0.340 Black thin
+line 163 0.866 0.346 0.039 0.375 Black thin
+circle 1 0.196 0.940 0.015 blue solid
+circle 2 0.085 0.891 0.015 beige solid
+circle 3 0.076 0.770 0.015 bisque solid
+circle 4 0.199 0.835 0.015 BlueViolet solid
+circle 5 0.360 0.817 0.015 brown solid
+circle 6 0.266 0.654 0.015 burlywood solid
+circle 7 0.067 0.496 0.015 chartreuse solid
+circle 8 0.132 0.326 0.015 coral solid
+circle 9 0.432 0.335 0.015 plum solid
+circle 10 0.605 0.547 0.015 cornsilk solid
+circle 11 0.714 0.775 0.015 SaddleBrown solid
+circle 12 0.806 0.873 0.015 MediumSeaGreen solid
+circle 13 0.520 0.951 0.015 DarkGoldenrod solid
+circle 14 0.499 0.663 0.015 MediumOrchid solid
+circle 15 0.423 0.493 0.015 DeepPink solid
+circle 16 0.633 0.257 0.015 DeepSkyBlue solid
+circle 17 0.730 0.446 0.015 PeachPuff solid
+circle 18 0.813 0.598 0.015 DodgerBlue solid
+circle 19 0.788 0.223 0.015 firebrick solid
+circle 20 0.490 0.118 0.015 ForestGreen solid
+circle 21 0.231 0.145 0.015 VioletRed solid
+circle 22 0.275 0.254 0.015 GreenYellow solid
+circle 23 0.252 0.471 0.015 honeydew solid
+circle 24 0.095 0.156 0.015 HotPink solid
+circle 25 0.693 0.129 0.015 IndianRed solid
+circle 26 0.866 0.346 0.015 khaki solid
+circle 27 0.591 0.395 0.015 lavender solid
+circle 28 0.587 0.779 0.015 tomato solid
+circle 29 0.633 0.897 0.015 LemonChiffon solid
+circle 30 0.372 0.902 0.015 LightBlue solid
+circle 31 0.150 0.612 0.015 LightGoldenrod solid
+circle 32 0.363 0.580 0.015 LightPink solid
+circle 33 0.905 0.721 0.015 LightSalmon solid
+circle 34 0.792 0.708 0.015 LimeGreen solid
+circle 35 0.813 0.125 0.015 magenta solid
+delay 4
+text 0 .5 .05 1 black Total Weight = 0;  35 Trees
+delay 20
+delay 4
+vis 101
+delay 4
+vis 101
+delay 4
+vis 101
+delay 4
+vis 101
+delay 4
+vis 101
+delay 4
+vis 101
+delay 4
+vis 101
+delay 4
+vis 101
+delete 101
+line 101 0.360 0.817 0.012 0.085 red thick
+lower 101
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.086;  34 Trees
+delete 30
+circle 30 0.372 0.902 0.015 brown solid
+delay 4
+delay 20
+delay 4
+vis 102
+delay 4
+vis 102
+delay 4
+vis 102
+delay 4
+vis 102
+delay 4
+vis 102
+delay 4
+vis 102
+delay 4
+vis 102
+delay 4
+vis 102
+delete 102
+line 102 0.788 0.223 0.025 -0.098 red thick
+lower 102
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.187;  33 Trees
+delete 35
+circle 35 0.813 0.125 0.015 firebrick solid
+delay 4
+delay 20
+delay 4
+vis 103
+delay 4
+vis 103
+delay 4
+vis 103
+delay 4
+vis 103
+delay 4
+vis 103
+delay 4
+vis 103
+delay 4
+vis 103
+delay 4
+vis 103
+delete 103
+line 103 0.714 0.775 0.078 -0.067 red thick
+lower 103
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.290;  32 Trees
+delete 34
+circle 34 0.792 0.708 0.015 SaddleBrown solid
+delay 4
+delay 20
+delay 4
+vis 104
+delay 4
+vis 104
+delay 4
+vis 104
+delay 4
+vis 104
+delay 4
+vis 104
+delay 4
+vis 104
+delay 4
+vis 104
+delay 4
+vis 104
+delete 104
+line 104 0.196 0.940 0.003 -0.105 red thick
+lower 104
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.395;  31 Trees
+delete 4
+circle 4 0.199 0.835 0.015 blue solid
+delay 4
+delay 20
+delay 4
+vis 105
+delay 4
+vis 105
+delay 4
+vis 105
+delay 4
+vis 105
+delay 4
+vis 105
+delay 4
+vis 105
+delay 4
+vis 105
+delay 4
+vis 105
+delete 105
+line 105 0.423 0.493 -0.060 0.087 red thick
+lower 105
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.501;  30 Trees
+delete 32
+circle 32 0.363 0.580 0.015 DeepPink solid
+delay 4
+delay 20
+delay 4
+vis 106
+delay 4
+vis 106
+delay 4
+vis 106
+delay 4
+vis 106
+delay 4
+vis 106
+delay 4
+vis 106
+delay 4
+vis 106
+delay 4
+vis 106
+delete 106
+line 106 0.813 0.598 -0.021 0.110 red thick
+lower 106
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.613;  29 Trees
+delete 18
+circle 18 0.813 0.598 0.015 SaddleBrown solid
+delay 4
+delay 20
+delay 4
+vis 107
+delay 4
+vis 107
+delay 4
+vis 107
+delay 4
+vis 107
+delay 4
+vis 107
+delay 4
+vis 107
+delay 4
+vis 107
+delay 4
+vis 107
+delete 107
+line 107 0.905 0.721 -0.113 -0.013 red thick
+lower 107
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.726;  28 Trees
+delete 33
+circle 33 0.905 0.721 0.015 SaddleBrown solid
+delay 4
+delay 20
+delay 4
+vis 108
+delay 4
+vis 108
+delay 4
+vis 108
+delay 4
+vis 108
+delay 4
+vis 108
+delay 4
+vis 108
+delay 4
+vis 108
+delay 4
+vis 108
+delete 108
+line 108 0.231 0.145 0.044 0.109 red thick
+lower 108
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.844;  27 Trees
+delete 22
+circle 22 0.275 0.254 0.015 VioletRed solid
+delay 4
+delay 20
+delay 4
+vis 109
+delay 4
+vis 109
+delay 4
+vis 109
+delay 4
+vis 109
+delay 4
+vis 109
+delay 4
+vis 109
+delay 4
+vis 109
+delay 4
+vis 109
+delete 109
+line 109 0.693 0.129 0.120 -0.004 red thick
+lower 109
+delete 0
+text 0 .5 .05 1 black Total Weight = 0.964;  26 Trees
+delete 25
+circle 25 0.693 0.129 0.015 firebrick solid
+delay 4
+delay 20
+delay 4
+vis 110
+delay 4
+vis 110
+delay 4
+vis 110
+delay 4
+vis 110
+delay 4
+vis 110
+delay 4
+vis 110
+delay 4
+vis 110
+delay 4
+vis 110
+delete 110
+line 110 0.085 0.891 -0.009 -0.121 red thick
+lower 110
+delete 0
+text 0 .5 .05 1 black Total Weight = 1.085;  25 Trees
+delete 3
+circle 3 0.076 0.770 0.015 beige solid
+delay 4
+delay 20
+delay 4
+vis 111
+delay 4
+vis 111
+delay 4
+vis 111
+delay 4
+vis 111
+delay 4
+vis 111
+delay 4
+vis 111
+delay 4
+vis 111
+delay 4
+vis 111
+delete 111
+line 111 0.196 0.940 -0.111 -0.049 red thick
+lower 111
+delete 0
+text 0 .5 .05 1 black Total Weight = 1.207;  24 Trees
+delete 2
+circle 2 0.085 0.891 0.015 blue solid
+delete 3
+circle 3 0.076 0.770 0.015 blue solid
+delay 4
+delay 20
+delay 4
+vis 112
+delay 4
+vis 112
+delay 4
+vis 112
+delay 4
+vis 112
+delay 4
+vis 112
+delay 4
+vis 112
+delay 4
+vis 112
+delay 4
+vis 112
+delete 112
+line 112 0.266 0.654 -0.116 -0.042 red thick
+lower 112
+delete 0
+text 0 .5 .05 1 black Total Weight = 1.330;  23 Trees
+delete 31
+circle 31 0.150 0.612 0.015 burlywood solid
+delay 4
+delay 20
+delay 4
+vis 113
+delay 4
+vis 113
+delay 4
+vis 113
+delay 4
+vis 113
+delay 4
+vis 113
+delay 4
+vis 113
+delay 4
+vis 113
+delay 4
+vis 113
+delete 113
+line 113 0.520 0.951 0.113 -0.054 red thick
+lower 113
+delete 0
+text 0 .5 .05 1 black Total Weight = 1.455;  22 Trees
+delete 29
+circle 29 0.633 0.897 0.015 DarkGoldenrod solid
+delay 4
+delay 20
+delay 4
+vis 114
+delay 4
+vis 114
+delay 4
+vis 114
+delay 4
+vis 114
+delay 4
+vis 114
+delay 4
+vis 114
+delay 4
+vis 114
+delay 4
+vis 114
+delete 114
+line 114 0.587 0.779 0.046 0.118 red thick
+lower 114
+delete 0
+text 0 .5 .05 1 black Total Weight = 1.582;  21 Trees
+delete 28
+circle 28 0.587 0.779 0.015 DarkGoldenrod solid
+delay 4
+delay 20
+delay 4
+vis 115
+delay 4
+vis 115
+delay 4
+vis 115
+delay 4
+vis 115
+delay 4
+vis 115
+delay 4
+vis 115
+delay 4
+vis 115
+delay 4
+vis 115
+delete 115
+line 115 0.714 0.775 -0.127 0.004 red thick
+lower 115
+delete 0
+text 0 .5 .05 1 black Total Weight = 1.709;  20 Trees
+delete 13
+circle 13 0.520 0.951 0.015 SaddleBrown solid
+delete 28
+circle 28 0.587 0.779 0.015 SaddleBrown solid
+delete 29
+circle 29 0.633 0.897 0.015 SaddleBrown solid
+delay 4
+delay 20
+delay 4
+vis 116
+delay 4
+vis 116
+delay 4
+vis 116
+delay 4
+vis 116
+delay 4
+vis 116
+delay 4
+vis 116
+delay 4
+vis 116
+delay 4
+vis 116
+delete 116
+line 116 0.788 0.223 -0.095 -0.094 LightGrey thin
+lower 116
+delay 20
+delay 4
+vis 117
+delay 4
+vis 117
+delay 4
+vis 117
+delay 4
+vis 117
+delay 4
+vis 117
+delay 4
+vis 117
+delay 4
+vis 117
+delay 4
+vis 117
+delete 117
+line 117 0.714 0.775 0.092 0.098 red thick
+lower 117
+delete 0
+text 0 .5 .05 1 black Total Weight = 1.843;  19 Trees
+delete 12
+circle 12 0.806 0.873 0.015 SaddleBrown solid
+delay 4
+delay 20
+delay 4
+vis 118
+delay 4
+vis 118
+delay 4
+vis 118
+delay 4
+vis 118
+delay 4
+vis 118
+delay 4
+vis 118
+delay 4
+vis 118
+delay 4
+vis 118
+delete 118
+line 118 0.231 0.145 -0.136 0.011 red thick
+lower 118
+delete 0
+text 0 .5 .05 1 black Total Weight = 1.980;  18 Trees
+delete 24
+circle 24 0.095 0.156 0.015 VioletRed solid
+delay 4
+delay 20
+delay 4
+vis 119
+delay 4
+vis 119
+delay 4
+vis 119
+delay 4
+vis 119
+delay 4
+vis 119
+delay 4
+vis 119
+delay 4
+vis 119
+delay 4
+vis 119
+delete 119
+line 119 0.076 0.770 0.123 0.065 LightGrey thin
+lower 119
+delay 20
+delay 4
+vis 120
+delay 4
+vis 120
+delay 4
+vis 120
+delay 4
+vis 120
+delay 4
+vis 120
+delay 4
+vis 120
+delay 4
+vis 120
+delay 4
+vis 120
+delete 120
+line 120 0.633 0.257 0.060 -0.128 red thick
+lower 120
+delete 0
+text 0 .5 .05 1 black Total Weight = 2.121;  17 Trees
+delete 19
+circle 19 0.788 0.223 0.015 DeepSkyBlue solid
+delete 25
+circle 25 0.693 0.129 0.015 DeepSkyBlue solid
+delete 35
+circle 35 0.813 0.125 0.015 DeepSkyBlue solid
+delay 4
+delay 20
+delay 4
+vis 121
+delay 4
+vis 121
+delay 4
+vis 121
+delay 4
+vis 121
+delay 4
+vis 121
+delay 4
+vis 121
+delay 4
+vis 121
+delay 4
+vis 121
+delete 121
+line 121 0.067 0.496 0.083 0.116 red thick
+lower 121
+delete 0
+text 0 .5 .05 1 black Total Weight = 2.264;  16 Trees
+delete 7
+circle 7 0.067 0.496 0.015 burlywood solid
+delay 4
+delay 20
+delay 4
+vis 122
+delay 4
+vis 122
+delay 4
+vis 122
+delay 4
+vis 122
+delay 4
+vis 122
+delay 4
+vis 122
+delay 4
+vis 122
+delay 4
+vis 122
+delete 122
+line 122 0.499 0.663 0.088 0.116 red thick
+lower 122
+delete 0
+text 0 .5 .05 1 black Total Weight = 2.409;  15 Trees
+delete 14
+circle 14 0.499 0.663 0.015 SaddleBrown solid
+delay 4
+delay 20
+delay 4
+vis 123
+delay 4
+vis 123
+delay 4
+vis 123
+delay 4
+vis 123
+delay 4
+vis 123
+delay 4
+vis 123
+delay 4
+vis 123
+delay 4
+vis 123
+delete 123
+line 123 0.788 0.223 0.078 0.123 red thick
+lower 123
+delete 0
+text 0 .5 .05 1 black Total Weight = 2.555;  14 Trees
+delete 26
+circle 26 0.866 0.346 0.015 DeepSkyBlue solid
+delay 4
+delay 20
+delay 4
+vis 124
+delay 4
+vis 124
+delay 4
+vis 124
+delay 4
+vis 124
+delay 4
+vis 124
+delay 4
+vis 124
+delay 4
+vis 124
+delay 4
+vis 124
+delete 124
+line 124 0.730 0.446 -0.139 -0.051 red thick
+lower 124
+delete 0
+text 0 .5 .05 1 black Total Weight = 2.703;  13 Trees
+delete 27
+circle 27 0.591 0.395 0.015 PeachPuff solid
+delay 4
+delay 20
+delay 4
+vis 125
+delay 4
+vis 125
+delay 4
+vis 125
+delay 4
+vis 125
+delay 4
+vis 125
+delay 4
+vis 125
+delay 4
+vis 125
+delay 4
+vis 125
+delete 125
+line 125 0.605 0.547 -0.014 -0.152 red thick
+lower 125
+delete 0
+text 0 .5 .05 1 black Total Weight = 2.856;  12 Trees
+delete 17
+circle 17 0.730 0.446 0.015 cornsilk solid
+delete 27
+circle 27 0.591 0.395 0.015 cornsilk solid
+delay 4
+delay 20
+delay 4
+vis 126
+delay 4
+vis 126
+delay 4
+vis 126
+delay 4
+vis 126
+delay 4
+vis 126
+delay 4
+vis 126
+delay 4
+vis 126
+delay 4
+vis 126
+delete 126
+line 126 0.252 0.471 0.111 0.109 red thick
+lower 126
+delete 0
+text 0 .5 .05 1 black Total Weight = 3.011;  11 Trees
+delete 23
+circle 23 0.252 0.471 0.015 DeepPink solid
+delay 4
+delay 20
+delay 4
+vis 127
+delay 4
+vis 127
+delay 4
+vis 127
+delay 4
+vis 127
+delay 4
+vis 127
+delay 4
+vis 127
+delay 4
+vis 127
+delay 4
+vis 127
+delete 127
+line 127 0.520 0.951 -0.148 -0.049 red thick
+lower 127
+delete 0
+text 0 .5 .05 1 black Total Weight = 3.167;  10 Trees
+delete 11
+circle 11 0.714 0.775 0.015 brown solid
+delete 12
+circle 12 0.806 0.873 0.015 brown solid
+delete 13
+circle 13 0.520 0.951 0.015 brown solid
+delete 14
+circle 14 0.499 0.663 0.015 brown solid
+delete 18
+circle 18 0.813 0.598 0.015 brown solid
+delete 28
+circle 28 0.587 0.779 0.015 brown solid
+delete 29
+circle 29 0.633 0.897 0.015 brown solid
+delete 33
+circle 33 0.905 0.721 0.015 brown solid
+delete 34
+circle 34 0.792 0.708 0.015 brown solid
+delay 4
+delay 20
+delay 4
+vis 128
+delay 4
+vis 128
+delay 4
+vis 128
+delay 4
+vis 128
+delay 4
+vis 128
+delay 4
+vis 128
+delay 4
+vis 128
+delay 4
+vis 128
+delete 128
+line 128 0.605 0.547 -0.106 0.116 red thick
+lower 128
+delete 0
+text 0 .5 .05 1 black Total Weight = 3.324;  9 Trees
+delete 10
+circle 10 0.605 0.547 0.015 brown solid
+delete 17
+circle 17 0.730 0.446 0.015 brown solid
+delete 27
+circle 27 0.591 0.395 0.015 brown solid
+delay 4
+delay 20
+delay 4
+vis 129
+delay 4
+vis 129
+delay 4
+vis 129
+delay 4
+vis 129
+delay 4
+vis 129
+delay 4
+vis 129
+delay 4
+vis 129
+delay 4
+vis 129
+delete 129
+line 129 0.432 0.335 -0.009 0.158 red thick
+lower 129
+delete 0
+text 0 .5 .05 1 black Total Weight = 3.483;  8 Trees
+delete 15
+circle 15 0.423 0.493 0.015 plum solid
+delete 23
+circle 23 0.252 0.471 0.015 plum solid
+delete 32
+circle 32 0.363 0.580 0.015 plum solid
+delay 4
+delay 20
+delay 4
+vis 130
+delay 4
+vis 130
+delay 4
+vis 130
+delay 4
+vis 130
+delay 4
+vis 130
+delay 4
+vis 130
+delay 4
+vis 130
+delay 4
+vis 130
+delete 130
+line 130 0.633 0.257 0.155 -0.034 LightGrey thin
+lower 130
+delay 20
+delay 4
+vis 131
+delay 4
+vis 131
+delay 4
+vis 131
+delay 4
+vis 131
+delay 4
+vis 131
+delay 4
+vis 131
+delay 4
+vis 131
+delay 4
+vis 131
+delete 131
+line 131 0.499 0.663 -0.136 -0.083 red thick
+lower 131
+delete 0
+text 0 .5 .05 1 black Total Weight = 3.642;  7 Trees
+delete 9
+circle 9 0.432 0.335 0.015 brown solid
+delete 15
+circle 15 0.423 0.493 0.015 brown solid
+delete 23
+circle 23 0.252 0.471 0.015 brown solid
+delete 32
+circle 32 0.363 0.580 0.015 brown solid
+delay 4
+delay 20
+delay 4
+vis 132
+delay 4
+vis 132
+delay 4
+vis 132
+delay 4
+vis 132
+delay 4
+vis 132
+delay 4
+vis 132
+delay 4
+vis 132
+delay 4
+vis 132
+delete 132
+line 132 0.132 0.326 0.143 -0.072 red thick
+lower 132
+delete 0
+text 0 .5 .05 1 black Total Weight = 3.802;  6 Trees
+delete 21
+circle 21 0.231 0.145 0.015 coral solid
+delete 22
+circle 22 0.275 0.254 0.015 coral solid
+delete 24
+circle 24 0.095 0.156 0.015 coral solid
+delay 4
+delay 20
+delay 4
+vis 133
+delay 4
+vis 133
+delay 4
+vis 133
+delay 4
+vis 133
+delay 4
+vis 133
+delay 4
+vis 133
+delay 4
+vis 133
+delay 4
+vis 133
+delete 133
+line 133 0.199 0.835 0.161 -0.018 red thick
+lower 133
+delete 0
+text 0 .5 .05 1 black Total Weight = 3.964;  5 Trees
+delete 5
+circle 5 0.360 0.817 0.015 blue solid
+delete 9
+circle 9 0.432 0.335 0.015 blue solid
+delete 10
+circle 10 0.605 0.547 0.015 blue solid
+delete 11
+circle 11 0.714 0.775 0.015 blue solid
+delete 12
+circle 12 0.806 0.873 0.015 blue solid
+delete 13
+circle 13 0.520 0.951 0.015 blue solid
+delete 14
+circle 14 0.499 0.663 0.015 blue solid
+delete 15
+circle 15 0.423 0.493 0.015 blue solid
+delete 17
+circle 17 0.730 0.446 0.015 blue solid
+delete 18
+circle 18 0.813 0.598 0.015 blue solid
+delete 23
+circle 23 0.252 0.471 0.015 blue solid
+delete 27
+circle 27 0.591 0.395 0.015 blue solid
+delete 28
+circle 28 0.587 0.779 0.015 blue solid
+delete 29
+circle 29 0.633 0.897 0.015 blue solid
+delete 30
+circle 30 0.372 0.902 0.015 blue solid
+delete 32
+circle 32 0.363 0.580 0.015 blue solid
+delete 33
+circle 33 0.905 0.721 0.015 blue solid
+delete 34
+circle 34 0.792 0.708 0.015 blue solid
+delay 4
+delay 20
+delay 4
+vis 134
+delay 4
+vis 134
+delay 4
+vis 134
+delay 4
+vis 134
+delay 4
+vis 134
+delay 4
+vis 134
+delay 4
+vis 134
+delay 4
+vis 134
+delete 134
+line 134 0.730 0.446 0.136 -0.100 red thick
+lower 134
+delete 0
+text 0 .5 .05 1 black Total Weight = 4.133;  4 Trees
+delete 16
+circle 16 0.633 0.257 0.015 blue solid
+delete 19
+circle 19 0.788 0.223 0.015 blue solid
+delete 25
+circle 25 0.693 0.129 0.015 blue solid
+delete 26
+circle 26 0.866 0.346 0.015 blue solid
+delete 35
+circle 35 0.813 0.125 0.015 blue solid
+delay 4
+delay 20
+delay 4
+vis 135
+delay 4
+vis 135
+delay 4
+vis 135
+delay 4
+vis 135
+delay 4
+vis 135
+delay 4
+vis 135
+delay 4
+vis 135
+delay 4
+vis 135
+delete 135
+line 135 0.432 0.335 0.159 0.060 LightGrey thin
+lower 135
+delay 20
+delay 4
+vis 136
+delay 4
+vis 136
+delay 4
+vis 136
+delay 4
+vis 136
+delay 4
+vis 136
+delay 4
+vis 136
+delay 4
+vis 136
+delay 4
+vis 136
+delete 136
+line 136 0.730 0.446 0.083 0.152 LightGrey thin
+lower 136
+delay 20
+delay 4
+vis 137
+delay 4
+vis 137
+delay 4
+vis 137
+delay 4
+vis 137
+delay 4
+vis 137
+delay 4
+vis 137
+delay 4
+vis 137
+delay 4
+vis 137
+delete 137
+line 137 0.132 0.326 -0.037 -0.170 LightGrey thin
+lower 137
+delay 20
+delay 4
+vis 138
+delay 4
+vis 138
+delay 4
+vis 138
+delay 4
+vis 138
+delay 4
+vis 138
+delay 4
+vis 138
+delay 4
+vis 138
+delay 4
+vis 138
+delete 138
+line 138 0.076 0.770 0.074 -0.158 red thick
+lower 138
+delete 0
+text 0 .5 .05 1 black Total Weight = 4.307;  3 Trees
+delete 6
+circle 6 0.266 0.654 0.015 blue solid
+delete 7
+circle 7 0.067 0.496 0.015 blue solid
+delete 31
+circle 31 0.150 0.612 0.015 blue solid
+delay 4
+delay 20
+delay 4
+vis 139
+delay 4
+vis 139
+delay 4
+vis 139
+delay 4
+vis 139
+delay 4
+vis 139
+delay 4
+vis 139
+delay 4
+vis 139
+delay 4
+vis 139
+delete 139
+line 139 0.806 0.873 -0.173 0.024 LightGrey thin
+lower 139
+delay 20
+delay 4
+vis 140
+delay 4
+vis 140
+delay 4
+vis 140
+delay 4
+vis 140
+delay 4
+vis 140
+delay 4
+vis 140
+delay 4
+vis 140
+delay 4
+vis 140
+delete 140
+line 140 0.432 0.335 -0.157 -0.081 red thick
+lower 140
+delete 0
+text 0 .5 .05 1 black Total Weight = 4.484;  2 Trees
+delete 8
+circle 8 0.132 0.326 0.015 blue solid
+delete 21
+circle 21 0.231 0.145 0.015 blue solid
+delete 22
+circle 22 0.275 0.254 0.015 blue solid
+delete 24
+circle 24 0.095 0.156 0.015 blue solid
+delay 4
+delay 20
+delay 4
+vis 141
+delay 4
+vis 141
+delay 4
+vis 141
+delay 4
+vis 141
+delay 4
+vis 141
+delay 4
+vis 141
+delay 4
+vis 141
+delay 4
+vis 141
+delete 141
+line 141 0.196 0.940 0.176 -0.038 LightGrey thin
+lower 141
+delay 20
+delay 4
+vis 142
+delay 4
+vis 142
+delay 4
+vis 142
+delay 4
+vis 142
+delay 4
+vis 142
+delay 4
+vis 142
+delay 4
+vis 142
+delay 4
+vis 142
+delete 142
+line 142 0.806 0.873 0.099 -0.152 LightGrey thin
+lower 142
+delay 20
+delay 4
+vis 143
+delay 4
+vis 143
+delay 4
+vis 143
+delay 4
+vis 143
+delay 4
+vis 143
+delay 4
+vis 143
+delay 4
+vis 143
+delay 4
+vis 143
+delete 143
+line 143 0.067 0.496 0.065 -0.170 LightGrey thin
+lower 143
+delay 20
+delay 4
+vis 144
+delay 4
+vis 144
+delay 4
+vis 144
+delay 4
+vis 144
+delay 4
+vis 144
+delay 4
+vis 144
+delay 4
+vis 144
+delay 4
+vis 144
+delete 144
+line 144 0.266 0.654 -0.014 -0.183 LightGrey thin
+lower 144
+delay 20
+delay 4
+vis 145
+delay 4
+vis 145
+delay 4
+vis 145
+delay 4
+vis 145
+delay 4
+vis 145
+delay 4
+vis 145
+delay 4
+vis 145
+delay 4
+vis 145
+delete 145
+line 145 0.360 0.817 -0.094 -0.163 LightGrey thin
+lower 145
+delay 20
+delay 4
+vis 146
+delay 4
+vis 146
+delay 4
+vis 146
+delay 4
+vis 146
+delay 4
+vis 146
+delay 4
+vis 146
+delay 4
+vis 146
+delay 4
+vis 146
+delete 146
+line 146 0.132 0.326 0.120 0.145 LightGrey thin
+lower 146
+delay 20
+delay 4
+vis 147
+delay 4
+vis 147
+delay 4
+vis 147
+delay 4
+vis 147
+delay 4
+vis 147
+delay 4
+vis 147
+delay 4
+vis 147
+delay 4
+vis 147
+delete 147
+line 147 0.605 0.547 -0.182 -0.054 LightGrey thin
+lower 147
+delay 20
+delay 4
+vis 148
+delay 4
+vis 148
+delay 4
+vis 148
+delay 4
+vis 148
+delay 4
+vis 148
+delay 4
+vis 148
+delay 4
+vis 148
+delay 4
+vis 148
+delete 148
+line 148 0.199 0.835 0.067 -0.181 LightGrey thin
+lower 148
+delay 20
+delay 4
+vis 149
+delay 4
+vis 149
+delay 4
+vis 149
+delay 4
+vis 149
+delay 4
+vis 149
+delay 4
+vis 149
+delay 4
+vis 149
+delay 4
+vis 149
+delete 149
+line 149 0.633 0.257 -0.143 -0.139 red thick
+lower 149
+delete 0
+text 0 .5 .05 1 black Total Weight = 4.683;  1 Trees
+delete 20
+circle 20 0.490 0.118 0.015 blue solid
+delay 4
+delay 20
+delete 150
+line 150 0.490 0.118 0.203 0.011 LightGrey thin
+lower 150
+delete 151
+line 151 0.360 0.817 0.139 -0.154 LightGrey thin
+lower 150
+delete 152
+line 152 0.360 0.817 0.160 0.134 LightGrey thin
+lower 150
+delete 153
+line 153 0.633 0.257 0.097 0.189 LightGrey thin
+lower 150
+delete 154
+line 154 0.605 0.547 0.208 0.051 LightGrey thin
+lower 150
+delete 155
+line 155 0.275 0.254 -0.023 0.217 LightGrey thin
+lower 150
+delete 156
+line 156 0.432 0.335 0.058 -0.217 LightGrey thin
+lower 150
+delete 157
+line 157 0.266 0.654 0.233 0.009 LightGrey thin
+lower 150
+delete 158
+line 158 0.714 0.775 -0.215 -0.112 LightGrey thin
+lower 150
+delete 159
+line 159 0.605 0.547 0.187 0.161 LightGrey thin
+lower 150
+delete 160
+line 160 0.490 0.118 -0.259 0.027 LightGrey thin
+lower 150
+delete 161
+line 161 0.076 0.770 -0.009 -0.274 LightGrey thin
+lower 150
+delete 162
+line 162 0.067 0.496 0.028 -0.340 LightGrey thin
+lower 150
+delete 163
+line 163 0.866 0.346 0.039 0.375 LightGrey thin
+lower 150
+delete 0
+text 0 .5 .05 1 black Total Weight in MST = 4.683

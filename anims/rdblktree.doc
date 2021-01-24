@@ -1,0 +1,91 @@
+rdblktree.doc 
+
+Red-Black Tree Insertion & Deletion Animation documentation file
+Written by Aaron Candib using XTANGO at Rensselaer Polytechnic Institute
+
+Funded by the Rensselaer Undergraduate Research program and Prof. Susan Rodger
+
+Files:
+
+	rdblktree.c
+	rdblktreescenes.c
+	rdblktree.h
+	rdblktreemake
+	rdblktree.doc
+
+
+General info:
+
+	A red-black tree is, in structure, no different than an ordinary binary
+tree.  It has a root, and every node can have up to two children, one called a
+left child and the other called a right child.  Each node, however, has an 
+extra color field, which can be either red or black.  The following rules apply
+to the coloring of nodes:
+
+1:  The root is always black.
+2:  Nil nodes are always black.  (If they are not used, any 'null children' are
+    considered as black nodes)
+3:  On any path from the root to a nil node, there can never be two consecutive
+    red nodes.
+4:  Every path from a node X to a nil node must contain exactly the same number
+    of black nodes.
+
+	One corollary of these rules is that the longest path from root to leaf
+in the tree is at most twice as long as the shortest path in the tree, which is
+a fairly strong balancing criteria.  So if insertions and deletions can be done
+in such a way as to preserve these rules, the tree will remain pretty well
+balanced.
+
+	Whenever a node is inserted into the red-black tree, it is initially 
+colored red.  This may violate property 3 listed above.  There is a special 
+algorithm that is employed at this point, which recolors nodes and performs
+pointer manipulations called "rotations" to restore the red-black properties to
+the tree.  The two complementary routines are called "Left Rotate" and "Right 
+Rotate".  As their names imply, they are routines that sort of twist the tree 
+to the left or right to help balance the tree.  I won't describe them here; 
+that's what the animation is for.  Deletion of a black node violates property 
+4, and another fixup algorithm is employed after such a deletion, which also 
+uses the rotation routines as well as recolorations to fix up the tree.
+
+
+Compilation and Execution:
+
+	To compile the program, you must first have XTANGO installed and the
+above files placed in the 'anims' subdirectory.  Then, type:
+
+	make -f rdblktreemake
+
+which will create the executable file 'rdblktree'.  To run the program, simply 
+type 'rdblktree'.  No parameters are necessary, although input may be piped in 
+as explained below.
+
+	When you run the program, after the XTANGO window appears you will be
+first asked whether or not you want to see the comparisons.  The comparisons
+slow down the finding of the node to be deleted or the location to insert a 
+node, but if you haven't worked with binary trees in a while, it's a good 
+reminder of how a binary search is done.  Type 'y' to see them, 'n' not to.
+
+	Next you'll get the instructions.  This program only deals with 
+positive integers.  Type 'i' followed by a number to insert that number into 
+the tree, 'd' followed by a number to delete that number from the tree, 'h' to 
+see the instructions again, and 'q' to stop.
+
+	There are a limited number of levels in the tree; if you try to insert
+below the bottom level, it will animate the search down to the bottom of the
+screen, then stop, print an error message, and not insert the node.  The 
+program will not crash, however, and you can continue inserting and deleting.
+
+	Also note that as of XTANGO version 1.42, the control buttons in the
+XTANGO window WILL NOT WORK when the program is waiting for your input from the
+keyboard.
+
+	You can also create an input file which can be piped in.  Just remember
+to make sure that the first character in the file is the 'y' or 'n', and the 
+last character in the file is a 'q'.
+
+
+References:
+
+"Introduction to Algorithms" by Cormen, Leiserson & Rivest.  McGrawHill, 1990
+Chapter 13 on Binary Search Trees and Chapter 14 on Red-Black Trees
+(pp 244-277)
