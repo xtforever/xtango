@@ -32,7 +32,7 @@ animator: animator.c $(XTANGOBJ)
 	$(CC) $(CFLAGS) -o animator animator.c $(XTANGOBJ) $(XLIB) $(MLIB)
 
 clean:
-	rm -f *.o
+	rm -f *.o animator
 
 spotless:
 	rm -f *.o
