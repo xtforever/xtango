@@ -46,9 +46,8 @@
 /*								  */
 /* RETURNS:  NULL.                                         	  */
 /******************************************************************/
-void
-TANGO_anim_setup(widgetid)
-   Widget widgetid;
+void 
+TANGO_anim_setup (Widget widgetid)
 {
    int	     old;
    Arg	     wargs[2];
@@ -100,8 +99,8 @@ TANGO_anim_setup(widgetid)
 /*								   */
 /* RETURNS:  NULL                                       	   */
 /*******************************************************************/
-void
-TANGO_anim_next_damage_frame()
+void 
+TANGO_anim_next_damage_frame (void)
 {
    XCopyArea(TANGO__data->display, TANGO__data->pixmap, 
              TANGO__data->display_window, TANGO_gc(),  
