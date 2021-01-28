@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+#include <unistd.h>
 
 #include "xtangolocal.h"
 
@@ -23,7 +25,7 @@ typedef struct ObjNode {
  } *ObjPtr;
 
 
-void parseLine(char *s);
+static  void parseLine(char *s);
 void bg(char *s);
 void coords(char *s);
 void delay(char *s);
@@ -51,7 +53,7 @@ void switchpos(char *s);
 void swapid(char *s);
 void comment(char *s);
 
-void anim_help();
+static void anim_help();
 double getFill();
 double getWidth();
 double fixY();
@@ -73,9 +75,12 @@ int     debug = 1;
 
 int main(int argc, char *argv[] )
 {
-   char str[256],*s;
+   char str[256];
+   int c;
+   FILE *fp=stdin;
+#if 0
+   char *s;
    int i;
-
    for (i = 1; i < argc; ++i) {
       if (argv[i][0] != '-') {
 	 anim_help();
@@ -95,14 +100,35 @@ int main(int argc, char *argv[] )
 	  }
        }
     }
+#endif
 
+   while(1) {
+     c=getopt(argc,argv,"dhf:");
+     if (c<0) break;
+     switch(c) {
+     case 'd':
+       debug=0;
+       break;
+
+     case 'f':
+       fp=fopen(optarg,"r");
+       if (!fp)  {
+	 fprintf(stderr," can not open %s\n",optarg);
+	 break;
+       }
+     default:
+       fprintf(stderr,"animator: unknown  option %c\n",c);
+     case 'h':
+       anim_help();
+     }
+   }
 
    printf("Press RUN ANIMATION button to begin\n");
 
    TANGOalgoOp(NULL,"BEGIN");
 
    ASSOCmake("IDS",1);
-   while (fgets(str,sizeof str, stdin))
+   while (fgets(str,sizeof str, fp))
        parseLine(str);
 
    TANGOalgoOp(NULL,"END");
@@ -110,23 +136,33 @@ int main(int argc, char *argv[] )
 
 
 
-void anim_help ()
+static void anim_help ()
 {
-   fprintf(stderr,"Usage: animator [-O]\n");
+   fprintf(stderr,"Usage: animator [-dhf<file>]\n");
+   fprintf(stderr,"-h   -this help\n");
+   fprintf(stderr,"-d   -enable debug\n");
+   fprintf(stderr," -f<fname>  -readfile\n");
    exit(1);
 }
 
 
 
-
-void parseLine(char *str)
+static void parseLine(char *str)
 {
    char cmd[50];
+   int i;
 
+
+   for (i=strlen(str);i>=0;i--)
+     if ( iscntrl(str[i]) ) str[i]=0; else break;
+   
    if (sscanf(str, "%s", cmd) <= 0)  /* empty line */
       return;
    if (str[0] == '%')
       return;
+
+   printf("line:%s\n",str);
+   usleep(100000);
    
    if (!strcmp(cmd,"line"))
       line(str);
@@ -195,8 +231,6 @@ void bg( char *str)
  }
 
 
-
-
 void coords( char *str)
 {
    char cmd[SLEN];
@@ -213,8 +247,7 @@ void coords( char *str)
 
 
 
-void
-delay(char *str)
+void delay(char *str)
 {
    TANGO_PATH path;
    TANGO_TRANS trans;
@@ -338,8 +371,7 @@ void rectangle(char *str)
 
 
 
-void
-circle(char *str)
+void circle(char *str)
 {
    char cmd[SLEN],color[SLEN],fill[SLEN];
    int id;
@@ -391,8 +423,7 @@ circle(char *str)
 
 
 void
-triangle(str)
-   char *str;
+triangle(char *str)
 {
    char cmd[SLEN],color[SLEN],fill[SLEN];
    int id;
@@ -452,8 +483,7 @@ triangle(str)
  }
 
 void
-text(str)
-   char *str;
+text(char *str)
 {
    char cmd[SLEN],color[SLEN];
    int id,cen,textindx;
@@ -665,8 +695,6 @@ delete(char *str)
    TANGOtrans_free(1,trans);
    removeObject(id);
 } 
-
-
 
 
 void
