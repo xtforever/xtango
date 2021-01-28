@@ -2882,6 +2882,7 @@ read_composite (TANGO_IMAGE_COMPONENT images[])
    char 	    *fname;
    char 	     text[STRINGLENGTH];
 
+   
    head = tail = NULL;
    num = 0;
    do
@@ -2896,19 +2897,28 @@ read_composite (TANGO_IMAGE_COMPONENT images[])
 			  &lx,&ly,colorstr,&sx,&sy,&wid,&sty,&arrow);
 	      color = get_color(colorstr);
       //  image = image_create(TANGO_IMAGE_TYPE_LINE,lx,ly,1,color, sx,sy,wid,sty,arrow);
+	      image = (TANGO_IMAGE) malloc( sizeof( struct _IMAGE));
+	      image->type = type;
 	      line_create(image,lx,ly,1,color, sx,sy,wid,sty,arrow);
 	      break;
+
 	   case TANGO_IMAGE_TYPE_RECTANGLE:
 	      sscanf(args,"%lf %lf %s %lf %lf %lf",
 			&lx,&ly,colorstr,&sx,&sy,&fill);
 	      color = get_color(colorstr);
       //  image = image_create(TANGO_IMAGE_TYPE_RECTANGLE,lx,ly,1,color,sx,sy,fill);
+	      image = (TANGO_IMAGE) malloc( sizeof( struct _IMAGE));
+	      image->type = type;
 	      rectangle_create(image,lx,ly,1,color,sx,sy,fill);
 	      break;
+
 	   case TANGO_IMAGE_TYPE_CIRCLE:
 	      sscanf(args,"%lf %lf %s %lf %lf",&lx,&ly,colorstr,&rad,&fill);
 	      color = get_color(colorstr);
       //      image = image_create(TANGO_IMAGE_TYPE_CIRCLE,lx,ly,1,color,rad,fill);
+
+	      image = (TANGO_IMAGE) malloc( sizeof( struct _IMAGE));
+	      image->type = type;
 	      circle_create(image, lx,ly,1,color,rad,fill);
 	      break;
 	   case TANGO_IMAGE_TYPE_ELLIPSE:
@@ -2916,6 +2926,9 @@ read_composite (TANGO_IMAGE_COMPONENT images[])
 			&lx,&ly,colorstr,&sx,&sy,&fill);
 	      color = get_color(colorstr);
       //      image = image_create(TANGO_IMAGE_TYPE_ELLIPSE,lx,ly,1,color,sx,sy,fill);
+
+	      image = (TANGO_IMAGE) malloc( sizeof( struct _IMAGE));
+	      image->type = type;
 	      ellipse_create(image, lx,ly,1,color,sx,sy,fill);
 	      break;
 	   case TANGO_IMAGE_TYPE_POLYLINE:
@@ -2941,7 +2954,8 @@ read_composite (TANGO_IMAGE_COMPONENT images[])
 		      while (*p == ' ') p++;
 		 }
  //      image = image_create(TANGO_IMAGE_TYPE_POLYLINE,lx,ly,1,color,vertices,vx,vy,wid,sty,arrow);
-				   
+	      image = (TANGO_IMAGE) malloc( sizeof( struct _IMAGE));
+	      image->type = type;				   
 	      polyline_create(image,lx,ly,1,color,vertices,vx,vy,wid,sty,arrow);
 	      break;
 	   case TANGO_IMAGE_TYPE_POLYGON:
@@ -2993,6 +3007,7 @@ read_composite (TANGO_IMAGE_COMPONENT images[])
 		      while (*p == ' ') p++;
 		 }
   //      image = image_create(TANGO_IMAGE_TYPE_SPLINE,lx,ly,1,color,vertices,vx,vy,wid,sty);
+
 	      spline_create(image,lx,ly,1,color,vertices,vx,vy,wid,sty);
 	      break;
 	    case TANGO_IMAGE_TYPE_TEXT:
@@ -3005,7 +3020,9 @@ read_composite (TANGO_IMAGE_COMPONENT images[])
 	      else
 		 fname = fontname;
 //      image = image_create(TANGO_IMAGE_TYPE_TEXT,lx,ly,1,color,fname,text,orient);
-					
+
+	      image = (TANGO_IMAGE) malloc( sizeof( struct _IMAGE));
+	      image->type = type;					
 	      text_create(image,lx,ly,1,color,fname,text,orient);
 	      break;
 	    case TANGO_IMAGE_TYPE_BITMAP:
