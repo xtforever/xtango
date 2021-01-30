@@ -258,7 +258,7 @@ int getopt()
                printf("Press <Return> to continue and any other key to EXIT.\n");
                getchar();
                j = getchar();
-               if ( j != 10 ) exit();
+               if ( j != 10 ) exit(0);
                break;
      }
      return(i);
