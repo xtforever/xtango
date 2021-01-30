@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "xtango.h"
 
@@ -12,21 +13,14 @@ void ANIMInit (), ANIMLink (), ANIMMerge (), ANIMUnion (), ANIMInsert (),
 
 static NAME_FUNCT fcn[]=
 {
-   {"Init", 1,
-    {VOID, (FPTR) ANIMInit}},
-   {"Link", 1,
-    {VOID, (FPTR) ANIMLink}},
-   {"Merge", 1,
-    {VOID, (FPTR) ANIMMerge}},
-   {"Union", 1,
-    {VOID, (FPTR) ANIMUnion}},
-   {"Insert", 1,
-    {VOID, (FPTR) ANIMInsert}},
-   {"Delete", 1,
-    {VOID, (FPTR) ANIMDelete}},
-   {"Extract", 1,
-    {VOID, (FPTR) ANIMExtract}},
-   {NULL, 0, NULL, NULL}
+   {"Init", 1,          {VOID, (FPTR) ANIMInit}         },
+   {"Link", 1,        {VOID, (FPTR) ANIMLink}      },
+   {"Merge", 1 ,   {VOID, (FPTR) ANIMMerge}  },
+   {"Union", 1,    {VOID, (FPTR) ANIMUnion}  },
+   {"Insert", 1,      {VOID, (FPTR) ANIMInsert}   },
+   {"Delete", 1,    {VOID, (FPTR) ANIMDelete} },
+   {"Extract", 1,    {VOID, (FPTR) ANIMExtract} },
+   {NULL, 0,          {NULL, NULL}}
 };
 
 /* ---------------------------------------------------------------- */
@@ -90,8 +84,7 @@ newNode ()
 }
 
 void
-freeNode (x)
-pNode x;
+freeNode (pNode x)
 {
    free (x);
 }
@@ -187,7 +180,7 @@ MMerge()
 {
    pNode cur1 = H -> head;
    pNode cur2 = N -> head;
-   pNode next1;
+   pNode next1;  // set but not used
    pNode next2;
 
    pNode prev = Null;
@@ -421,7 +414,7 @@ char *argv[];
    char buf[32];
    int i;
 
-   int tty = isatty (stdin);
+   int tty = isatty (fileno(stdin));
 
    printf ("\nEntering Binomial Heaps Demo\n");
    printf("Commands are:\n");
@@ -440,7 +433,8 @@ char *argv[];
    do {
       *cmd = '\0';
       printf ("\nEnter a command: ");
-      gets (buf);
+      fgets (buf, sizeof buf -1 , stdin);
+
       sprintf (cmdbuf, "%s 0", buf);
 
       sscanf (cmdbuf, "%s %d", cmd, &i);
