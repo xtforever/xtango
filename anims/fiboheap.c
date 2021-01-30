@@ -29,6 +29,7 @@
 
 
 #include <stdio.h>
+#include <unistd.h>
 
 #include "fiboheap.h"
 
@@ -179,7 +180,7 @@ pNode getLeft(x)
 ***
 ***************************************************************************/
 
-void remove(x)
+void myremove(x)
      pNode x;
 {
   pNode p;
@@ -208,7 +209,7 @@ void remove(x)
 void FibHeapLink(y, x)
      pNode y, x;
 {
-  remove(y);   /* remove y from the root list of H */
+  myremove(y);   /* remove y from the root list of H */
 
   /* make y a child of x */
   y -> p = x;
@@ -319,7 +320,7 @@ pNode ExtractMin()
        childMember(z->child);
 
        /* remove z from the root list of H */
-       remove(z);
+       myremove(z);
 
        TANGOalgoOp (fcn, "Delete", z);
 
@@ -348,7 +349,7 @@ pNode ExtractMin()
 ***
 ***************************************************************************/
 
-main ()
+int main ()
 {
    pNode x;
 
@@ -357,7 +358,8 @@ main ()
    char buf[32];
    int i, n;
 
-   int tty = isatty (stdin);
+  // int tty = isatty (stdin);
+   int tty = isatty (fileno(stdin));
 
    TANGOalgoOp (fcn, "BEGIN");
 
@@ -377,7 +379,7 @@ main ()
    do {
       *cmd = '\0';
       printf ("\nEnter a command: ");
-      gets (buf);
+      fgets (buf,sizeof buf -1, stdin);
       sprintf (cmdbuf, "%s 0", buf);
 
       sscanf (cmdbuf, "%s %d", cmd, &i);
