@@ -435,7 +435,7 @@ main( argc , argv)
  *
 */
 {
-  char *userMode;
+  char userMode[80];
   printf("Treap data Structure animation\n");
   printf("\t( this animation does NOT draw node circles and edges \n");
   printf("\t the outline of the tree should be clear though). \n\n");
@@ -446,10 +446,10 @@ main( argc , argv)
   printf("Please select [d]emo or [u]ser mode \n");
 
   /* probably overkill on size, but hey! */
-  userMode = (char *)calloc( 80 , sizeof(char));
+  //  userMode = (char *)calloc( 80 , sizeof(char));
 
     
-  gets( userMode);
+  fgets(userMode, sizeof userMode, stdin);
 
   switch ( *userMode)
     {
