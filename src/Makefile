@@ -46,7 +46,7 @@ $(MOTIF): $(BFILES) xtango$(MOTIF).o $(HFILES)
 $(BFILES) xtango$(ATHENA).o xtango$(HP).o xtango$(MOTIF).o: $(HFILES)
 
 install:
-	cp xtango.h ../include/xtango.h
+	cp xtango.h xtangolocal.h ../include/
 
 clean:
 	rm -f $(BFILES) xtango$(ATHENA).o xtango$(HP).o  xtango$(MOTIF).o \
