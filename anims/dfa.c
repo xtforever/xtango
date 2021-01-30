@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include <stdio.h>
+#include <ctype.h>
 #include "xtango.h"
 #include "dfa.h"
 
@@ -138,7 +139,7 @@ main ()
 
  printf ("\nEnter a string: ");
 
- while ((input = getchar(stdin)) != EOF) {
+ while ((input = getchar()) != EOF) {
    if (!isspace(cinput = (char) input)) {
      switch (toupper(cinput)) {
 	case 'A' :
