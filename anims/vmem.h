@@ -37,7 +37,7 @@ void AnimInit();
 void AnimMove();
 void AnimSwapOut();
 void AnimSlideUp();
-void WriteToAudio();
+int WriteToAudio();
 
 /*** EXTERNS ***/
 int sound;
