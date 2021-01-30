@@ -10,8 +10,8 @@
 #    Uncomment the first line below for HP X widgets; second for Athena.
 #
 #WIDGETS   = Xw
-#WIDGETS   = Xaw
-WIDGETS   = Xm
+WIDGETS   = Xaw
+#WIDGETS   = Xm
 
 XDIR      = .
 XTANGODIR = ../lib
@@ -35,37 +35,41 @@ TESTS     = allocator anim avl binoheap bintree bmap boyer bpack bres\
             roach shaker shellsort\
             shuffle spath test topsort treap tree tsp viewtran vmem
 
-CC        = cc
-FLAGS     = -g 
+CC        = gcc
+FLAGS     = -g -Wall -fdiagnostics-color=never
 OPTFLAGS  = -O
 CFLAGS    = $(FLAGS) $(INCLUDE)
 OPTCFLAGS = $(OPTFLAGS) $(INCLUDE)
 
-executable:
-	$(CC) $(CFLAGS) $(PROG).c $(PROG)scenes.c $(XTANGOBJ)\
-              $(XLIB) $(MLIB) -o $(PROG) 
+OBJS=$(addsuffix .o, $(TESTS)) $(addsuffix scenes.o, $(TESTS))
 
-all: 
-	./doscript
+all: $(TESTS)
+
+$(TESTS) :
+	$(CC) $(CFLAGS) $@.o $@scenes.o $(XTANGOBJ) $(XLIB) $(MLIB) -o $@
+
+
+
+#executable:
+#	$(CC) $(CFLAGS) $(PROG).c $(PROG)scenes.c $(XTANGOBJ) $(XLIB) $(MLIB) -o $(PROG) 
+
 
 clean:
-	rm -f *.o
-
-spotless:
 	rm -f *.o
 	rm -f $(TESTS)
 
 
 
 
+
 # This is an example of the old-fashioned way.
 
-anim.o: anim.c
-	$(CC) $(FLAGS) $(INCLUDE) -c anim.c
-animscenes.o: animscenes.c
-	$(CC) $(FLAGS) $(INCLUDE) -c animscenes.c
-anim: anim.o animscenes.o $(XTANGOBJ)
-	$(CC) -o anim anim.o animscenes.o $(XTANGOBJ) $(XLIB) $(MLIB)
+#anim.o: anim.c
+#	$(CC) $(FLAGS) $(INCLUDE) -c anim.c
+#animscenes.o: animscenes.c
+#	$(CC) $(FLAGS) $(INCLUDE) -c animscenes.c
+#anim: anim.o animscenes.o $(XTANGOBJ)
+#	$(CC) -o anim anim.o animscenes.o $(XTANGOBJ) $(XLIB) $(MLIB)
 
 
 # end of Makefile
