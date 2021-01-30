@@ -1,6 +1,8 @@
 /* Polygon clipping    by Kevin Haulk */
 
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "xtango.h"
 #include "clip.h"
 
@@ -147,7 +149,7 @@ for (i = 0; i < num_vert; i++)
    delete_trans = TANGOtrans_create(TANGO_TRANS_TYPE_DELETE, markers[i].im2,
                      null_path);
    TANGOtrans_perform(delete_trans);
-   free(markers[i]);
+//  free(markers[i]);
    }
 free(markers);
 }
