@@ -148,7 +148,7 @@ animate_begin (void)
    TANGO__data->damty = TANGO__data->by = 1.0;
    TANGO__data->damby = TANGO__data->ty = 0.0;
    TANGO__data->mono_fillstyle = 0;    /* Patterns represent colors */
-   TANGO__data->delay = 0;
+   TANGO__data->delay = 100;
 
    /* Start paused--don't lose initial x stuff */
    /*    (before window/widgets are displayed) */
