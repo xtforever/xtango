@@ -7,6 +7,8 @@
 
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "xtango.h"
 
 /* Animation Calls */
@@ -23,7 +25,7 @@ struct node
 	struct node *next;
 	} *head;
 
-extern char *malloc();
+//extern char *malloc();
 
 main()
 {
@@ -49,9 +51,10 @@ main()
 		printf("Enter Data : ");
 		scanf("%s",str);
 		node_no = 0;
-		ptr = (struct node *)malloc(1,sizeof(struct node));
-		ptr->data = malloc(strlen(str),sizeof(char));
-		strcpy(ptr->data, str);
+		ptr = (struct node *)calloc(1,sizeof(struct node));
+//		ptr->data = calloc(strlen(str),sizeof(char));
+//		strcpy(ptr->data, str);
+		ptr->data=strdup(str);
 		printf("Enter where to insert : start / end / after <node>\n");
 		scanf("%s",str1);
 		if (!strcmp(str1,"start"))
