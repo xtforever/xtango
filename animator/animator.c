@@ -162,7 +162,7 @@ static void parseLine(char *str)
       return;
 
    printf("line:%s\n",str);
-   usleep(100000);
+   //usleep(100000);
    
    if (!strcmp(cmd,"line"))
       line(str);
