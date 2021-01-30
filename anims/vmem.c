@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
 #include "vmem.h"
 #include <X11/Xlib.h>
 #include "xtango.h"
@@ -192,7 +194,7 @@ static void FIFOize(reference,side,swap_out,block)
 /*******************************************************
 *  The workhouse function call                         *
 *******************************************************/
-main( argc, argv ) 
+int main( argc, argv ) 
          int argc;
          char *argv[];
 {
@@ -376,6 +378,7 @@ int WriteToAudio(file_name)
 
     fclose(fp);
     fclose (audio);
+    return 0;
 }
 
 
