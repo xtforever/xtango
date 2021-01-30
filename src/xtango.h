@@ -10,6 +10,7 @@
 /*****************	types & constants    ******************/
 /**************************************************************/
 #include <stdlib.h>
+#include <X11/Intrinsic.h>
 
 typedef enum {
    TANGO_IMAGE_TYPE_LINE,
@@ -117,8 +118,9 @@ extern	void		ASSOCinit();
 extern	void		ASSOCmake();
 extern	void		ASSOCstore();
 extern  int             ASSOCmember();
-extern	int		ASSOCretrieve();
+extern	long		ASSOCretrieve();
 extern  int             ASSOCdelete();
+
 
 extern  char *		TANGOalgoOp();
 
@@ -197,6 +199,32 @@ extern  TANGO_TRANS     TAPswitch();
 extern  TANGO_TRANS     TAPexchange();
 extern  TANGO_TRANS     TAPflash();
 
+/*
+ *  xtangoanim.c
+ */ 
+extern void TANGO_anim_setup(Widget widgetid);
+extern void TANGO_anim_next_damage_frame(void);
+/*
+ *  xtangoassoc.c
+ */ 
+#if 0
+extern void ASSOCinit(void);
+extern void ASSOCmake(char *name, int keys);
+extern void ASSOCstore(char *name, long k1, long k2, long k3, long k4, long k5, long k6);
+extern int ASSOCmember(char *name, long k1, long k2, long k3, long k4, long k5);
+extern int ASSOCdelete(char *name, long k1, long k2, long k3, long k4, long k5);
+extern int ASSOCretrieve(char *name, long k1, long k2, long k3, long k4, long k5);
+extern void ASSOC_clear(void);
+#endif
+/*
+extern TABLE_PTR table_exists(char *name);
+extern RECORD_PTR record_exists(TABLE_PTR tp, int hash_val, int k1, int k2, int k3, int k4, int k5);
+int remove_record(TABLE_PTR tp, int hash_val, int k1, int k2, int k3, int k4, int k5);
+int same_record(RECORD_PTR rp, int keys, int k1, int k2, int k3, int k4, int k5);
+int hash_string(char *name);
+int hash_keys(int num, int k1, int k2, int k3, int k4, int k5);
+void assoc_dump(void);
+*/
 
 /**************************************************************/
 /*****************	end of xtango.h      ******************/
