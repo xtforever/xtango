@@ -1,18 +1,22 @@
 #include <stdio.h>
-#include <xtango.h>
+//#include <xtango.h>
+#include <xtangolocal.h>
 
 
 /*  create an association */
 
 void
 ANIMInit(id,n)
-   int id,n;
+   long id,n;
 {
    double width,height,radius,starty;
    double area,space;
    TANGO_IMAGE ptr;
    TANGO_PATH path;
    TANGO_TRANS trans;
+
+   struct _IMAGE image;
+   struct _TANGO_CIRCLE circ;
 
    width = 0.8/(double)n;
    height = 0.1;
@@ -36,7 +40,19 @@ ANIMInit(id,n)
    TWISTcreate_2d_loc_array(NULL,id,100,n,0.1+(width/2.0),starty+(height/2.0)+space,
 			       width,space);
 
-   ptr = TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,0.5,0.05,1,TANGO_COLOR_RED,radius,1.0);
+  
+			image.type = TANGO_IMAGE_TYPE_CIRCLE;
+			image.loc[0] = 0.5;
+			image.loc[1] = 0.05;
+			image.visible = 1;
+			circ.color = TANGO_COLOR_RED;
+			circ.radius = radius;
+			circ.fill = 1;
+			image.object = &circ;
+			ptr = TANGOimage_create(&image);
+
+
+//   ptr = TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,0.5,0.05,1,TANGO_COLOR_RED,radius,1.0);
    ASSOCmake("PTR",0);
    ASSOCstore("PTR",ptr);
 
@@ -52,9 +68,9 @@ ANIMInit(id,n)
 
 void
 ANIMPrimary(id, index,num)
-   int	id,index,num;
+   long	id,index,num;
 {
-   double	x, y;
+  //   double	x, y;
    TANGO_LOC	ptrloc,toloc;
    TANGO_IMAGE	ptr;
    TANGO_PATH	movepath, colorpath;
@@ -78,9 +94,9 @@ ANIMPrimary(id, index,num)
 
 void
 ANIMSecondary(id, index,num)
-   int	id,index,num;
+   long	id,index,num;
 {
-   double	x, y;
+  //   double	x, y;
    TANGO_LOC	ptrloc,toloc;
    TANGO_IMAGE	ptr;
    TANGO_PATH	movepath, colorpath;
@@ -104,17 +120,34 @@ ANIMSecondary(id, index,num)
 
 void
 ANIMProbe(id,index,num)
-   int	id,index,num;
+   long	id,index,num;
 {
    double	x, y;
    TANGO_LOC	probeloc;
    TANGO_IMAGE	probe, ptr;
    TANGO_PATH	onepath;
    TANGO_TRANS	appear,delay,adder;
+   struct _IMAGE image;
+   struct _TANGO_CIRCLE circ;
+
+   DEBUG("%s\n",__func__);
 
    probeloc = (TANGO_LOC) ASSOCretrieve("ID3",id,num,index);
    TANGOloc_inquire(probeloc,&x,&y);
-   probe = TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,x,y,1,TANGO_COLOR_BLACK,0.005,1.0);
+
+
+	image.type = TANGO_IMAGE_TYPE_CIRCLE;
+	image.loc[0] = x;
+	image.loc[1] = y;
+	image.visible = 1;
+	circ.color = TANGO_COLOR_BLACK;
+	circ.radius = 0.005;
+	circ.fill = 1;
+	image.object = &circ;
+	probe = TANGOimage_create(&image);
+
+
+//   probe = TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,x,y,1,TANGO_COLOR_BLACK,0.005,1.0);
    onepath = TANGOpath_null(1);
    appear = TANGOtrans_create(TANGO_TRANS_TYPE_DELAY, probe, onepath);
    delay = TANGOtrans_create(TANGO_TRANS_TYPE_DELAY, NULL, TANGOpath_iterate(onepath, 2.0));
@@ -126,7 +159,7 @@ ANIMProbe(id,index,num)
 
 void
 ANIMFill(id,index)
-   int	id,index;
+   long	id,index;
 {
    static double fillpath_x[1] = { 0.5 };
    static double fillpath_y[1] = { 0.0 };

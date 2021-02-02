@@ -5,7 +5,7 @@
  **********************************/
 
 #include <stdio.h>
-#include <xtango.h>
+#include <xtangolocal.h>
 
 
 double fillval = 1.0;
@@ -48,7 +48,7 @@ ANIMInput_loc(id,index,x,y)
 
 void
 ANIMSorted_loc(id,index,x,y)
-   int id,index;
+   long id,index;
    double x,y;
 {
    TANGO_LOC loc;
@@ -61,7 +61,7 @@ ANIMSorted_loc(id,index,x,y)
 
 void
 ANIMPsorted_loc(id,index,x,y)
-   int id,index;
+   long id,index;
    double x,y;
 {
    TANGO_LOC loc;
@@ -91,22 +91,36 @@ ANIMInput_adj(id,from,to,edge)
 
 void
 ANIMDraw(id,num,adjid)
-   int id;
+   long id;
    int num;
    int adjid;
 {
    int i,j;
-   double x,y;
+
    TANGO_IMAGE im, txt;
    TANGO_LOC  pt[50];
    int adjmat[50][50];
    TANGO_PATH path;
    TANGO_TRANS trans;
 
+   struct _IMAGE image; 
+   struct _TANGO_TEXT text;
+   struct _TANGO_CIRCLE circ;  
 
-   txt= TANGOimage_create (TANGO_IMAGE_TYPE_TEXT, XTEXT, YTEXT,
-			   1, TANGO_COLOR_BLACK,
-			   NULL, "TOPOLOGICAL SORT", 0);
+   image.type = TANGO_IMAGE_TYPE_TEXT;
+   image.loc[0] = XTEXT;
+   image.loc[1] = YTEXT;
+   image.visible =1;
+   text.color=TANGO_COLOR_BLACK;
+   text.font_name[0]=0;
+   strcpy(text.text,"TOPOLOGICAL SORT");
+   text.orient=0;
+   image.object = &text; 
+   txt=TANGOimage_create(&image);
+
+//   txt= TANGOimage_create (, , ,, TANGO_COLOR_BLACK,NULL, "TOPOLOGICAL SORT", 0);
+			   
+			   
    for (i=0; i<num; ++i) /* create array of TANGO_LOCS for locations */
       pt[i] = (TANGO_LOC) ASSOCretrieve("ID",id,i);
 
@@ -118,8 +132,19 @@ ANIMDraw(id,num,adjid)
 		     SIZE,0.0);
 
    ASSOCmake("lozenge",0);  /* make the lozenge that moves around the graph */
-   im = TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,0.1,0.1,0,
-			  TANGO_COLOR_BLACK,SIZE/2.0,1.0);
+
+   image.type = TANGO_IMAGE_TYPE_CIRCLE;
+   image.loc[0] = 0.1;
+   image.loc[1] = 0.1;
+   image.visible = 0;
+   circ.color = TANGO_COLOR_BLACK;
+   circ.radius = SIZE/2.0;
+   circ.fill = 1;
+   image.object = &circ;   
+   im=TANGOimage_create(&image); 
+
+//   im = TANGOimage_create(,0.1,0.1,0,TANGO_COLOR_BLACK,SIZE/2.0,1.0);
+			  
    ASSOCstore("lozenge",im);
 
    path = TANGOpath_null(4);
@@ -130,18 +155,18 @@ ANIMDraw(id,num,adjid)
 }
 
 
-
 /* beginning of a new component, make the lozenge visible, and change the */
 /* vertex to indicate it's been visited                                   */
 
 void
 ANIMNew_comp(id,vnum,val)
-   int id,vnum,val;
+   long id,vnum,val;
 {
    double x,y;
    char str[5];
-   TANGO_IMAGE	 loz,image,new,text;
-   TANGO_LOC	 atpt,topt,center;
+   TANGO_IMAGE	 loz,image,new,txt;
+   //   TANGO_LOC	 atpt,topt,center;
+   TANGO_LOC	 atpt,topt;
    TANGO_PATH	 movepath,onepath,colpath,fillpath;
    TANGO_TRANS	 move,appear,t[2],change,fill,all;
    loz = (TANGO_IMAGE) ASSOCretrieve("lozenge");
@@ -155,11 +180,25 @@ ANIMNew_comp(id,vnum,val)
    onepath = TANGOpath_null(1);     /* make visible */
    appear = TANGOtrans_create(TANGO_TRANS_TYPE_VISIBLE,loz,onepath);
    image = (TANGO_IMAGE) ASSOCretrieve("IMAGE_AT",id,topt);
-   sprintf(str,"%d",val);
+   sprintf(str,"%ld",val);
    TANGOloc_inquire(topt,&x,&y);
-   text = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,
-			    TANGO_COLOR_BLACK,"variable",str,1);
-   ASSOCstore("TEXT_AT",id,topt,text);
+
+   struct _IMAGE ximage; 
+   struct _TANGO_TEXT text;
+   ximage.type = TANGO_IMAGE_TYPE_TEXT;
+   ximage.loc[0] = x;
+   ximage.loc[1] = y;
+   ximage.visible =1;
+   text.color=TANGO_COLOR_BLACK;
+   strcpy(text.font_name,"variable");
+   strcpy(text.text,str);
+   text.orient=1;
+   ximage.object = &text; 
+   txt=TANGOimage_create(&ximage);
+ 
+ //   txt = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_BLACK,"variable",str,1);
+			    
+   ASSOCstore("TEXT_AT",id,topt,txt);
    colpath = TANGOpath_color(TANGO_COLOR_GREEN);
    t[0] = TANGOtrans_create(TANGO_TRANS_TYPE_FILL,image,fillpath);
    t[1] = TANGOtrans_create(TANGO_TRANS_TYPE_COLOR,image,colpath);
@@ -184,7 +223,7 @@ ANIMVisit(id,vnum,order)
 {
    double x,y;
    char str[5];
-   TANGO_IMAGE	 loz,image,new,text;
+   TANGO_IMAGE	 loz,image,new,txt;
    TANGO_LOC	 atpt,topt,center;
    TANGO_PATH	 movepath,onepath,colpath,fillpath;
    TANGO_TRANS	 move,t[2],change,fill,all;
@@ -202,9 +241,23 @@ ANIMVisit(id,vnum,order)
    image = (TANGO_IMAGE) ASSOCretrieve("IMAGE_AT",id,topt);
    sprintf(str,"%d",order);
    TANGOloc_inquire(topt,&x,&y);
-   text = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,
-			    TANGO_COLOR_BLACK,"variable",str,1);
-   ASSOCstore("TEXT_AT",id,topt,text);
+
+   struct _IMAGE im; 
+   struct _TANGO_TEXT text;
+   im.type = TANGO_IMAGE_TYPE_TEXT;
+   im.loc[0] = x;
+   im.loc[1] = y;
+   im.visible =1;
+   text.color=TANGO_COLOR_BLACK;
+   strcpy(text.font_name,"variable");
+   strcpy(text.text,str);
+   text.orient=1;
+   im.object = &text; 
+   txt=TANGOimage_create(&im);
+
+//   txt = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_BLACK,"variable",str,1);
+			    
+   ASSOCstore("TEXT_AT",id,topt,txt);
    onepath = TANGOpath_null(1);
    colpath = TANGOpath_color(TANGO_COLOR_GREEN);
    t[0] = TANGOtrans_create(TANGO_TRANS_TYPE_FILL,image,fillpath);
@@ -258,7 +311,7 @@ ANIMBacktrack(id,vnum)
 
 void
 ANIMDone(id,vnum, pred, tsid, vts)
-   int id,vnum, pred, tsid, vts;
+   long id,vnum, pred, tsid, vts;
 {
    double lx, ly;
    char str[5];
@@ -283,13 +336,40 @@ ANIMDone(id,vnum, pred, tsid, vts)
    tsloc = (TANGO_LOC) ASSOCretrieve("ID", tsid, vts);
    lx= TANGOloc_X(loc); 
    ly= TANGOloc_Y(loc);
-   vnew= TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE, 
-			   lx, ly,
-			   TANGO_COLOR_RED, SIZE, SIZE, 1.0);
-   sprintf(str, "%d", vnum);
-   tnew= TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,
-			   lx, ly, 1,
-			   TANGO_COLOR_BLACK, NULL, str ,1);
+
+   struct _IMAGE image; 
+   struct _TANGO_RECTANGLE rec;
+   image.type = TANGO_IMAGE_TYPE_RECTANGLE;
+   image.loc[0] = lx;
+   image.loc[1] = ly;
+   image.visible = 1;
+   rec.color=TANGO_COLOR_RED;
+   rec.size[0]=SIZE;
+   rec.size[1]=SIZE;
+   rec.fill = 1;
+   image.object = &rec;   
+   vnew=TANGOimage_create(&image); 
+  
+//   vnew= TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE, 
+//			   lx, ly,
+//			   TANGO_COLOR_RED, SIZE, SIZE, 1.0);
+   sprintf(str, "%ld", vnum);
+
+   struct _TANGO_TEXT xtext;
+   image.type = TANGO_IMAGE_TYPE_TEXT;
+   image.loc[0] = lx;
+   image.loc[1] = ly;
+   image.visible =1;
+   xtext.color=TANGO_COLOR_BLACK;
+   xtext.font_name[0]=0;
+   strcpy(xtext.text,str);
+   xtext.orient=1;
+   image.object = &xtext; 
+   tnew=TANGOimage_create(&image);
+ 
+   //   tnew= TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,
+   //			   lx, ly, 1,
+   //			   TANGO_COLOR_BLACK, NULL, str ,1);
    tspath= TANGOpath_distance(loc, tsloc, STEP);
    vmove= TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, vertex, tspath);
    tmove= TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, text, tspath);
@@ -313,7 +393,8 @@ ANIMRedraw(id,num,adjid)
    int adjid;
 {
    int i,j;
-   double sx, sy, dx, dy, vx[4], vy[4], yoffset, loc;
+   //   double sx, sy, dx, dy, vx[4], vy[4], yoffset, loc;
+   double sx, sy, dx, dy,  yoffset, loc;
    TANGO_IMAGE spl;
    TANGO_PATH path;
    TANGO_TRANS color, raise, all;
@@ -340,21 +421,43 @@ ANIMRedraw(id,num,adjid)
 	       loc= -SIZE/ 2;
 	     }
 	   yoffset= yoffset*(j-i)/num;
-	   
+
 	   sx= TANGOloc_X(pt[i]);
 	   sy= TANGOloc_Y(pt[i]) + loc;
 	   dx= TANGOloc_X(pt[j]);
 	   dy= TANGOloc_Y(pt[j]) + loc;
-
+#if 0
 	   vx[0]= (dx- sx)/3.0;
 	   vy[0]= yoffset;
 	   vx[1]= (dx- sx)*2.0/3.0;
 	   vy[1]= yoffset;
 	   vx[2]= (dx- sx);
 	   vy[2]= 0.0;
-	   spl= TANGOimage_create(TANGO_IMAGE_TYPE_POLYLINE, sx, sy,
-				  1, TANGO_COLOR_BLACK, 4, vx, vy,
-				  0.3, 1.0, 1);
+#endif
+
+	   struct _IMAGE image; 
+	   struct _TANGO_POLYLINE poly;
+	   image.type = TANGO_IMAGE_TYPE_POLYLINE;
+	   image.loc[0] = sx;
+	   image.loc[1] = sy;
+	   image.visible = 1;
+	   poly.color=TANGO_COLOR_BLACK;
+	   poly.vertices=3;
+	   poly.vertex[0][0]=(dx- sx)/3.0;
+	   poly.vertex[0][1]=yoffset;
+	   poly.vertex[1][0]=(dx- sx)*2.0/3.0;
+	   poly.vertex[1][1]=yoffset;
+	   poly.vertex[2][0]=dx-sx;
+	   poly.vertex[2][1]=0.0;
+	   poly.width=0.3;
+	   poly.style=1.0;
+	   poly.arrow=1;
+	   image.object = &poly;   
+	   spl=TANGOimage_create(&image); 
+ 
+//	   spl= TANGOimage_create(TANGO_IMAGE_TYPE_POLYLINE, sx, sy,
+//				  1, TANGO_COLOR_BLACK, 4, vx, vy,
+//				  0.3, 1.0, 1);
 	   path= TANGOpath_color(TANGO_COLOR_RED);
 	   color= TANGOtrans_create(TANGO_TRANS_TYPE_COLOR, spl,path);
 	   raise= TANGOtrans_create(TANGO_TRANS_TYPE_RAISE, spl, path);

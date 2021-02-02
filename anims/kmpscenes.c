@@ -4,7 +4,7 @@
 /* state automata.                                       */
 
 #include <stdio.h>
-#include <xtango.h>
+#include <xtangolocal.h>
 
 #define patID      0	  /* pattern string ID     */
 #define subID      1	  /* subject string ID     */
@@ -24,7 +24,6 @@ void ANIMInit(pattern, subject)
 #define   SIDE   0.9      /* */
 #define   HEIGHT 0.1	  /* height of rectangles */
 
-   int          strlen(); /* string length function         */
    double       width;	  /* width of rectangles            */
    TANGO_PATH	path;	  /* a null path to display images  */
    TANGO_TRANS  delay;    /* a transition to display images */
@@ -66,13 +65,15 @@ void SetupStringImages(id, theString, width, yloc)
 {
    int          len;      /* the length of theString           */
    int          i;        /* loop variable                     */
-   int          strlen(); /* string length function            */
    TANGO_LOC    center;   /* holds center of rectangle         */
    TANGO_IMAGE  rect;     /* pointer to a string rectangle     */
-   TANGO_IMAGE  text;     /* pointer to the text within rect   */
+   TANGO_IMAGE  line;     /* pointer to the text within rect   */
    double       x, y;     /* the window location to place text */
    char         str[2];   /* used to set up text in rectangles */
 
+   struct _IMAGE image; 
+   struct _TANGO_TEXT text;
+ 
    len = strlen(theString);
 
 /* create an array of rectangle images */
@@ -90,9 +91,21 @@ void SetupStringImages(id, theString, width, yloc)
       center = TANGOimage_loc(rect, TANGO_PART_TYPE_C);
       TANGOloc_inquire(center, &x, &y);
       str[0] = theString[i];
-      text = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT, x, y, 1, 
-                               TANGO_COLOR_BLACK, NULL, str, 1);
-      ASSOCstore("TEXT", rect, text);
+
+      image.type =TANGO_IMAGE_TYPE_TEXT;
+      image.loc[0] = x;
+      image.loc[1] = y;
+      image.visible =1;
+      text.color=TANGO_COLOR_BLACK;
+      text.font_name[0]=0;
+      strcpy(text.text,str);
+      text.orient=1;
+      image.object = &text; 
+      line=TANGOimage_create(&image);
+
+//    text = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT, x, y, 1, TANGO_COLOR_BLACK, NULL, str, 1);
+                               
+      ASSOCstore("TEXT", rect, line);
     }
 }
 
@@ -230,8 +243,8 @@ void ANIMUpdate(patlen, patn, subn, n)
    for (i=patn-1; (i>=patn-n-1) && (i>=0); i--)
    {
       patrect = (TANGO_IMAGE) ASSOCretrieve("ID", patID, i);
-      colorrect = TANGOtrans_create
-                            (TANGO_TRANS_TYPE_COLOR, patrect, colorpath);
+      colorrect = TANGOtrans_create(TANGO_TRANS_TYPE_COLOR, patrect, colorpath);
+                            
       compose = TANGOtrans_compose(2, compose, colorrect);
       TANGOtrans_free(1, colorrect);
    }

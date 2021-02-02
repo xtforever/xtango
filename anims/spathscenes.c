@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "xtango.h"
+#include "xtangolocal.h"
 
 #define   SIZE	 0.04
 #define   FCOLOR   TANGO_COLOR_RED
@@ -21,9 +21,37 @@ ANIMInit()
    ASSOCmake("LABEL",1);
    ASSOCmake("EDGE",2);
 
-   TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,0.05,0.025,1,TANGO_COLOR_RED,NULL,"STOP",1);
-   stop = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,0.0,0.0,1,TANGO_COLOR_RED,
-			       0.1,0.05,0.0);
+struct _IMAGE ximage; 
+struct _TANGO_TEXT xtext;
+ ximage.type = TANGO_IMAGE_TYPE_TEXT;
+ ximage.loc[0] = 0.05;
+ ximage.loc[1] =  0.025;
+ ximage.visible =1;
+ xtext.color=TANGO_COLOR_RED;
+  xtext.font_name[0]=0;
+
+strcpy(xtext.text,"STOP");
+ xtext.orient=1;
+ximage.object = &xtext; 
+stop=TANGOimage_create(&ximage);
+
+ struct _TANGO_RECTANGLE rec;
+ ximage.type = TANGO_IMAGE_TYPE_RECTANGLE;
+ ximage.loc[0] = 0.0;
+ ximage.loc[1] = 0.0;
+ ximage.visible = 1;
+ rec.color=TANGO_COLOR_RED;
+ rec.size[0]=0.1;
+ rec.size[1]=0.05;
+ rec.fill = 0;
+ ximage.object = &rec;   
+ stop=TANGOimage_create(&ximage); 
+
+
+
+//   TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,0.05,0.025,1,TANGO_COLOR_RED,NULL,"STOP",1);
+//   stop = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,0.0,0.0,1,TANGO_COLOR_RED,
+//			       0.1,0.05,0.0);
 }
 
 
@@ -47,14 +75,47 @@ ANIMVertex(index)
 	   return(NULL);
 	loc = TANGOloc_create(x,y);
 	ASSOCstore("VERTEX",index,loc);
-	node = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,x-SIZE/2.0,y-SIZE/2.0,1,
-				    TANGO_COLOR_BLACK,SIZE,SIZE,0.0);
+
+
+struct _IMAGE ximage; 
+struct _TANGO_RECTANGLE rec;
+ ximage.type = TANGO_IMAGE_TYPE_RECTANGLE;
+ ximage.loc[0] = x-SIZE/2.0;
+ximage.loc[1] = y-SIZE/2.0;
+ ximage.visible = 1;
+ rec.color=TANGO_COLOR_BLACK;
+ rec.size[0]=SIZE;
+rec.size[1]=SIZE;
+ rec.fill = 0;
+ximage.object = &rec;   
+node=TANGOimage_create(&ximage); 
+
+
+//	node = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,x-SIZE/2.0,y-SIZE/2.0,1,
+//				    TANGO_COLOR_BLACK,SIZE,SIZE,0.0);
 	ASSOCstore("NODE",index,node);
 	ASSOCstore("INPUT",node,index);
 	ASSOCstore("EDGE",index,index,NULL);
 	sprintf(str,"%d",index);
-	label = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_BLACK,
-				     "variable",str,1);
+
+
+struct _TANGO_TEXT xtext;
+ ximage.type = TANGO_IMAGE_TYPE_TEXT;
+ ximage.loc[0] = x;
+ ximage.loc[1] = y;
+ ximage.visible =1;
+ xtext.color=TANGO_COLOR_BLACK;
+
+strcpy(xtext.font_name,"variable");
+strcpy(xtext.text,str);
+ xtext.orient=1;
+ximage.object = &xtext; 
+label=TANGOimage_create(&ximage);
+
+
+
+//	label = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_BLACK,
+//				     "variable",str,1);
 	ASSOCstore("LABEL",index,label);
 	path = TANGOpath_null(1);
 	trans = TANGOtrans_create(TANGO_TRANS_TYPE_RAISE,node,path);
@@ -103,8 +164,25 @@ ANIMEdge()
 	v2 = (TANGO_LOC) ASSOCretrieve("VERTEX",index2);
 	TANGOloc_inquire(v1,&x1,&y1);
 	TANGOloc_inquire(v2,&x2,&y2);
-	edge = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,x1,y1,1,TANGO_COLOR_BLACK,
-				    x2-x1,y2-y1,0.5,1.0,0);
+
+struct _IMAGE ximage; 
+struct _TANGO_LINE line;
+ ximage.type = TANGO_IMAGE_TYPE_LINE;
+ ximage.loc[0] = x1;
+ ximage.loc[1] = y1;
+ ximage.visible =1;
+ line.color=TANGO_COLOR_BLACK;
+ line.size[0]=x2-x1;
+ line.size[1]=y2-y1;
+ line.width=0.5;
+ line.style=1.0;
+ line.arrow=0;
+ximage.object = &line;   
+edge=TANGOimage_create(&ximage); 
+
+
+//	edge = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,x1,y1,1,TANGO_COLOR_BLACK,
+//				    x2-x1,y2-y1,0.5,1.0,0);
 	ASSOCstore("EDGE",index1,index2,edge);
 	ASSOCstore("EDGE",index2,index1,edge);
 	path = TANGOpath_null(1);
@@ -149,7 +227,7 @@ ANIMExamine(from, to)
    static double solid_y[1] = { 0.5 };
    TANGO_IMAGE edge;
    TANGO_PATH dashed, solid;
-   TANGO_PATH new,old;
+   //   TANGO_PATH new,old;
    TANGO_TRANS t1, t2, flash, repeat;
 
    edge = (TANGO_IMAGE) ASSOCretrieve("EDGE", from, to);
