@@ -20,17 +20,14 @@ static NAME_FUNCT fcn[] = { {"Init",	  1, {VOID, (FPTR)ANIMInit}},
 			    {NULL,	  0,  NULL, NULL} };
 
 
-
-
 #define maxLength 50
 #define true  1
 #define false 0
 
-main ()
+int main ()
 {
    char pattern[maxLength], subject[maxLength];
    int fLink[maxLength];
-   int strlen();
    int KMPScan();
    void ConstructFLink();
 
@@ -64,7 +61,7 @@ void ConstructFLink(pattern, fLink)
    char pattern[];
    int  fLink[];
 {
-   int strlen(), i, j, l;
+   int  i, j, l;
 
    fLink[1] = 0;
    i = 2;
@@ -88,7 +85,7 @@ int KMPScan(pattern, subject, fLink)
    char pattern[], subject[];
    int  fLink[];
 {
-   int strlen(), i, j, subl, patl;
+   int i, j, subl, patl;
    int theSame;
 
    i = 1;
