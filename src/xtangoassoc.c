@@ -142,12 +142,12 @@ void ASSOCmake(char *name, int keys)
 
 
 
-/***************************************************************/
-/*							       */
-/*   ASSOCstore - store a record in a certain association under*/
-/*	a set of keys.					       */
-/*							       */
-/***************************************************************/
+/***************************************************************************/
+/*						     */
+/*   ASSOCstore - store a record in a certain association under                   */
+/*	a set of keys.				   */
+/*						  */
+/************************************************************************/
 
 void ASSOCstore(char *name, long k1, long k2, long k3, long k4, long k5, long k6)
 {
@@ -202,12 +202,12 @@ void ASSOCstore(char *name, long k1, long k2, long k3, long k4, long k5, long k6
 
 
 
-/***************************************************************/
-/*							       */
-/*   ASSOCmember - tell if a record has been saved under the   */
-/*      given association and keys.     		       */
-/*							       */
-/***************************************************************/
+/************************************************************************/
+/*					                        */
+/*   ASSOCmember - tell if a record has been saved under the               */
+/*      given association and keys.     		                        */
+/*						*/
+/************************************************************************/
 
 int ASSOCmember(char *name, long k1, long k2, long k3, long k4, long k5)
 {
