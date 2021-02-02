@@ -40,7 +40,7 @@
 /*****************      LOCAL functions      ******************/
 /**************************************************************/
 
-int find_function();
+static int find_function();
 
 /**************************************************************/
 /*****************	  entry points       ******************/
@@ -61,15 +61,16 @@ TANGOalgoOp(nmfnc, fname, p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,
 			  p16,p17,p18,p19,p20)
    NAME_FUNCT nmfnc[];
    char *fname;
-   int  p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20;
+   long p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20;
 {
    char *retval = NULL;
    int  i,j;
 
    if (TANGO__data)
-      DEBUG("TANGOalgoOp(0x%p,\"%s\",%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d...)\n", 
+      DEBUG("TANGOalgoOp(0x%p,\"%s\",%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld,%ld...)\n", 
 	 nmfnc, fname, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11);
 
+   //   printf("fname=%s\n",fname);
    switch (i = find_function(nmfnc, fname)) {
       case FUNCT_NOT_FOUND    : COMPLAIN("ERROR: TANGOalgoOp: %s (\"%s\")\n",
 					 "unknown function name", fname); break;
@@ -85,8 +86,7 @@ TANGOalgoOp(nmfnc, fname, p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,
 						  p15,p16,p17,p18,p19,p20);
 			       retval = (char *)NULL;
 			       break;
-	       case CHAR_PTR : retval =
-	      			  (char *)(*nmfnc[i].funct[j].function)(p1,p2,
+	       case CHAR_PTR : retval =   (char *)(*nmfnc[i].funct[j].function)(p1,p2,
 						p3,p4,p5,p6,p7,p8,p9,p10,p11,
 						p12,p13,p14,p15,p16,17,p18,
 						p19,p20);
@@ -108,7 +108,7 @@ TANGOalgoOp(nmfnc, fname, p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,
 /* 							      */
 /* RETURNS:  TRUE(1) if found or FALSE(0).		      */
 /**************************************************************/
-int
+static int
 find_function(nmfnc, fname)
    NAME_FUNCT nmfnc[];
    char *fname;
