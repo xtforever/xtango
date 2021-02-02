@@ -67,7 +67,7 @@ TREENODE_PTR allocate_node();
 /**************************************************************/
 void TWISTcreate_loc_array(assoc, id, num, horiz, x, y, spacing)
 char *assoc;
-int id;
+long id;
 int num;
 int horiz;
 WIN_COORD x, y;
@@ -76,7 +76,7 @@ WIN_COORD spacing;
 	int i;
 	TANGO_LOC loc;
 
-	DEBUG("TWISTcreate_loc_array(\"%s\", %d, %d, %d, %lf, %lf, %lf)\n",
+	DEBUG("TWISTcreate_loc_array(\"%s\", %ld, %d, %d, %lf, %lf, %lf)\n",
 	      assoc, id, num, horiz, x, y, spacing);
 
 	for (i = 0; i < num; ++i) {
@@ -101,7 +101,7 @@ WIN_COORD spacing;
 /**************************************************************/
 void TWISTcreate_2d_loc_array(assoc, id, rows, cols, x, y, xspacing, yspacing)
 char *assoc;
-int id;
+long id;
 int rows, cols;
 WIN_COORD x, y;
 WIN_COORD xspacing, yspacing;
@@ -111,7 +111,7 @@ WIN_COORD xspacing, yspacing;
 	TANGO_LOC loc;
 
 	DEBUG
-	    ("TWISTcreate_2d_loc_array(\"%s\", %d, %d, %d, %lf, %lf, %lf, %lf)\n",
+	    ("TWISTcreate_2d_loc_array(\"%s\", %ld, %d, %d, %lf, %lf, %lf, %lf)\n",
 	     assoc, id, rows, cols, x, y, xspacing, yspacing);
 
 	py = y;
@@ -140,12 +140,13 @@ void
 TWISTcreate_image_array(assoc, id, num, type, horiz, just, x, y, xvals, xfactor,
 			yvals, yfactor, spacing, vis, color, fill, width, style)
 char *assoc;
-int id;
+long id;
 int num;
 TANGO_IMAGE_TYPE type;
 int horiz;			/*  1-horiz, 0-vert                     */
 int just;			/*  justification: 0,1, or 2            */
-WIN_COORD x, y;			/*  starting placement loc              */
+WIN_COORD x;			/*  starting placement loc              */
+WIN_COORD y;			/*  starting placement loc              */
 double xvals[];			/*  width factors (if NULL, constant)   */
 WIN_COORD xfactor;		/*  multiply by xvals to get widths     */
 double yvals[];			/*  height factors (if NULL, constant   */
@@ -158,7 +159,7 @@ double width;
 double style;
 {
 	DEBUG
-	    ("TWISTcreate_image_array(\"%s\",%d,%d,0x%d,%d,%d,%lf,%lf,0x%p,%lf,0x%p,%lf,%lf,%d,%d,%lf,%lf,%lf)\n",
+	    ("TWISTcreate_image_array(\"%s\",%ld,%d,0x%d,%d,%d,%lf,%lf,0x%p,%lf,0x%p,%lf,%lf,%d,%d,%lf,%lf,%lf)\n",
 	     assoc, id, num, type, horiz, just, x, y, xvals, xfactor, yvals,
 	     yfactor, spacing, vis, color, fill, width, style);
 
@@ -193,7 +194,7 @@ double style;
 /**************************************************************/
 void TWISTcreate_graph(assoc, id, num, loc, adj, im_type, size, fill)
 char *assoc;
-int id;
+long id;
 int num;
 TANGO_LOC loc[];
 int adj[][50];
@@ -211,7 +212,7 @@ double fill;
 	struct _TANGO_RECTANGLE rec;
 	struct _TANGO_LINE line;
 
-	DEBUG("TWISTcreate_graph(\"%s\", %d,% d, 0x%p, 0x%p, %d, %lf, %lf)\n",
+	DEBUG("TWISTcreate_graph(\"%s\", %ld,% d, 0x%p, 0x%p, %d, %lf, %lf)\n",
 	      assoc, id, num, loc, adj, im_type, size, fill);
 
 	hs = size / 2.0;
@@ -302,8 +303,7 @@ int edgelevels;
 	      treeid, lx, by, rx, ty, edgelevels);
 
 	if ((rx <= lx) || (by <= ty)) {
-		fprintf(stderr,
-			"Illegal box coords passed to TWISTcreate_bintree\n");
+		fprintf(stderr,"Illegal box coords passed to TWISTcreate_bintree\n");
 		return;
 	}
 
@@ -315,6 +315,7 @@ int edgelevels;
 
 	for (i = 0; i < 16; ++i)
 		numonlevel[i] = 0;
+
 	width[0] = (rx - lx) / 2.0;
 	for (i = 1; i < 16; ++i)
 		width[i] = width[i - 1] / 2.0;
@@ -389,7 +390,7 @@ void create_line_array(assoc, id, num, horiz, just, x, y, xvals,
 		       xfactor, yvals, yfactor, spacing, vis, color,
 		       width, style)
 char *assoc;
-int id;
+long id;
 int num;
 int horiz;			/*  1-horiz, 0-vert                     */
 int just;			/*  justification: 0,1, or 2            */
@@ -442,15 +443,15 @@ double style;
 			if (just == BOTTOM) {
 				image.loc[1] = py - sy;
 				im = TANGOimage_create(&image);
-//              im = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px,py-sy,vis,       color,0.0,sy,width,style,0);
+//im = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px,py-sy,vis,       color,0.0,sy,width,style,0);
 			} else if (just == MIDDLE) {
 				image.loc[1] = py - (sy / 2.0);
 				im = TANGOimage_create(&image);
-//              im =  TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px,py-(sy/2.0),vis,color,0.0,sy,width,style,0);
+//im =  TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px,py-(sy/2.0),vis,color,0.0,sy,width,style,0);
 			} else if (just == TOP) {
 				image.loc[1] = py;
 				im = TANGOimage_create(&image);
-				//im = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px,py,vis,          color,0.0,sy,width,style,0);
+//im = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px,py,vis,          color,0.0,sy,width,style,0);
 			}
 			px += spacing;
 		} else {	/* vertical */
@@ -462,15 +463,15 @@ double style;
 			if (just == LEFT) {
 				image.loc[0] = px;
 				im = TANGOimage_create(&image);
-				//im = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px,py,vis,color,sx,0.0,width,style,0);
+//im = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px,py,vis,color,sx,0.0,width,style,0);
 			} else if (just == MIDDLE) {
 				image.loc[0] = px - (sx / 2.0);
 				im = TANGOimage_create(&image);
-				//im =  TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px-(sx/2.0),py,vis,color,sx,0.0,width,style,0);
+//im =  TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px-(sx/2.0),py,vis,color,sx,0.0,width,style,0);
 			} else if (just == RIGHT) {
 				image.loc[0] = px - sx;
 				im = TANGOimage_create(&image);
-				//im = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px-sx,py,vis,color,sx,0.0,width,style,0);
+//im = TANGOimage_create(TANGO_IMAGE_TYPE_LINE,px-sx,py,vis,color,sx,0.0,width,style,0);
 			}
 			py += spacing;
 		}
@@ -491,7 +492,7 @@ double style;
 void create_rect_array(assoc, id, num, horiz, just, x, y, xvals,
 		       xfactor, yvals, yfactor, spacing, vis, color, fill)
 char *assoc;
-int id;
+long id;
 int num;
 int horiz;			/*  1-horiz, 0-vert                     */
 int just;			/*  justification: 0,1, or 2            */
@@ -589,7 +590,7 @@ double fill;
 void create_circle_array(assoc, id, num, horiz, just, x, y, xvals,
 			 xfactor, yvals, yfactor, spacing, vis, color, fill)
 char *assoc;
-int id;
+long id;
 int num;
 int horiz;			/*  1-horiz, 0-vert                     */
 int just;			/*  justification: 0,1, or 2            */
