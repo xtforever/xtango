@@ -45,7 +45,7 @@ OBJS=$(addsuffix .o, $(TESTS)) $(addsuffix scenes.o, $(TESTS))
 
 all: $(TESTS)
 
-$(TESTS) :
+$(TESTS) : $(OBJS)
 	$(CC) $(CFLAGS) $@.o $@scenes.o $(XTANGOBJ) $(XLIB) $(MLIB) -o $@
 
 
