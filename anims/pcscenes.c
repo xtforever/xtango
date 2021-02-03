@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "xtango.h"
+#include "xtangolocal.h"
 
 #define cosine cos
 #define sine   sin
@@ -61,19 +61,119 @@ ANIMInit(buffer,n)
    ASSOCstore("REGIONLOC",PRODUCER,ploc);
    ASSOCstore("REGIONLOC",MONITOR,mloc);
    ASSOCstore("REGIONLOC",CONSUMER,cloc);
-   rect = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,0.0,0.0,1,TANGO_COLOR_BLACK,0.2,0.2,0.0);
-   TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,0.1,0.05,1,TANGO_COLOR_RED,"variable","PRODUCER",1);
+
+struct _IMAGE ximage; 
+struct _TANGO_RECTANGLE rec;
+ ximage.type = TANGO_IMAGE_TYPE_RECTANGLE;
+  ximage.loc[0] = 0.0;
+  ximage.loc[1] = 0.0;
+  ximage.visible = 1;
+  rec.color=TANGO_COLOR_BLACK;
+  rec.size[0]=0.2;
+  rec.size[1]=0.2;
+  rec.fill = 0;
+  ximage.object = &rec;   
+  rect=TANGOimage_create(&ximage); 
+
+//   rect = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,0.0,0.0,1,TANGO_COLOR_BLACK,0.2,0.2,0.0);
+
+struct _TANGO_TEXT xtext;
+ ximage.type = TANGO_IMAGE_TYPE_TEXT;
+ ximage.loc[0] = 0.1;
+ ximage.loc[1] = 0.05;
+ ximage.visible =1;
+ xtext.color=TANGO_COLOR_RED;
+
+strcpy(xtext.font_name,"variable");
+strcpy(xtext.text,"PRODUCER");
+ xtext.orient=1;
+ximage.object = &xtext; 
+TANGOimage_create(&ximage);
+
+
+//   TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,0.1,0.05,1,TANGO_COLOR_RED,"variable","PRODUCER",1);
    ASSOCstore("REGIONRECT",PRODUCER,rect);
-   rect = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,0.4,0.0,1,TANGO_COLOR_BLACK,0.2,0.2,0.0);
-   TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,0.5,0.05,1,TANGO_COLOR_RED,"variable","MONITOR",1);
+
+
+ ximage.type = TANGO_IMAGE_TYPE_RECTANGLE;
+  ximage.loc[0] = 0.4;
+  ximage.loc[1] = 0.0;
+  ximage.visible = 1;
+  rec.color=TANGO_COLOR_BLACK;
+  rec.size[0]=0.2;
+  rec.size[1]=0.2;
+  rec.fill = 0;
+  ximage.object = &rec;   
+  rect=TANGOimage_create(&ximage); 
+
+
+//   rect = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,0.4,0.0,1,TANGO_COLOR_BLACK,0.2,0.2,0.0);
+ ximage.type = TANGO_IMAGE_TYPE_TEXT;
+ ximage.loc[0] = 0.5;
+ ximage.loc[1] = 0.05;
+ ximage.visible =1;
+ xtext.color=TANGO_COLOR_RED;
+strcpy(xtext.font_name,"variable");
+strcpy(xtext.text,"MONITOR");
+ xtext.orient=1;
+ximage.object = &xtext; 
+TANGOimage_create(&ximage);
+ 
+//  TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,0.5,0.05,1,TANGO_COLOR_RED,"variable","MONITOR",1);
    ASSOCstore("REGIONRECT",MONITOR,rect);
-   rect = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,0.8,0.0,1,TANGO_COLOR_BLACK,0.2,0.2,0.0);
-   TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,0.9,0.05,1,TANGO_COLOR_RED,"variable","CONSUMER",1);
+
+ ximage.type = TANGO_IMAGE_TYPE_RECTANGLE;
+  ximage.loc[0] = 0.8;
+  ximage.loc[1] = 0.05;
+  ximage.visible = 1;
+  rec.color=TANGO_COLOR_BLACK;
+  rec.size[0]=0.2;
+  rec.size[1]=0.2;
+  rec.fill = 0;
+  ximage.object = &rec;   
+  rect=TANGOimage_create(&ximage); 
+
+//   rect = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,0.8,0.0,1,TANGO_COLOR_BLACK,0.2,0.2,0.0);
+
+ ximage.type = TANGO_IMAGE_TYPE_TEXT;
+ ximage.loc[0] = 0.9;
+ ximage.loc[1] = 0.05;
+ ximage.visible =1;
+ xtext.color=TANGO_COLOR_RED;
+strcpy(xtext.font_name,"variable");
+strcpy(xtext.text,"CONSUMER");
+ xtext.orient=1;
+ximage.object = &xtext; 
+TANGOimage_create(&ximage);
+
+//   TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,0.9,0.05,1,TANGO_COLOR_RED,"variable","CONSUMER",1);
    ASSOCstore("REGIONRECT",CONSUMER,rect);
 
+struct _TANGO_CIRCLE xcirc;
+ ximage.type = TANGO_IMAGE_TYPE_CIRCLE;
+ ximage.loc[0] = BUFX;
+ximage.loc[1] = BUFY;
+ ximage.visible = 1;
+ xcirc.color = TANGO_COLOR_BLACK;
+ xcirc.radius = INNER_RAD;
+ xcirc.fill = 0;
+ximage.object = &xcirc;   
+TANGOimage_create(&ximage);
+
    /* draw the ring buffers two circles */
-   TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,BUFX,BUFY,1,TANGO_COLOR_BLACK,INNER_RAD,0.0);
-   TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,BUFX,BUFY,1,TANGO_COLOR_BLACK,OUTER_RAD,0.0);
+//   TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,BUFX,BUFY,1,TANGO_COLOR_BLACK,INNER_RAD,0.0);
+
+ ximage.type = TANGO_IMAGE_TYPE_CIRCLE;
+ ximage.loc[0] = BUFX;
+ximage.loc[1] = BUFY;
+ ximage.visible = 1;
+ xcirc.color = TANGO_COLOR_BLACK;
+ xcirc.radius = OUTER_RAD;
+ xcirc.fill = 0;
+ximage.object = &xcirc;   
+TANGOimage_create(&ximage);
+
+//   TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,BUFX,BUFY,1,TANGO_COLOR_BLACK,OUTER_RAD,0.0);
 
    qspot = n-1;
    angle = 0.0;
@@ -100,23 +200,77 @@ ANIMInit(buffer,n)
 	y = sine(angle) * INNER_RAD;
 	sx = (cosine(angle) * OUTER_RAD) - x;
 	sy = (sine(angle) * OUTER_RAD) - y;
-	TANGOimage_create(TANGO_IMAGE_TYPE_LINE,BUFX+x,BUFY+y,1,TANGO_COLOR_BLACK,sx,sy,0.0,1.0,0);
+
+
+struct _TANGO_LINE line;
+ ximage.type = TANGO_IMAGE_TYPE_LINE;
+ ximage.loc[0] = BUFX+x;
+ ximage.loc[1] = BUFY+y;
+ ximage.visible =1;
+ line.color=TANGO_COLOR_BLACK;
+ line.size[0]=sx;
+ line.size[1]=sy;
+ line.width=0.0;
+ line.style=1;
+ line.arrow=0;
+ximage.object = &line;   
+TANGOimage_create(&ximage); 
+
+//	TANGOimage_create(TANGO_IMAGE_TYPE_LINE,BUFX+x,BUFY+y,1,TANGO_COLOR_BLACK,sx,sy,0.0,1.0,0);
 
 	qspot--;
       }
 
    loc = (TANGO_LOC) ASSOCretrieve("ID",buffer,n-1);
    TANGOloc_inquire(loc,&x,&y);
-   nullspot = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,x-ELT_SIZE,y-ELT_SIZE,
-				 1,TANGO_COLOR_BLACK,2.0*ELT_SIZE,2.0*ELT_SIZE,1.0);
-   ASSOCstore("PTR_ICONS",NULL_PTR,nullspot);
+
+
+   ximage.type = TANGO_IMAGE_TYPE_RECTANGLE;
+   ximage.loc[0] = x-ELT_SIZE;;
+   ximage.loc[1] = y-ELT_SIZE;
+   ximage.visible = 1;
+   rec.color=TANGO_COLOR_BLACK;
+   rec.size[0]=2.0*ELT_SIZE;
+  rec.size[1]=2.0*ELT_SIZE;
+  rec.fill = 1;
+  ximage.object = &rec;   
+  nullspot=TANGOimage_create(&ximage); 
+
+//   nullspot = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE,x-ELT_SIZE,y-ELT_SIZE,
+//				 1,TANGO_COLOR_BLACK,2.0*ELT_SIZE,2.0*ELT_SIZE,1.0);
+  
+  ASSOCstore("PTR_ICONS",NULL_PTR,nullspot);
 
    loc = (TANGO_LOC) ASSOCretrieve("PTR_POS",IN_PTR,0);
    TANGOloc_inquire(loc,&x,&y);
-   inptr = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_RED,"variable","In",1);
+
+   ximage.type = TANGO_IMAGE_TYPE_TEXT;
+   ximage.loc[0] = x;
+   ximage.loc[1] = y;
+   ximage.visible =1;
+   xtext.color=TANGO_COLOR_RED;
+     strcpy(xtext.font_name,"variable");
+   strcpy(xtext.text,"In");
+   xtext.orient=1;
+   ximage.object = &xtext; 
+   inptr=TANGOimage_create(&ximage);
+
+//   inptr = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_RED,"variable","In",1);
    loc = (TANGO_LOC) ASSOCretrieve("PTR_POS",OUT_PTR,0);
    TANGOloc_inquire(loc,&x,&y);
-   outptr = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_RED,"variable","Out",1);
+
+   ximage.type = TANGO_IMAGE_TYPE_TEXT;
+   ximage.loc[0] = x;
+   ximage.loc[1] = y;
+   ximage.visible =1;
+   xtext.color=TANGO_COLOR_RED;
+   strcpy(xtext.font_name,"variable");
+   strcpy(xtext.text,"Out");
+   xtext.orient=1;
+   ximage.object = &xtext; 
+   outptr=TANGOimage_create(&ximage);
+ 
+//   outptr = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_RED,"variable","Out",1);
 
    ASSOCstore("PTR_ICONS",IN_PTR,inptr);
    ASSOCstore("PTR_ICONS",OUT_PTR,outptr);
@@ -127,10 +281,6 @@ ANIMInit(buffer,n)
    TANGOpath_free(1,path);
    TANGOtrans_free(1,trans);
 }
-
-
-
-
 
 
 /* the PRODUCER is waiting, fill its region */
@@ -152,9 +302,6 @@ ANIMP_wait()
 }
 
 
-
-
-
 /* the PRODUCER is done waiting, unfill its region */
 
 void
@@ -172,9 +319,6 @@ ANIMP_active()
    TANGOpath_free(1,onepath);
    TANGOtrans_free(1,fill);
 }
-
-
-
 
 
 /* the CONSUMER is waiting; fill its region */
@@ -195,11 +339,6 @@ ANIMC_wait()
    TANGOtrans_free(1,fill);
 }
 
-
-
-
-
-
 /* the CONSUMER is done waiting; unfill its region */
 
 void
@@ -218,10 +357,6 @@ ANIMC_active()
    TANGOtrans_free(1,fill);
 }
 
-
-
-
-
 /* introduce a new item in the PRODUCER region */
 
 void
@@ -238,8 +373,34 @@ ANIMNew_item(id,num)
    ploc = (TANGO_LOC) ASSOCretrieve("REGIONLOC",PRODUCER);
    TANGOloc_inquire(ploc,&x,&y);
    sprintf(str,"%d",num);
-   node = TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,x,y,1,TANGO_COLOR_BLUE,ELT_SIZE,0.0);
-   text = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_BLUE,NULL,str,1);
+
+struct _IMAGE ximage;
+struct _TANGO_CIRCLE xcirc;
+ ximage.type = TANGO_IMAGE_TYPE_CIRCLE;
+ ximage.loc[0] = x;
+ ximage.loc[1] = y;
+ ximage.visible = 1;
+ xcirc.color = TANGO_COLOR_BLUE;
+ xcirc.radius = ELT_SIZE;
+ xcirc.fill = 0;
+ ximage.object = &xcirc;   
+ node=TANGOimage_create(&ximage);
+
+//   node = TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE,x,y,1,TANGO_COLOR_BLUE,ELT_SIZE,0.0);
+ 
+ struct _TANGO_TEXT xtext;
+ ximage.type = TANGO_IMAGE_TYPE_TEXT;
+  ximage.loc[0] = x;
+  ximage.loc[1] = y;
+  ximage.visible =1;
+  xtext.color=TANGO_COLOR_BLUE;
+  xtext.font_name[0]=0;
+  strcpy(xtext.text,str);
+  xtext.orient=1;
+  ximage.object = &xtext; 
+  text=TANGOimage_create(&ximage);
+
+//  text = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT,x,y,1,TANGO_COLOR_BLUE,NULL,str,1);
    ASSOCstore("ID",id,num,node);   /* save it for later references */
    ASSOCstore("ITEM_TEXT",node,text);
 
@@ -247,11 +408,6 @@ ANIMNew_item(id,num)
    trans = TANGOtrans_create(TANGO_TRANS_TYPE_DELAY,NULL,path);
    TANGOtrans_perform(trans);	 /* make it appear */
 }
-
-
-
-
-
 
 
 /* the queue is full, so have the given item move to the monitor */
