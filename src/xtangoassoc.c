@@ -268,11 +268,11 @@ int ASSOCdelete(char *name, long k1, long k2, long k3, long k4, long k5)
 
 
 
-/***************************************************************/
-/*							       */
+/******************************************************************/
+/*					          */
 /*   ASSOCretrieve - return the record saved under the given   */
-/*	association and keys.				       */
-/*							       */
+/*	association and keys.			       */
+/*					      */
 /***************************************************************/
 
 long  ASSOCretrieve(char *name, long k1, long k2, long k3, long k4, long k5)
@@ -296,49 +296,50 @@ long  ASSOCretrieve(char *name, long k1, long k2, long k3, long k4, long k5)
 	keys = t->keys;
 	hash_val = hash_keys(keys, k1, k2, k3, k4, k5);
 	r = record_exists(t, hash_val, k1, k2, k3, k4, k5);
-	if (!r) {
-		switch (keys) {
-		case 0:
-			fprintf(stderr, "No record for assoc %s\n", name);
-			if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
-				assoc_dump();
-			break;
-		case 1:
-			fprintf(stderr,
-				"No record for assoc %s, keys = (%ld)\n",name, k1);
-			if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
-				assoc_dump();
-			break;
-		case 2:
-			fprintf(stderr,"No record for assoc %s, keys = (%ld,%ld)\n",name, k1, k2);
-			if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
-				assoc_dump();
-			break;
-		case 3:
-			fprintf(stderr,
-				"No record for assoc %s, keys = (%ld,%ld,%ld)\n",
-				name, k1, k2, k3);
-			if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
-				assoc_dump();
-			break;
-		case 4:
-			fprintf(stderr,
-				"No record for assoc %s, keys = (%ld,%ld,%ld,%ld)\n",
-				name, k1, k2, k3, k4);
-			if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
-				assoc_dump();
-			break;
-		case 5:
-			fprintf(stderr,
-				"No record for assoc %s, keys = (%ld,%ld,%ld,%ld,%ld)\n",
-				name, k1, k2, k3, k4, k5);
-			if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
-				assoc_dump();
-			break;
-		}
-		return (0);
-	} else
+	if (r) 
 		return (r->record);
+
+	switch (keys) {
+	case 0:
+		fprintf(stderr, "No record for assoc %s\n", name);
+		if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
+			assoc_dump();
+		break;
+	case 1:
+		fprintf(stderr,
+			"No record for assoc %s, keys = (%ld)\n",name, k1);
+		if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
+			assoc_dump();
+		break;
+	case 2:
+		fprintf(stderr,"No record for assoc %s, keys = (%ld,%ld)\n",name, k1, k2);
+		if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
+			assoc_dump();
+		break;
+	case 3:
+		fprintf(stderr,
+			"No record for assoc %s, keys = (%ld,%ld,%ld)\n",
+			name, k1, k2, k3);
+		if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
+			assoc_dump();
+		break;
+	case 4:
+		fprintf(stderr,
+			"No record for assoc %s, keys = (%ld,%ld,%ld,%ld)\n",
+			name, k1, k2, k3, k4);
+		if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
+			assoc_dump();
+		break;
+	case 5:
+		fprintf(stderr,
+			"No record for assoc %s, keys = (%ld,%ld,%ld,%ld,%ld)\n",
+			name, k1, k2, k3, k4, k5);
+		if (TANGO__data->debug & TANGO_DEBUG_EXTERNAL)
+			assoc_dump();
+		break;
+	}
+
+	return (-1);
 }
 
 
