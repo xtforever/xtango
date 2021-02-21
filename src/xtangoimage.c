@@ -627,15 +627,34 @@ image_create2( TANGO_IMAGE image, int type)
 
 	 break;
 	}
-#if 0
+
       case TANGO_IMAGE_TYPE_BITMAP:
+	{
 	 /* locx,locy,vis,array,n,width,height */
-	 bmap_create(new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9);
+	  TANGO_BITMAP_PTR bm=(TANGO_BITMAP_PTR)image->object;
+
+	bmap_create(new_image, 
+		    image->loc[0],image->loc[1],image->visible,
+		    bm->bmap,bm->used,bm->width,bm->height);
+
+ //	 bmap_create(new_image, p1,p2, p3,p4, p5, p6, p7, p8, p9);
 	 break;
+	    }
+#if 0
       case TANGO_IMAGE_TYPE_COMPOSITE:
 	 composite_create(new_image, p1,p2, p3,p4, p5, p6);
 	 break;
 #endif
+      case TANGO_IMAGE_TYPE_COMPOSITE:
+	{
+	  TANGO_IMAGE_COMPONENT  *subimage=image->object;
+
+	  composite_create(new_image,
+			   image->loc[0],image->loc[1],image->visible,subimage);
+
+   //	 composite_create(new_image, p1,p2, p3,p4, p5, p6);
+	 break;
+	}
       default:
 	 fprintf(stderr,
 		 "Illegal TANGO_IMAGE_TYPE received by TANGOimage_create=%d\n",
