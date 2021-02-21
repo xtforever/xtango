@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "xtango.h"
-
+#include "xtangolocal.h"
 
 static TANGO_IMAGE_COMPONENT face[8] = {
    { TANGO_IMAGE_TYPE_CIRCLE, "0.0000 0.0000 TANGO_COLOR_BLACK 0.0570 0.0000"},
@@ -30,8 +29,136 @@ scene1()
    TANGO_IMAGE line, rect, circle, ellipse, ppolyline, polygon, spline, text, compos;
    TANGO_PATH path;
    TANGO_TRANS m1, m2, m3, m4, m5, m6, m7, m8, m9;
+   struct _IMAGE ximage; 
+   int i;
 
    path = TANGOpath_create(28, path_x, path_y);
+
+
+
+struct _TANGO_LINE xline;
+   ximage.type = TANGO_IMAGE_TYPE_LINE;
+   ximage.loc[0] =  0.1377;
+   ximage.loc[1] = 0.0954;
+   ximage.visible =1;
+   xline.color= TANGO_COLOR_BLACK;
+   xline.size[0]=0.1086;
+   xline.size[1]= 0.0689;
+   xline.width= 0.5000;
+   xline.style= 0.5000;
+   xline.arrow= 0;
+   ximage.object = &xline;   
+   line=TANGOimage_create(&ximage); 
+
+struct _TANGO_RECTANGLE rec;
+   ximage.type = TANGO_IMAGE_TYPE_RECTANGLE;
+   ximage.loc[0] = 0.1007;
+   ximage.loc[1] = 0.2503;
+   ximage.visible =  1;
+   rec.color= TANGO_COLOR_GREEN;
+   rec.size[0]= 0.1126;
+   rec.size[1]= 0.0609;
+   rec.fill =  0.5000;
+   ximage.object = &rec;   
+   rect=TANGOimage_create(&ximage); 
+
+   struct _TANGO_CIRCLE xcirc;
+ ximage.type = TANGO_IMAGE_TYPE_CIRCLE;
+ ximage.loc[0] =  0.1298;
+ ximage.loc[1] =  0.4556;
+ ximage.visible =  1;
+ xcirc.color =  TANGO_COLOR_BLUE;
+ xcirc.radius =  0.0477;
+ xcirc.fill =  0.8333;
+ ximage.object = &xcirc;   
+ circle=TANGOimage_create(&ximage);
+ 
+struct _TANGO_ELLIPSE elli;
+ ximage.type = TANGO_IMAGE_TYPE_ELLIPSE;
+ ximage.loc[0] =  0.2609;
+ ximage.loc[1] =  0.7046;
+ ximage.visible =  1;
+ elli.color=TANGO_COLOR_MAROON;
+ elli.size[0]= 0.1682;
+ elli.size[1]= 0.1662;
+elli.fill= 0.2777;
+ximage.object = &elli;   
+ellipse=TANGOimage_create(&ximage); 
+
+struct _TANGO_POLYLINE xpoly;
+ ximage.type = TANGO_IMAGE_TYPE_POLYLINE;
+ ximage.loc[0] =  0.4291;
+ ximage.loc[1] =  0.8212;
+ ximage.visible =  1;
+ xpoly.color= TANGO_COLOR_BLACK;
+ xpoly.vertices= 5;
+ for(i=0;i<xpoly.vertices;i++) {
+   xpoly.vertex[i][0]=ppolyline_x[i];  //vx
+   xpoly.vertex[i][1]=ppolyline_y[i]; //vy
+}
+xpoly.width=1;
+xpoly.style=1;
+xpoly.arrow=3;
+ximage.object = &xpoly;   
+ppolyline=TANGOimage_create(&ximage); 
+
+struct _TANGO_POLYGON pgon;
+ximage.type = TANGO_IMAGE_TYPE_POLYGON;
+ximage.loc[0] =  0.6954 ;
+ximage.loc[1] = 0.7642;
+ximage.visible = 1;
+pgon.color= TANGO_COLOR_RED;
+pgon.sides= 5; 
+  for(i=0;i<pgon.sides;i++) 
+    {
+      pgon.vertex[i][0] = polygon_x[i];//vx
+      pgon.vertex[i][1] = polygon_y[i];//vy
+    }
+pgon.fill=0.7222;
+
+ximage.object = &pgon;   
+polygon=TANGOimage_create(&ximage); 
+
+struct _TANGO_SPLINE xspline;
+ximage.type = TANGO_IMAGE_TYPE_SPLINE;
+ximage.loc[0] =  0.8358;
+ximage.loc[1] =  0.3285;
+ximage.visible = 1;
+xspline.color=TANGO_COLOR_BLACK;
+xspline.vertices=5;
+  for(i=0;i<xspline.vertices;i++) 
+    {
+      xspline.vertex[i][0] = spline_x[i];//vx
+      xspline.vertex[i][1] = spline_y[i];//vy
+    }
+xspline.width=0;
+xspline.style=1;
+ximage.object = &xspline;   
+spline=TANGOimage_create(&ximage); 
+
+struct _TANGO_TEXT xtext;
+ximage.type = TANGO_IMAGE_TYPE_TEXT;
+ximage.loc[0] =  0.6411;
+ximage.loc[1] =  0.1748;
+ximage.visible = 1;
+xtext.color= TANGO_COLOR_BLACK;
+ xtext.font_name[0]=0;
+strcpy(xtext.text,"testing");
+xtext.orient=0;
+ximage.object = &xtext; 
+text=TANGOimage_create(&ximage);
+
+//struct _TANGO_COMPOSITE xcomp;
+ximage.type = TANGO_IMAGE_TYPE_COMPOSITE;
+ximage.loc[0] =  0.3682;
+ximage.loc[1] =  0.1642;
+ximage.visible = 1;
+// xcomp.image_list=&face;
+ximage.object = &face;   
+compos=TANGOimage_create(&ximage);
+
+
+#if 0
    line = TANGOimage_create(TANGO_IMAGE_TYPE_LINE, 0.1377, 0.0954, 1, TANGO_COLOR_BLACK, 0.1086, 0.0689, 0.5000, 0.5000, 0);
    rect = TANGOimage_create(TANGO_IMAGE_TYPE_RECTANGLE, 0.1007, 0.2503, 1, TANGO_COLOR_GREEN, 0.1126, 0.0609, 0.5000);
    circle = TANGOimage_create(TANGO_IMAGE_TYPE_CIRCLE, 0.1298, 0.4556, 1, TANGO_COLOR_BLUE, 0.0477, 0.8333);
@@ -41,6 +168,9 @@ scene1()
    spline = TANGOimage_create(TANGO_IMAGE_TYPE_SPLINE, 0.8358, 0.3285, 1, TANGO_COLOR_BLACK, 5, spline_x, spline_y, 0.0000, 1.0000, 0);
    text = TANGOimage_create(TANGO_IMAGE_TYPE_TEXT, 0.6411, 0.1748, 1, TANGO_COLOR_BLACK, NULL, "tstring");
    compos = TANGOimage_create(TANGO_IMAGE_TYPE_COMPOSITE, 0.3682, 0.1642, 1, face);
+#endif
+
+
    m1 = TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, line, path);
    m2 = TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, rect, path);
    m3 = TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, circle, path);
@@ -49,7 +179,11 @@ scene1()
    m6 = TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, polygon, path);
    m7 = TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, spline, path);
    m8 = TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, text, path);
-   m9 = TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, compos, path);
+
+  m9 = TANGOtrans_create(TANGO_TRANS_TYPE_MOVE, compos, path);
+
+
+
    TANGOtrans_perform(m1);
    TANGOtrans_perform(m2);
    TANGOtrans_perform(m3);
@@ -59,6 +193,7 @@ scene1()
    TANGOtrans_perform(m7);
    TANGOtrans_perform(m8);
    TANGOtrans_perform(m9);
+
 
    m1 = TANGOtrans_create(TANGO_TRANS_TYPE_RESIZE, line, path);
    m2 = TANGOtrans_create(TANGO_TRANS_TYPE_RESIZE, rect, path);
@@ -69,6 +204,8 @@ scene1()
    m7 = TANGOtrans_create(TANGO_TRANS_TYPE_RESIZE, spline, path);
    m8 = TANGOtrans_create(TANGO_TRANS_TYPE_RESIZE, text, path);
    m9 = TANGOtrans_create(TANGO_TRANS_TYPE_RESIZE, compos, path);
+
+
    TANGOtrans_perform(m1);
    TANGOtrans_perform(m2);
    TANGOtrans_perform(m3);
@@ -78,6 +215,7 @@ scene1()
    TANGOtrans_perform(m7);
    TANGOtrans_perform(m8);
    TANGOtrans_perform(m9);
+
 }
 
 
